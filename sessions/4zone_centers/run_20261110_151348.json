@@ -1,0 +1,22 @@
+{
+  "mode": "scan",
+  "epc": "",
+  "ref_epc": "1A0000000000000000000009",
+  "tx_power_dbm": [
+    12,
+    15,
+    20
+  ],
+  "RfMode": 1002,
+  "Session": 2,
+  "search": "dual",
+  "rx_sens_dbm": -80,
+  "dwell_s": 20,
+  "ports": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "started": "2026-11-10T15:13:48.9505481-08:00"
+}

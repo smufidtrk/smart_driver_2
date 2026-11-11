@@ -1,0 +1,37 @@
+sev,layout,scenario,feat,acc,acc_3in_from_edge,acc_when_conf90,coverage_conf90,top2_acc,p_err_lt_12in,p_err_lt_18in
+mild,3 ant - triangle,same-shelf,rssi,76.4,84.1,90.0,50.3,94.0,94.0,98.7
+mild,3 ant - triangle,same-shelf,both,86.5,93.4,97.0,52.7,98.1,98.2,99.4
+mild,3 ant - triangle,transfer,rssi,76.7,82.7,89.2,50.4,94.1,93.7,98.3
+mild,3 ant - triangle,transfer,both,83.6,91.8,96.4,51.5,97.5,97.9,99.3
+typical,3 ant - triangle,same-shelf,rssi,66.1,70.7,78.2,30.6,87.4,87.6,97.1
+typical,3 ant - triangle,same-shelf,both,82.3,87.5,96.2,39.2,96.9,96.3,99.1
+typical,3 ant - triangle,transfer,rssi,66.4,70.1,76.9,30.7,87.4,87.2,96.3
+typical,3 ant - triangle,transfer,both,78.4,86.2,95.3,35.9,95.9,95.9,99.3
+harsh,3 ant - triangle,same-shelf,rssi,56.7,60.4,60.9,18.2,80.1,82.9,95.7
+harsh,3 ant - triangle,same-shelf,both,74.6,82.2,94.3,21.0,94.5,94.7,98.5
+harsh,3 ant - triangle,transfer,rssi,56.4,59.4,58.6,19.0,82.4,82.3,95.8
+harsh,3 ant - triangle,transfer,both,72.2,78.5,91.9,21.9,93.9,94.4,98.7
+mild,4 ant - 1 per quadrant,same-shelf,rssi,87.1,93.0,98.6,57.2,98.0,99.2,100.0
+mild,4 ant - 1 per quadrant,same-shelf,both,92.1,96.8,99.0,59.5,99.5,99.7,100.0
+mild,4 ant - 1 per quadrant,transfer,rssi,87.8,93.1,98.9,58.0,97.9,98.9,100.0
+mild,4 ant - 1 per quadrant,transfer,both,89.5,96.0,99.2,57.3,98.6,99.7,100.0
+typical,4 ant - 1 per quadrant,same-shelf,rssi,79.8,88.4,97.5,46.9,94.3,96.1,99.7
+typical,4 ant - 1 per quadrant,same-shelf,both,87.0,92.4,99.1,48.9,97.6,98.6,99.9
+typical,4 ant - 1 per quadrant,transfer,rssi,80.7,89.1,96.9,48.1,94.5,97.0,99.7
+typical,4 ant - 1 per quadrant,transfer,both,84.2,91.8,97.7,49.9,96.7,98.1,100.0
+harsh,4 ant - 1 per quadrant,same-shelf,rssi,71.5,80.8,94.3,27.1,89.3,92.5,98.5
+harsh,4 ant - 1 per quadrant,same-shelf,both,81.8,90.9,97.2,38.5,95.5,97.7,99.7
+harsh,4 ant - 1 per quadrant,transfer,rssi,71.7,81.1,94.3,28.8,90.6,93.1,99.3
+harsh,4 ant - 1 per quadrant,transfer,both,81.5,90.6,96.9,38.8,95.2,97.5,99.6
+mild,6 ant - 3x2 grid,same-shelf,rssi,88.7,94.7,99.3,59.1,99.2,99.1,99.9
+mild,6 ant - 3x2 grid,same-shelf,both,91.1,97.9,99.2,58.3,99.6,99.3,99.9
+mild,6 ant - 3x2 grid,transfer,rssi,89.3,94.7,99.8,59.7,99.5,99.4,100.0
+mild,6 ant - 3x2 grid,transfer,both,90.6,97.4,99.1,57.9,99.5,99.7,100.0
+typical,6 ant - 3x2 grid,same-shelf,rssi,81.8,88.5,97.3,41.4,95.5,94.7,98.9
+typical,6 ant - 3x2 grid,same-shelf,both,87.8,95.8,98.8,47.5,98.6,98.7,99.7
+typical,6 ant - 3x2 grid,transfer,rssi,80.9,88.5,96.5,42.4,95.1,95.3,98.9
+typical,6 ant - 3x2 grid,transfer,both,86.8,95.3,99.3,44.3,98.3,99.1,99.9
+harsh,6 ant - 3x2 grid,same-shelf,rssi,71.6,79.4,96.2,26.3,88.7,89.4,97.6
+harsh,6 ant - 3x2 grid,same-shelf,both,85.1,91.3,98.1,37.7,96.8,97.1,99.1
+harsh,6 ant - 3x2 grid,transfer,rssi,72.9,80.2,96.3,26.9,89.8,90.1,97.3
+harsh,6 ant - 3x2 grid,transfer,both,83.1,91.2,98.2,36.6,97.1,98.2,99.6

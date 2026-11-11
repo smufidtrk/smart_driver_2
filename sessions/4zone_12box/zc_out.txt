@@ -1,0 +1,223 @@
+=== 4zone_centers/scan_20261110_151348-p12  (12 dBm)  reference tag read on ports 1,3,4   boxes: ..0261->z1  ..0650->z2  ..0654->z3  ..0661->z4
+=== 4zone_centers/scan_20261110_151348-p15  (15 dBm)  reference tag read on ports 1,3,4   boxes: ..0261->z1  ..0650->z2  ..0654->z3  ..0661->z4
+=== 4zone_centers/scan_20261110_151348-p20  (20 dBm)  reference tag read on ports 1,2,3,4   boxes: ..0261->z1  ..0650->z2  ..0654->z3  ..0661->z4
+=== 4zone_rot1/scan_20261110_152516-p12  (12 dBm)  reference tag read on ports 3,4   boxes: ..0261->z2  ..0650->z3  ..0654->z4  ..0661->z1
+=== 4zone_rot1/scan_20261110_152516-p15  (15 dBm)  reference tag read on ports 1,3,4   boxes: ..0261->z2  ..0650->z3  ..0654->z4  ..0661->z1
+=== 4zone_rot2/scan_20261110_153054-p12  (12 dBm)  reference tag read on ports 3,4   boxes: ..0261->z3  ..0650->z4  ..0654->z1  ..0661->z2
+=== 4zone_rot2/scan_20261110_153054-p15  (15 dBm)  reference tag read on ports 3,4   boxes: ..0261->z3  ..0650->z4  ..0654->z1  ..0661->z2
+=== 4zone_rot3/scan_20261110_153315-p12  (12 dBm)  reference tag read on ports 3,4   boxes: ..0261->z4  ..0650->z1  ..0654->z2  ..0661->z3
+=== 4zone_rot3/scan_20261110_153315-p15  (15 dBm)  reference tag read on ports 3,4   boxes: ..0261->z4  ..0650->z1  ..0654->z2  ..0661->z3
+=== 4zone_rot4/scan_20261110_153546-p12  (12 dBm)  reference tag read on ports 3,4   boxes: ..0261->z1  ..0650->z2  ..0654->z3  ..0661->z4
+=== 4zone_rot4/scan_20261110_153546-p15  (15 dBm)  reference tag read on ports 3,4   boxes: ..0261->z1  ..0650->z2  ..0654->z3  ..0661->z4
+=== 4zone_12box/scan_20261110_165425-p12  (12 dBm)  reference tag read on ports 3,4   boxes: ..0649->z1  ..0650->z1  ..0651->z1  ..0653->z2  ..0654->z2  ..0655->z2  ..0656->z3  ..0657->z3  ..0658->z3  ..0659->z4  ..0660->z4  ..0661->z4
+=== 4zone_12box/scan_20261110_165425-p15  (15 dBm)  reference tag read on ports 3,4   boxes: ..0649->z1  ..0650->z1  ..0651->z1  ..0653->z2  ..0654->z2  ..0655->z2  ..0656->z3  ..0657->z3  ..0658->z3  ..0659->z4  ..0660->z4  ..0661->z4
+
+────────── 4zone_12box/scan_20261110_165425-p15  15 dBm ──────────
+
+  reads:  rows = box (zone, depth y in inches from the aisle, EPC end), columns = antenna
+                    ant1(z1)  ant2(z2)  ant3(z3)  ant4(z4)
+    zone y    tag                                         
+    1    6.0  0649       153       213       104       171
+         12.0 0650       210       215       214       154
+         18.0 0651       207       175       210       131
+    2    6.0  0653       211       215       214       139
+         12.0 0654       214       215       213       213
+         18.0 0655       181       198       159       213
+    3    6.0  0656       207       177       212       214
+         12.0 0657       216       215       214       214
+         18.0 0658       213       140       204       187
+    4    6.0  0659       126       179       209       214
+         12.0 0660       215       215       214       214
+         18.0 0661         -       161       156       159
+
+  RSSI (dBm):  rows = box (zone, depth y in inches from the aisle, EPC end), columns = antenna
+                    ant1(z1)  ant2(z2)  ant3(z3)  ant4(z4)
+    zone y    tag                                         
+    1    6.0  0649     -56.5     -47.0     -54.5     -48.5
+         12.0 0650     -36.0     -39.0     -48.5     -50.0
+         18.0 0651     -44.0     -53.5     -48.0     -56.0
+    2    6.0  0653     -55.0     -48.5     -49.5     -52.0
+         12.0 0654     -43.0     -39.5     -52.0     -48.0
+         18.0 0655     -53.5     -55.5     -53.5     -48.0
+    3    6.0  0656     -54.0     -49.5     -47.5     -42.5
+         12.0 0657     -53.0     -44.0     -42.5     -41.0
+         18.0 0658     -53.0     -54.8     -56.5     -57.0
+    4    6.0  0659     -57.5     -48.5     -49.5     -43.5
+         12.0 0660     -47.5     -47.5     -41.5     -39.0
+         18.0 0661         -     -53.5     -58.5     -58.0
+
+  phase noise (deg, per channel):  rows = box (zone, depth y in inches from the aisle, EPC end), columns = antenna
+                    ant1(z1)  ant2(z2)  ant3(z3)  ant4(z4)
+    zone y    tag                                         
+    1    6.0  0649       1.5       1.0       2.2       1.9
+         12.0 0650       0.7       1.1       1.2       1.4
+         18.0 0651       1.2       2.0       1.1       2.4
+    2    6.0  0653       2.4       1.1       1.6       2.0
+         12.0 0654       1.1       1.0       1.2       1.1
+         18.0 0655       1.5       1.4       1.5       1.2
+    3    6.0  0656       1.5       1.1       0.9       0.9
+         12.0 0657       1.7       0.8       0.8       0.8
+         18.0 0658       1.5       1.2       2.1       2.2
+    4    6.0  0659       2.0       2.2       1.3       1.3
+         12.0 0660       1.6       1.0       0.9       0.8
+         18.0 0661         -       1.2       1.1       1.9
+
+  TRUE distance box -> antenna (in):  rows = box (zone, depth y in inches from the aisle, EPC end), columns = antenna
+                    ant1(z1)  ant2(z2)  ant3(z3)  ant4(z4)
+    zone y    tag                                         
+    1    6.0  0649         8        15        25        37
+         12.0 0650        13        18        27        38
+         18.0 0651        19        22        31        41
+    2    6.0  0653        15         8        15        25
+         12.0 0654        18        13        18        27
+         18.0 0655        22        19        22        31
+    3    6.0  0656        25        15         8        15
+         12.0 0657        27        18        13        18
+         18.0 0658        31        22        19        22
+    4    6.0  0659        37        25        15         8
+         12.0 0660        38        27        18        13
+         18.0 0661        41        31        22        19
+
+  distance from PHASE slope, ref-tag corrected (in):  rows = box (zone, depth y in inches from the aisle, EPC end), columns = antenna
+                    ant3(z3)  ant4(z4)
+    zone y    tag                     
+    1    6.0  0649       359       274
+         12.0 0650       -36       195
+         18.0 0651       -18        81
+    2    6.0  0653       -96       282
+         12.0 0654       -77        61
+         18.0 0655        16        37
+    3    6.0  0656      -196        77
+         12.0 0657       -81        47
+         18.0 0658      -192       -30
+    4    6.0  0659       -97       -46
+         12.0 0660       -86       -30
+         18.0 0661      -125      -146
+
+  Zone call per box:
+    box ..0649 in zone 1 (y=6"):  strongest RSSI -> zone 2 (WRONG, margin 1.5 dB)   shortest phase distance -> zone 4 (WRONG)
+    box ..0650 in zone 1 (y=12"):  strongest RSSI -> zone 1 (OK, margin 3.0 dB)   shortest phase distance -> zone 3 (WRONG)
+    box ..0651 in zone 1 (y=18"):  strongest RSSI -> zone 1 (OK, margin 4.0 dB)   shortest phase distance -> zone 3 (WRONG)
+    box ..0653 in zone 2 (y=6"):  strongest RSSI -> zone 2 (OK, margin 1.0 dB)   shortest phase distance -> zone 3 (WRONG)
+    box ..0654 in zone 2 (y=12"):  strongest RSSI -> zone 2 (OK, margin 3.5 dB)   shortest phase distance -> zone 3 (WRONG)
+    box ..0655 in zone 2 (y=18"):  strongest RSSI -> zone 4 (WRONG, margin 5.5 dB)   shortest phase distance -> zone 3 (WRONG)
+    box ..0656 in zone 3 (y=6"):  strongest RSSI -> zone 4 (WRONG, margin 5.0 dB)   shortest phase distance -> zone 3 (OK)
+    box ..0657 in zone 3 (y=12"):  strongest RSSI -> zone 4 (WRONG, margin 1.5 dB)   shortest phase distance -> zone 3 (OK)
+    box ..0658 in zone 3 (y=18"):  strongest RSSI -> zone 1 (WRONG, margin 1.8 dB)   shortest phase distance -> zone 3 (OK)
+    box ..0659 in zone 4 (y=6"):  strongest RSSI -> zone 4 (OK, margin 5.0 dB)   shortest phase distance -> zone 3 (WRONG)
+    box ..0660 in zone 4 (y=12"):  strongest RSSI -> zone 4 (OK, margin 2.5 dB)   shortest phase distance -> zone 3 (WRONG)
+    box ..0661 in zone 4 (y=18"):  strongest RSSI -> zone 2 (WRONG, margin 4.5 dB)   shortest phase distance -> zone 4 (OK)
+  Phase-distance error vs tape measure: median |err| 95", worst 333"
+
+────────── 4zone_centers/scan_20261110_151348-p15  15 dBm ──────────
+
+  reads:  rows = box (zone, depth y in inches from the aisle, EPC end), columns = antenna
+                    ant1(z1)  ant2(z2)  ant3(z3)  ant4(z4)
+    zone y    tag                                         
+    1    12.0 0261       259       260       247       253
+    2    12.0 0650       254       259       260       259
+    3    12.0 0654       172       254       260       260
+    4    12.0 0661       259       258       259       260
+
+  RSSI (dBm):  rows = box (zone, depth y in inches from the aisle, EPC end), columns = antenna
+                    ant1(z1)  ant2(z2)  ant3(z3)  ant4(z4)
+    zone y    tag                                         
+    1    12.0 0261     -36.5     -38.5     -47.0     -52.0
+    2    12.0 0650     -49.5     -38.0     -49.0     -51.5
+    3    12.0 0654     -56.8     -45.5     -42.0     -41.0
+    4    12.0 0661     -51.0     -48.0     -44.0     -37.5
+
+  phase noise (deg, per channel):  rows = box (zone, depth y in inches from the aisle, EPC end), columns = antenna
+                    ant1(z1)  ant2(z2)  ant3(z3)  ant4(z4)
+    zone y    tag                                         
+    1    12.0 0261       1.0       0.8       1.1       1.1
+    2    12.0 0650       1.2       0.7       1.1       1.0
+    3    12.0 0654       1.1       0.7       0.8       0.7
+    4    12.0 0661       1.4       1.2       0.9       0.7
+
+  TRUE distance box -> antenna (in):  rows = box (zone, depth y in inches from the aisle, EPC end), columns = antenna
+                    ant1(z1)  ant2(z2)  ant3(z3)  ant4(z4)
+    zone y    tag                                         
+    1    12.0 0261        13        18        27        38
+    2    12.0 0650        18        13        18        27
+    3    12.0 0654        27        18        13        18
+    4    12.0 0661        38        27        18        13
+
+  distance from PHASE slope, ref-tag corrected (in):  rows = box (zone, depth y in inches from the aisle, EPC end), columns = antenna
+                    ant1(z1)  ant3(z3)  ant4(z4)
+    zone y    tag                               
+    1    12.0 0261      -610       139       227
+    2    12.0 0650      -424        80       138
+    3    12.0 0654      -330      -145        33
+    4    12.0 0661      -438      -118       -41
+
+  Zone call per box:
+    box ..0261 in zone 1 (y=12"):  strongest RSSI -> zone 1 (OK, margin 2.0 dB)   shortest phase distance -> zone 1 (OK)
+    box ..0650 in zone 2 (y=12"):  strongest RSSI -> zone 2 (OK, margin 11.0 dB)   shortest phase distance -> zone 1 (WRONG)
+    box ..0654 in zone 3 (y=12"):  strongest RSSI -> zone 4 (WRONG, margin 1.0 dB)   shortest phase distance -> zone 1 (WRONG)
+    box ..0661 in zone 4 (y=12"):  strongest RSSI -> zone 4 (OK, margin 6.5 dB)   shortest phase distance -> zone 1 (WRONG)
+  Phase-distance error vs tape measure: median |err| 147", worst 623"
+
+Phase-pattern match between box readings, per antenna  (median [min-max]; 1 = identical, ~0.15 = unrelated)
+  same box, same spot, untouched (other power)  ant1 0.99 [0.89-1.00]  ant2 0.99 [0.89-1.00]  ant3 0.99 [0.86-1.00]  ant4 0.99 [0.88-1.00]
+  same box, same spot, put back                 ant1 0.70 [0.45-0.99]  ant2 0.63 [0.52-0.88]  ant3 0.71 [0.50-0.90]  ant4 0.78 [0.02-0.94]
+  SAME SPOT, different box                      ant1 0.93 [0.19-1.00]  ant2 0.85 [0.49-0.99]  ant3 0.87 [0.33-1.00]  ant4 0.91 [0.06-1.00]
+  same box, different spot                      ant1 0.37 [0.06-0.83]  ant2 0.34 [0.07-0.91]  ant3 0.40 [0.04-0.91]  ant4 0.38 [0.04-0.94]
+  different box, different spot                 ant1 0.37 [0.03-0.89]  ant2 0.33 [0.00-0.89]  ant3 0.43 [0.03-0.94]  ant4 0.38 [0.04-0.95]
+
+  different boxes at different spots, 15 dBm, by how many zones apart:
+    1 zone(s) apart: ant1 0.48  ant2 0.31  ant3 0.56  ant4 0.44
+    2 zone(s) apart: ant1 0.38  ant2 0.26  ant3 0.42  ant4 0.37
+    3 zone(s) apart: ant1 0.28  ant2 0.61  ant3 0.26  ant4 0.21
+  -> phase is a property of the SPOT only if 'SAME SPOT, different box' is near the top rows
+     and clearly above 'same box, different spot'.
+
+Zone call per box reading using the OTHER sessions as the lookup table (same power):
+  phase pattern    correct 40/40 = 100%
+  strongest RSSI   correct 30/40 = 75%
+
+OFF-CENTER boxes, looked up against the centered readings (same power).
+  score(zone) = best mean-over-antennas match to any centered reading in that zone;  own = match on the zone's own antenna
+
+  4zone_12box  (dx=+0" dy=+0")
+     power    box zone    y phase_call rssi_call  score_own_zone  score_best_other  own_ant_match
+      15.0 ..0649    1  6.0          1         2            0.48              0.34           0.61
+      15.0 ..0650    1 12.0          1         1            0.91              0.53           0.94
+      15.0 ..0651    1 18.0          1         1            0.65              0.55           0.89
+      15.0 ..0653    2  6.0          1         2            0.48              0.57           0.55
+      15.0 ..0654    2 12.0          2         2            0.90              0.67           0.97
+      15.0 ..0655    2 18.0          2         4            0.65              0.52           0.68
+      15.0 ..0656    3  6.0          3         4            0.65              0.63           0.47
+      15.0 ..0657    3 12.0          2         4            0.78              0.78           0.92
+      15.0 ..0658    3 18.0          4         1            0.41              0.61           0.41
+      15.0 ..0659    4  6.0          4         4            0.69              0.51           0.93
+      15.0 ..0660    4 12.0          4         4            0.87              0.60           0.96
+      15.0 ..0661    4 18.0          3         2            0.59              0.79           0.17
+
+  Correct zone, all powers:
+    4zone_12box    dx=+0" dy=+0" y=6":  phase 6/8   RSSI 4/8   own-antenna match median 0.58  (centered, different box: ~0.9)
+    4zone_12box    dx=+0" dy=+0" y=12":  phase 7/8   RSSI 6/8   own-antenna match median 0.96  (centered, different box: ~0.9)
+    4zone_12box    dx=+0" dy=+0" y=18":  phase 4/8   RSSI 2/8   own-antenna match median 0.55  (centered, different box: ~0.9)
+    TOTAL:           phase 17/24 = 71%   RSSI 12/24 = 50%
+
+Within 4zone_12box/scan_20261110_165425-p15 (15 dBm): phase-pattern match between boxes in the same capture  (median per antenna)
+  same zone, other depth    ant1 0.50  ant2 0.24  ant3 0.41  ant4 0.47
+  other zone, same depth    ant1 0.35  ant2 0.38  ant3 0.41  ant4 0.36
+  other zone, other depth   ant1 0.38  ant2 0.35  ant3 0.33  ant4 0.34
+  other zone, by zones apart:  1: 0.45 0.36 0.36 0.51   2: 0.26 0.35 0.51 0.31   3: 0.23 0.41 0.29 0.18
+    box ..0649 z1 y=6": most similar box ..0653 (z2 y=6", 0.51)  OTHER ZONE
+    box ..0650 z1 y=12": most similar box ..0651 (z1 y=18", 0.56)  same zone
+    box ..0651 z1 y=18": most similar box ..0653 (z2 y=6", 0.60)  OTHER ZONE
+    box ..0653 z2 y=6": most similar box ..0651 (z1 y=18", 0.60)  OTHER ZONE
+    box ..0654 z2 y=12": most similar box ..0657 (z3 y=12", 0.75)  OTHER ZONE
+    box ..0655 z2 y=18": most similar box ..0651 (z1 y=18", 0.58)  OTHER ZONE
+    box ..0656 z3 y=6": most similar box ..0661 (z4 y=18", 0.52)  OTHER ZONE
+    box ..0657 z3 y=12": most similar box ..0654 (z2 y=12", 0.75)  OTHER ZONE
+    box ..0658 z3 y=18": most similar box ..0660 (z4 y=12", 0.63)  OTHER ZONE
+    box ..0659 z4 y=6": most similar box ..0660 (z4 y=12", 0.67)  same zone
+    box ..0660 z4 y=12": most similar box ..0659 (z4 y=6", 0.67)  same zone
+    box ..0661 z4 y=18": most similar box ..0657 (z3 y=12", 0.74)  OTHER ZONE
+  most similar box is in the same zone for 3/12 boxes
+
+-> sessions/4zone_centers\analysis\zone_centers.csv
+-> sessions/4zone_centers\analysis\zone_centers.png

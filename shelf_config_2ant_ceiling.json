@@ -1,0 +1,22 @@
+{
+  "_comment": "2-antenna CEILING test: both antennas on the underside of the shelf above, facing straight down, centered over the left and right halves. Port 1 = LEFT, port 2 = RIGHT. z = height of the antenna face above the shelf floor (measure it). Origin = front-left corner of the shelf floor; x = length (left->right), y = depth (front -> back wall), z = up. Inches.",
+  "zone": { "length_in": 32, "depth_in": 24, "height_in": 20 },
+  "quadrant_labels": { "BR": "1", "BL": "2", "FL": "3", "FR": "4" },
+  "antennas": {
+    "1": { "x_in": 8,  "y_in": 12, "z_in": 19 },
+    "2": { "x_in": 24, "y_in": 12, "z_in": 19 }
+  },
+  "reference_tag": {
+    "_comment": "On-metal tag, centered on the back wall. Never move it.",
+    "epc": "1A0000000000000000000009",
+    "x_in": 16, "y_in": 24, "z_in": 10
+  },
+  "reader": {
+    "ip": "172.16.29.145",
+    "tx_power_dbm": 20,
+    "rx_sens_dbm": -80,
+    "rf_mode": 1002,
+    "session": 2,
+    "population_estimate": 16
+  }
+}

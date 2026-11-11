@@ -1,0 +1,68 @@
+
+=== mild multipath ===
+                layout   method  acc  acc_3in_from_edge  acc_when_conf90  top2_acc  coverage_conf90  p_err_lt_12in  p_err_lt_18in  median_err_in
+        1 ant - center     rssi 26.1               27.5              NaN      46.5              0.0           49.1           71.7           12.3
+        1 ant - center    phase 24.4               24.4              NaN      44.5              0.0           38.5           61.0           14.8
+        1 ant - center     both 25.9               26.6              NaN      46.0              0.0           51.0           71.0           11.8
+    2 ant - left/right     rssi 41.4               40.3              NaN      81.4              0.0           68.4           86.5            7.9
+    2 ant - left/right    phase 37.7               37.3              NaN      71.1              0.0           58.6           80.1           10.6
+    2 ant - left/right     both 43.3               43.1              NaN      83.7              0.0           70.5           86.3            8.1
+      2 ant - diagonal     rssi 58.0               64.1             91.7      81.0             11.3           68.3           83.9            8.0
+      2 ant - diagonal    phase 45.3               49.8             83.6      73.3              7.7           53.0           76.7           11.3
+      2 ant - diagonal     both 58.0               64.9             91.4      82.6             13.2           70.3           86.9            7.9
+      3 ant - triangle     rssi 71.1               73.9             95.6      89.7             36.5           83.6           92.3            4.9
+      3 ant - triangle    phase 60.4               66.2             94.0      83.2             15.6           75.6           87.6            7.4
+      3 ant - triangle     both 74.7               78.5             97.5      92.0             40.7           87.1           93.2            4.7
+4 ant - 1 per quadrant     rssi 82.3               85.6             98.1      94.0             55.1           88.5           97.8            4.7
+4 ant - 1 per quadrant    phase 73.6               81.0             97.4      89.3             25.9           85.6           95.1            6.2
+4 ant - 1 per quadrant     both 86.0               89.7             98.6      95.9             61.2           92.2           98.6            4.6
+4 ant - 1 per quadrant rssi_max 86.5               90.5             86.5      95.4              NaN           95.7           99.9            5.4
+      6 ant - 3x2 grid     rssi 86.2               89.6             98.7      96.5             62.2           94.9           98.9            3.0
+      6 ant - 3x2 grid    phase 82.1               92.1             97.6      95.9             38.7           96.9           99.0            4.5
+      6 ant - 3x2 grid     both 90.6               94.9             99.1      98.6             67.1           98.0           99.3            2.8
+
+=== typical multipath ===
+                layout   method  acc  acc_3in_from_edge  acc_when_conf90  top2_acc  coverage_conf90  p_err_lt_12in  p_err_lt_18in  median_err_in
+        1 ant - center     rssi 23.5               23.2              NaN      44.2              0.0           53.3           72.9           11.1
+        1 ant - center    phase 24.9               25.3              NaN      43.9              0.0           27.3           49.5           18.1
+        1 ant - center     both 25.0               24.8              NaN      45.2              0.0           51.2           71.0           11.7
+    2 ant - left/right     rssi 42.7               45.0              NaN      82.5              0.0           72.3           86.7            7.9
+    2 ant - left/right    phase 38.9               35.8              NaN      73.4              0.0           49.5           74.3           12.1
+    2 ant - left/right     both 43.2               43.8              NaN      84.3              0.0           71.8           86.8            7.7
+      2 ant - diagonal     rssi 55.7               62.3             98.2      82.1              7.3           72.1           86.9            7.7
+      2 ant - diagonal    phase 47.1               50.0             86.4      72.5              4.4           43.1           72.2           13.3
+      2 ant - diagonal     both 57.9               66.3             97.4      84.6             10.1           72.3           87.3            7.4
+      3 ant - triangle     rssi 65.7               68.0             96.5      86.6             18.8           80.8           90.5            5.6
+      3 ant - triangle    phase 61.2               64.5             92.8      84.7              4.6           62.6           85.3           10.0
+      3 ant - triangle     both 69.5               74.3             95.9      90.5             24.5           84.7           91.6            4.9
+4 ant - 1 per quadrant     rssi 76.9               82.0             97.9      91.9             37.3           88.0           97.3            5.0
+4 ant - 1 per quadrant    phase 68.9               76.6             97.6      85.6             11.3           71.6           89.1            8.8
+4 ant - 1 per quadrant     both 81.6               86.4             98.7      94.3             44.7           90.5           96.9            4.6
+4 ant - 1 per quadrant rssi_max 81.5               88.4             81.5      93.7              NaN           92.5           98.7            5.6
+      6 ant - 3x2 grid     rssi 79.8               85.2             97.4      93.8             43.1           91.0           97.1            3.6
+      6 ant - 3x2 grid    phase 77.5               84.6             99.3      92.5             19.9           84.1           95.5            7.0
+      6 ant - 3x2 grid     both 84.2               89.7             98.0      96.8             53.1           94.9           98.3            3.7
+
+=== harsh multipath ===
+                layout   method  acc  acc_3in_from_edge  acc_when_conf90  top2_acc  coverage_conf90  p_err_lt_12in  p_err_lt_18in  median_err_in
+        1 ant - center     rssi 25.0               25.1              NaN      43.4              0.0           53.6           75.1           11.2
+        1 ant - center    phase 24.9               25.7              NaN      43.1              0.0           25.2           48.8           18.2
+        1 ant - center     both 25.1               25.5              NaN      44.9              0.0           51.4           69.9           11.6
+    2 ant - left/right     rssi 42.9               44.4              NaN      79.5              0.0           71.8           90.3            8.2
+    2 ant - left/right    phase 37.4               35.8              NaN      75.5              0.0           45.1           75.1           13.0
+    2 ant - left/right     both 44.1               46.4              NaN      80.9              0.0           73.8           88.4            7.5
+      2 ant - diagonal     rssi 52.1               57.9             97.8      78.7              3.0           72.1           88.3            8.1
+      2 ant - diagonal    phase 46.9               50.6             57.1      73.5              0.5           36.7           70.3           14.0
+      2 ant - diagonal     both 54.7               61.3             95.9      83.0              4.9           72.9           86.5            7.6
+      3 ant - triangle     rssi 58.8               62.8             94.2      82.1              8.0           79.3           92.6            6.8
+      3 ant - triangle    phase 57.2               61.5            100.0      87.5              0.1           50.2           83.1           11.9
+      3 ant - triangle     both 64.9               70.3             90.8      88.1             10.2           82.5           92.3            5.6
+4 ant - 1 per quadrant     rssi 68.3               74.8             96.3      88.4             14.5           84.8           97.5            6.2
+4 ant - 1 per quadrant    phase 65.5               72.6             81.2      87.9              1.1           59.0           87.2           10.9
+4 ant - 1 per quadrant     both 75.1               83.6             96.4      93.1             22.1           88.1           96.9            5.1
+4 ant - 1 per quadrant rssi_max 71.4               81.8             71.4      88.9              NaN           85.8           96.1            5.9
+      6 ant - 3x2 grid     rssi 67.8               76.6             94.9      86.1             21.0           85.2           95.7            5.0
+      6 ant - 3x2 grid    phase 74.1               83.9             95.3      92.7              4.3           73.0           93.2            8.4
+      6 ant - 3x2 grid     both 76.6               84.6             96.5      93.4             30.9           91.9           98.1            4.2
+
+plots + summary.csv -> C:\Users\SyedMufid\Downloads\smart_driver_2\sim\results

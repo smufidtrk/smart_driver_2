@@ -1,0 +1,20 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# .NET build output
+capture/bin/
+capture/obj/
+
+# simulated test data (regenerate with sim/make_fake_session.py)
+sessions/fake_*/
+
+# editor / OS
+.vs/
+.vscode/
+Thumbs.db
+desktop.ini
+
+# stray folders from a mistyped diagnostic run (duplicates of sessions/diag)
+sessions/diag$*/

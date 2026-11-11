@@ -1,0 +1,34 @@
+Session sessions/2ant_move_15dbm: 10 captures in manifest, 10 with test-tag reads
+
+Per-port QC (test tag)
+  port  seen%  chan  reads   rssi  phase sd raw  sd mod180
+     1    100    40   1236  -47.0          6.7°       3.6°
+     2    100    22    589  -50.0          8.8°       4.1°
+  captures read by >=2 ports: 100%   all 4: 100%
+  -> 180° phase ambiguity present (raw >> mod-180 jitter); mod-180 processing is required.
+
+Reference tag read in 100% of capture-ports
+  per-port cable term (m equiv.) used for ALL captures, and per-capture reference scatter:
+    port 1:  16.267 m  [reference tag (session median)]   scatter sd  48.1 cm (n=10)
+    port 2:  19.658 m  [reference tag (session median)]   scatter sd  86.9 cm (n=10)
+    port 1: phase pattern corrected by the reference tag in 10/10 captures
+    port 2: phase pattern corrected by the reference tag in 6/10 captures  (others matched un-corrected)
+
+Model error sizes (common offset removed), by read strength weak / mid / strong:
+  range : [231.4 231.4 231.4] cm
+  RSSI  : [23.3 23.3 23.3] dB      (RSSI offset P0 = -23.1 dB)
+  closest simulation severity: 'harsh'  -> compare with README / sim/results/summary.csv
+
+Evaluation: 5-fold cross-validation grouped by (x,y) spot (9 spots)
+
+  2 ant (all)
+    method                           acc acc 3in fro acc when co coverage co    top2 acc p err lt 12 p err lt 18 med err in
+    fingerprint rssi               80.0%           -           -       80.0%       90.0%      100.0%      100.0%       4.1"
+    fingerprint rssi+slope         90.0%           -       90.0%       60.0%       90.0%      100.0%      100.0%       3.2"
+    pattern phase                  90.0%           -           -       40.0%       90.0%      100.0%      100.0%       3.6"
+    pattern rssi+phase             90.0%           -           -       50.0%       90.0%      100.0%      100.0%       3.3"
+    model rssi                     30.0%           -           -        0.0%       50.0%       50.0%       70.0%      12.3"
+    model phase                    30.0%           -           -        0.0%       70.0%       80.0%      100.0%      10.2"
+    model rssi+phase               40.0%           -           -        0.0%       70.0%       80.0%       90.0%       7.2"
+
+Wrote sessions/2ant_move_15dbm\analysis

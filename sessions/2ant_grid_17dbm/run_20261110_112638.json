@@ -1,0 +1,16 @@
+{
+  "mode": "survey",
+  "epc": "1A1122334455667788990261",
+  "ref_epc": "1A0000000000000000000009",
+  "tx_power_dbm": 17,
+  "RfMode": 1002,
+  "Session": 2,
+  "search": "dual",
+  "rx_sens_dbm": -80,
+  "dwell_s": 30,
+  "ports": [
+    1,
+    2
+  ],
+  "started": "2026-11-10T11:26:38.2539077-08:00"
+}

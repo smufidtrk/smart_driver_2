@@ -1,0 +1,654 @@
+<title>Truck Shelf Zone Tests</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one reading column of findings; wide per-box figures sit in their own scroll boxes. */
+:root {
+  --bg: #f4f5f7; --surface: #ffffff; --ink: #121519; --ink-2: #4b535d; --muted: #7d858f;
+  --line: #dde1e6; --axis: #b9bfc7; --accent: #4a44c4;
+  --z1: #2a78d6; --z2: #eb6834; --z3: #1baf7a; --z4: #eda100;
+  --good: #0a8a0a; --bad: #d03b3b;
+  --display: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111316; --surface: #1a1d21; --ink: #eef0f3; --ink-2: #b8c0c9; --muted: #8a929c;
+  --line: #2c3137; --axis: #434a52; --accent: #9a94f0;
+  --z1: #3987e5; --z2: #d95926; --z3: #199e70; --z4: #c98500;
+  --good: #2bb52b; --bad: #e66767; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #111316; --surface: #1a1d21; --ink: #eef0f3; --ink-2: #b8c0c9; --muted: #8a929c;
+  --line: #2c3137; --axis: #434a52; --accent: #9a94f0;
+  --z1: #3987e5; --z2: #d95926; --z3: #199e70; --z4: #c98500;
+  --good: #2bb52b; --bad: #e66767; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.55 var(--body); margin: 0; }
+.wrap { max-width: 1040px; margin: 0 auto; padding-block: 40px 72px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; letter-spacing: 0.005em; }
+h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.05; font-weight: 700; }
+h2 { font-size: 26px; line-height: 1.15; font-weight: 700; }
+h3 { font-size: 18px; font-weight: 600; }
+p { margin: 0; max-width: 68ch; }
+.eyebrow { font: 600 12px/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.lede { font-size: 17px; color: var(--ink-2); max-width: 70ch; }
+header { display: grid; gap: 14px; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 20px; font: 13px/1.4 var(--mono); color: var(--muted); }
+section { display: grid; gap: 18px; padding-block: 40px; border-bottom: 1px solid var(--line); }
+section > * { min-width: 0; }
+.sec-head { display: grid; gap: 8px; }
+ul.findings { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; max-width: 78ch; }
+ul.findings li { display: grid; grid-template-columns: 26px 1fr; gap: 8px; align-items: start; }
+.pill { font: 600 11px/1 var(--mono); padding: 5px 0; border-radius: 4px; text-align: center; color: #fff; }
+.pill.ok { background: var(--good); } .pill.no { background: var(--bad); } .pill.mid { background: var(--muted); }
+.scores { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+.score { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; display: grid; gap: 6px; }
+.score .k { font: 600 12px/1.3 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.score .v { display: flex; gap: 18px; align-items: baseline; flex-wrap: wrap; }
+.score .v b { font: 700 28px/1 var(--display); }
+.score .v span { font-size: 13px; color: var(--ink-2); }
+.score .n { font-size: 13px; color: var(--ink-2); }
+.photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+figure { margin: 0; display: grid; gap: 8px; min-width: 0; }
+figure img { width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--line); display: block; }
+figcaption { font-size: 13px; color: var(--ink-2); }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 12px; min-width: 0; }
+.scroll { overflow-x: auto; }
+.scroll svg { display: block; width: 100%; height: auto; }
+.controls { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 7px; overflow: hidden; }
+.seg button { font: 500 13px/1 var(--body); padding: 8px 12px; border: 0; background: transparent; color: var(--ink-2); cursor: pointer; }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--surface); }
+.seg button:focus-visible, .cell:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.ctl-label { font: 600 12px/1 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.result-line { font-size: 14px; color: var(--ink-2); }
+.result-line b { color: var(--ink); font-variant-numeric: tabular-nums; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--ink-2); align-items: center; }
+.sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; margin-right: 5px; }
+.sw.bad { background: transparent; border: 2px dashed var(--bad); }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+table { border-collapse: collapse; font-size: 13px; width: 100%; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font: 600 11px/1.3 var(--mono); text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; font-family: var(--mono); }
+details summary { cursor: pointer; font-size: 14px; color: var(--accent); }
+details[open] summary { margin-bottom: 10px; }
+.note { font-size: 13px; color: var(--muted); }
+.callout { border-left: 3px solid var(--accent); padding: 4px 0 4px 14px; max-width: 76ch; }
+#tip { position: fixed; z-index: 20; pointer-events: none; background: var(--surface); color: var(--ink); border: 1px solid var(--line);
+  border-radius: 8px; padding: 10px 12px; font-size: 12.5px; line-height: 1.45; box-shadow: 0 6px 24px rgba(0,0,0,.18); max-width: 300px; }
+#tip b { font-family: var(--mono); }
+#tip table td { padding: 1px 6px 1px 0; border: 0; font: 12px/1.4 var(--mono); }
+
+/* SVG */
+svg text { fill: var(--ink); font-family: var(--body); }
+.t-box { font: 600 13px var(--mono); }
+.t-small { font-size: 10px; fill: var(--muted); }
+.t-val { font: 10px var(--mono); fill: var(--ink-2); }
+.t-head { font: 600 13px var(--display); }
+.t-lab { font-size: 12px; fill: var(--ink-2); }
+.t-badge-ok { font: 600 11px var(--mono); fill: var(--ink); }
+.t-badge-bad { font: 600 11px var(--mono); fill: #fff; }
+.badge-ok { fill: var(--surface); stroke: var(--line); }
+.badge-bad { fill: var(--bad); }
+.zf1 { fill: var(--z1); } .zf2 { fill: var(--z2); } .zf3 { fill: var(--z3); } .zf4 { fill: var(--z4); } .zf0 { fill: var(--muted); }
+.zs1 { stroke: var(--z1); } .zs2 { stroke: var(--z2); } .zs3 { stroke: var(--z3); } .zs4 { stroke: var(--z4); } .zs0 { stroke: var(--muted); }
+.cellbg { fill-opacity: 0.16; }
+.cellbd { fill: none; stroke-width: 2; }
+.cellbd.wrong { stroke: var(--bad); stroke-width: 3; stroke-dasharray: 6 4; }
+.bar.own { stroke: var(--ink); stroke-width: 1.5; }
+.axis { stroke: var(--axis); stroke-width: 1; }
+.grid { stroke: var(--line); stroke-width: 1; }
+.wall { fill: var(--line); }
+.divider { stroke: var(--ink-2); stroke-width: 2; }
+.ant { fill: var(--ink); }
+.ref { stroke: var(--muted); stroke-width: 1.2; stroke-dasharray: 4 4; }
+.line1 { stroke: var(--z1); } .line2 { stroke: var(--z2); }
+.dot1 { fill: var(--z1); } .dot2 { fill: var(--z2); }
+.cell { cursor: default; }
+@media (prefers-reduced-motion: no-preference) { .seg button { transition: background .15s, color .15s; } }
+</style>
+
+<div class="wrap">
+<header>
+  <span class="eyebrow">RFID zone tests · Impinj R700 · Nov 9–10, 2026</span>
+  <h1>Truck shelf zone tests</h1>
+  <p class="lede">Can a reader tell which zone of a truck shelf a box sits in, using RSSI and phase? This page collects every
+  test so far. The early tests split the shelf into four quadrants with 2 antennas; the later ones use 4 side-by-side 1&nbsp;ft
+  zones with one antenna per zone. Every figure shows each box: where it was, what each antenna heard, and which zone it was assigned.</p>
+  <div class="meta"><span>Reader: Impinj R700, RF mode 1002, session 2</span><span>Power: 12–20 dBm</span><span>Captures: 20–30 s each</span><span>Box tags: 1A1122…06xx</span></div>
+</header>
+
+<section>
+  <div class="sec-head"><span class="eyebrow">Summary</span><h2>What the tests show</h2></div>
+  <div class="scores" id="scores"></div>
+  <ul class="findings">
+    <li><span class="pill ok">YES</span><span><b>The phase measurement is clean.</b> About 1° of noise per channel at 12–15 dBm, and an untouched box repeats its pattern at 0.99. At 20 dBm the noise grows to 2–17°, so stay at 15 dBm or less.</span></li>
+    <li><span class="pill no">NO</span><span><b>Phase does not give distance here.</b> Distances from the phase slope across the channels came out 40–700" wrong, and not even in the right order. Reflections off the metal swamp the direct path.</span></li>
+    <li><span class="pill mid">SPOT</span><span><b>The phase pattern marks an exact spot, not a zone.</b> Different boxes on the same spot match at about 0.9. Moving a box 1–2" drops the match to 0.4–0.8, and boxes 6" apart in depth inside the same zone look no more alike than boxes in other zones.</span></li>
+    <li><span class="pill no">RSSI</span><span><b>Strongest antenna is right 75% of the time at the zone centers, and 50% with three boxes per zone.</b> Zone 3 is called zone 4 in every session, and the front row reads 10–20 dB weaker than the middle row.</span></li>
+    <li><span class="pill no">GRID</span><span><b>A full calibration grid shows no zone pattern.</b> With 32 boxes on the shelf, strongest antenna drops to 44–47%. Boxes 6" apart have equally similar phase patterns whether they share a zone or not. The phase lookup worked (10/12) only when a calibration box sat within about 4".</span></li>
+    <li><span class="pill mid">ENV</span><span><b>Small physical changes change the pattern.</b> Antenna 2 was tilted slightly further down after move 1 of the rotation test. Zone 2's pattern on antenna 2 went from 0.96–0.99 (before and after, separately) to 0.61 between the two, while zones 1, 3 and 4 kept theirs (0.91–0.96). A stationary tag's pattern also dropped to 0.49 when a box came within 12".</span></li>
+  </ul>
+  <p class="callout">Phase is reliable as a measurement but not as a zone signal on its own. A phase lookup only works for spots that were surveyed, and has to be redone when the layout changes. Reliable zone calls will have to come from the antennas: placement, aim, beam width, and possibly metal dividers.</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="eyebrow">Setup</span><h2>The 4-zone shelf</h2>
+  <p>Four zones of about 1 ft each sit side by side along a metal truck shelf. One antenna per zone is mounted under the roof at the aisle edge, centered on its zone and tilted 45° down toward the back wall. The nearest box (front row) is about 1 ft from its antenna. Ports 1–4 serve zones 1–4, left to right as seen from the aisle. Each box carries its tag label on the top.</p></div>
+  <div class="photos">
+    <figure><img src="photos/setup_aisle_view.jpg" alt="Shelf seen from the aisle: four antennas under the roof edge, twelve boxes in four zones" loading="lazy"><figcaption>From the aisle: antennas 1–4 under the roof edge, 12 boxes in zones 1–4 (box numbers are the last 3 digits of the EPC).</figcaption></figure>
+    <figure><img src="photos/setup_end_view.jpg" alt="View along the shelf from one end, antennas tilted down from the roof" loading="lazy"><figcaption>Along the shelf: antennas at the open aisle side, tilted 45° down toward the back wall.</figcaption></figure>
+    <figure><img src="photos/setup_top_view.jpg" alt="Close-up from above of boxes with tag labels on top, blue tape between zones" loading="lazy"><figcaption>From above: tag label on each box top, blue tape between zones, metal floor and walls.</figcaption></figure>
+  </div>
+</section>
+
+<section id="t-two">
+  <div class="sec-head"><span class="eyebrow">Test 1 · Nov 10 · 48 spots · 17 dBm</span><h2>Two antennas, four quadrants</h2>
+  <p>Antennas on the left and right side walls at mid-depth, pointing inward. One box was moved over a 8&nbsp;×&nbsp;6 grid of spots, 4" apart. Each cell is one spot, colored by the quadrant it was assigned to; a dashed red outline means the call was wrong. The lookup-table methods were tested with 5-fold cross-validation, leaving out whole spots.</p></div>
+  <div class="panel">
+    <div class="controls"><span class="ctl-label">Method</span><div class="seg" id="two-method"></div></div>
+    <div class="result-line" id="two-result"></div>
+    <div class="legend" id="two-legend"></div>
+    <div class="scroll"><svg id="two-svg" role="img" aria-label="Quadrant call for each of the 48 spots" style="min-width:600px"></svg></div>
+  </div>
+  <p class="note">Quadrants use your numbering: Q1 back right, Q2 back left, Q3 front left, Q4 front right. The numbers in each cell are the box's RSSI on antenna 1 / antenna 2 (dBm). Best result: 42% (fingerprint RSSI + phase slope), against 25% for a random guess.</p>
+</section>
+
+<section id="t-phase">
+  <div class="sec-head"><span class="eyebrow">Tests 2 &amp; 3 · Nov 10 · side-wall antennas</span><h2>How fast the phase pattern changes</h2>
+  <p>"Match" compares the phase pattern across all 50 channels between two readings: 1 means the same pattern, about 0.15 means unrelated. Left: one box moved away from a marked spot in steps. Right: the reference tag never moved while the test box was placed around it during the 48-spot survey.</p></div>
+  <div class="two">
+    <div class="panel"><h3>Box moved from its spot</h3><div class="legend" id="move-legend"></div><div class="scroll"><svg id="move-svg" role="img" aria-label="Phase match against distance moved, left and toward the front" style="min-width:300px"></svg></div>
+      <p class="note">Putting the box back on the marked spot gave 0.90 / 0.95, so anything well below 0.9 is a real change.</p></div>
+    <div class="panel"><h3>Tag that never moved, with a box nearby</h3><div class="legend" id="ref-legend"></div><div class="scroll"><svg id="ref-svg" role="img" aria-label="Reference tag phase match against distance of the moving box" style="min-width:300px"></svg></div>
+      <p class="note">With the box within 12": median match 0.49 on antenna 1. Its RSSI moved by only 0.5–1.2 dB.</p></div>
+  </div>
+</section>
+
+<section id="t-rot">
+  <div class="sec-head"><span class="eyebrow">Test 4 · Nov 10 · 4 boxes × 5 placements · 12 &amp; 15 dBm</span><h2>Zone centers and rotation</h2>
+  <p>One box at the center of each zone (12" deep). After each capture every box moved one zone to the right, with the box in zone 4 wrapping to zone 1, so each spot was seen with four different boxes. Move 4 brings every box back to its start spot. The phase call compares each reading with the readings from the other placements and picks the zone of the closest pattern.</p></div>
+  <div class="panel">
+    <div class="controls">
+      <span class="ctl-label">Zone call</span><div class="seg" id="rot-clf"></div>
+      <span class="ctl-label">Power</span><div class="seg" id="rot-pw"></div>
+    </div>
+    <div class="result-line" id="rot-result"></div>
+    <div class="legend zone-legend"></div>
+    <div class="scroll"><svg id="rot-svg" role="img" aria-label="Zone call per box for the start placement and four rotations" style="min-width:640px"></svg></div>
+  </div>
+  <div class="two">
+    <div class="panel"><h3>Phase-pattern match by comparison type</h3><div class="scroll"><svg id="pairs-svg" role="img" aria-label="Median phase-pattern match by comparison type" style="min-width:300px"></svg></div>
+      <p class="note">Median over the 4 antennas, at 12 and 15 dBm. "Same box, put back" is pulled down by zone 2: antenna 2 was tilted slightly further down after move 1, which changed its pattern. In zones 1, 3 and 4 the put-back match on the zone's own antenna was 0.89–0.99. After the tilt (moves 2–4), different boxes on the same spot matched 0.80–1.00 on every antenna.</p></div>
+    <div class="panel"><h3>Reading the cells</h3>
+      <p>Bars show the box's median RSSI on antennas A1–A4, scaled from −72 to −30 dBm; the outlined bar is the zone's own antenna. The badge is the zone the box was assigned to. The bottom line is the lead of the strongest antenna (RSSI call) or the best pattern match in the right zone against the best in any other zone (phase call).</p>
+      <p>Hover or tap a cell for reads, phase noise and all four RSSI values.</p></div>
+  </div>
+</section>
+
+<section id="t-12">
+  <div class="sec-head"><span class="eyebrow">Test 5 · Nov 10 · 12 boxes · 12 &amp; 15 dBm</span><h2>Three boxes per zone</h2>
+  <p>Three boxes per zone at the front (about 6" deep), middle (12") and back (18"), all on the shelf together. The phase call uses only the zone-center readings from test 4 as the lookup, so the middle row is on surveyed spots and the front and back rows are not.</p></div>
+  <div class="panel">
+    <div class="controls">
+      <span class="ctl-label">Zone call</span><div class="seg" id="tw-clf"></div>
+      <span class="ctl-label">Power</span><div class="seg" id="tw-pw"></div>
+    </div>
+    <div class="result-line" id="tw-result"></div>
+    <div class="legend zone-legend"></div>
+    <div class="scroll"><svg id="tw-svg" role="img" aria-label="Zone call per box, 3 rows by 4 zones, antennas at the aisle edge" style="min-width:640px"></svg></div>
+  </div>
+  <div class="two">
+    <div class="panel"><h3>How alike are the 12 boxes' phase patterns?</h3><div class="scroll"><svg id="mx-svg" role="img" aria-label="Phase-pattern match between every pair of the 12 boxes" style="min-width:320px"></svg></div>
+      <p class="note">15 dBm, mean over the 4 antennas, same capture. If each zone had its own pattern, the four outlined blocks would be dark. They aren't: the most similar box was in the same zone for only 3 of 12 boxes.</p></div>
+    <div class="panel"><h3>Why the front row is weak</h3>
+      <p>Front boxes are the closest to their antenna, yet read 10–20 dB weaker than the middle box (box 649: −56.5 dBm on antenna 1, box 650: −36). Beam aim can explain about 2–3 dB of that, so most of the loss likely comes from the tag's orientation on the box, the antenna mount, or a reflection null at the front row.</p>
+      <p>Zone 3 boxes again read strongest on antenna 4, now with three more boxes, so antenna 3's aim, mount or cable needs checking.</p></div>
+  </div>
+  <details class="panel"><summary>Show all 12-box readings as a table</summary><div class="scroll"><table id="tw-table"></table></div></details>
+</section>
+
+<section id="t-cal">
+  <div class="sec-head"><span class="eyebrow">Test 6 · Nov 10 · 32 calibration boxes · 12, 15 &amp; 20 dBm</span><h2>Calibration grid: is there a zone pattern?</h2>
+  <p>32 boxes fill the shelf, two columns per zone and four rows, about 6" apart (positions estimated from the layout sketch). Each box is called using only the other 31 boxes as the lookup table, so its nearest calibration neighbour is 6" away.</p></div>
+  <div class="panel">
+    <div class="controls">
+      <span class="ctl-label">Zone call</span><div class="seg" id="cal-m"></div>
+      <span class="ctl-label">Power</span><div class="seg" id="cal-pw"></div>
+    </div>
+    <div class="result-line" id="cal-result"></div>
+    <div class="legend zone-legend"></div>
+    <div class="scroll"><svg id="cal-svg" role="img" aria-label="Zone call for each of the 32 calibration boxes" style="min-width:900px"></svg></div>
+  </div>
+  <div class="two">
+    <div class="panel"><h3>Phase match by distance between boxes</h3><div class="scroll"><table id="cal-dist"></table></div>
+      <p class="note">Median pattern match over all box pairs in the grid. At the same distance, boxes in the same zone are no more alike than boxes across a zone boundary, so the pattern carries distance, not zone.</p></div>
+    <div class="panel"><h3>Accuracy by method</h3><div class="scroll"><table id="cal-acc"></table></div>
+      <p class="note">"12-box layout" uses the 32-box grid as the lookup table for the test 5 boxes, whose spots are about 4" from the nearest grid box. Phase called 10 of 12 right at 15 dBm; only 2 of those matched their own tag, so it is matching nearby spots, not tags.</p></div>
+  </div>
+  <p class="callout">No zone pattern shows up. With the shelf full, RSSI loses its structure: antenna 2 is the strongest antenna for middle-row boxes from zone 1 to zone 3, and antenna 1 hears a zone 4 box as loudly as its own. The phase lookup works only when a calibration box sat within about 4" of the box being called (10/12), not at 6" (44–53%).</p>
+</section>
+
+<section id="t-geo">
+  <div class="sec-head"><span class="eyebrow">Geometry</span><h2>Antenna height sets the zone separation</h2>
+  <p>A free-space model of the roof antennas (patch, 70° beam, tilted down toward the back wall) gives how much stronger a middle box reads on its own antenna than on the neighbouring zone's antenna. Tilt mostly moves coverage between the front and back rows; the separation between zones depends on height.</p></div>
+  <div class="panel scroll"><table>
+    <thead><tr><th class="num">Height above tags</th><th class="num">Tilt</th><th class="num">Beam center lands</th><th class="num">Own vs neighbour antenna</th><th class="num">Front vs middle box</th></tr></thead>
+    <tbody>
+      <tr><td class="num">12"</td><td class="num">45°</td><td class="num">12" deep</td><td class="num">≈ 10 dB</td><td class="num">+2.5 dB</td></tr>
+      <tr><td class="num">24"</td><td class="num">45°</td><td class="num">24" (back wall)</td><td class="num">≈ 4 dB</td><td class="num">−1.6 dB</td></tr>
+      <tr><td class="num">24"</td><td class="num">63°</td><td class="num">12" deep</td><td class="num">≈ 4 dB</td><td class="num">+0.6 dB</td></tr>
+      <tr><td class="num">36"</td><td class="num">45°</td><td class="num">36" (past the wall)</td><td class="num">≈ 2 dB</td><td class="num">−2.2 dB</td></tr>
+      <tr><td class="num">48"</td><td class="num">45°</td><td class="num">48"</td><td class="num">≈ 1.4 dB</td><td class="num">−2.1 dB</td></tr>
+    </tbody></table></div>
+  <p>With the front box about 1 ft from the antenna, the model expects about 10 dB between neighbouring zones. The tests measured 1–5 dB at the zone centers, so reflections from the metal shelf and walls take away most of the geometric advantage.</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="eyebrow">Next</span><h2>What to try next</h2></div>
+  <ul class="findings">
+    <li><span class="pill mid">1</span><span><b>Check antenna 3:</b> its aim, mount and cable. Zone 3 boxes read strongest on antenna 4 in every session.</span></li>
+    <li><span class="pill mid">2</span><span><b>Front-row check:</b> one box on the zone 1 front spot, captured with its tag facing up, toward the aisle and toward the back, to find out why the front row is 10–20 dB weak.</span></li>
+    <li><span class="pill mid">3</span><span><b>Antenna placement:</b> lower or narrower-beam antennas, less power, or metal dividers between zones, then repeat the 12-box test.</span></li>
+    <li><span class="pill mid">4</span><span><b>Reader reboot test:</b> reboot the reader and recapture the zone-center boxes. If the patterns still match about 0.95, a reference tag per zone is only needed for monitoring.</span></li>
+  </ul>
+</section>
+
+<section>
+  <div class="sec-head"><span class="eyebrow">Record</span><h2>Test log</h2></div>
+  <div class="panel scroll"><table>
+    <thead><tr><th>Started</th><th>Session</th><th>Setup</th><th class="num">Captures</th><th>Result</th></tr></thead>
+    <tbody>
+      <tr><td>Nov 9, 16:39</td><td>2ant_readtest</td><td>2 side-wall antennas, read check, 20 dBm</td><td class="num">2</td><td>Box read on both antennas</td></tr>
+      <tr><td>Nov 9, 18:34</td><td>2ant_move</td><td>Move test, RF mode 4120, 20 dBm</td><td class="num">10</td><td>Reference tag never read; switched to RF mode 1002</td></tr>
+      <tr><td>Nov 10, 11:02</td><td>2ant_move_15dbm</td><td>Move test, RF mode 1002, 15 dBm</td><td class="num">10</td><td>Pattern drops to 0.44–0.81 after a 1" move</td></tr>
+      <tr><td>Nov 10, 11:29</td><td>2ant_grid_17dbm</td><td>48-spot quadrant survey, 17 dBm</td><td class="num">48</td><td>Best method 42%, strongest antenna 12.5%</td></tr>
+      <tr><td>Nov 10, 15:14</td><td>4zone_centers</td><td>4 boxes at zone centers, 12/15/20 dBm</td><td class="num">3</td><td>RSSI 3 of 4 zones; phase ranging fails; 20 dBm noisy</td></tr>
+      <tr><td>Nov 10, 15:25–15:36</td><td>4zone_rot1–rot4</td><td>Boxes rotated one zone per capture, 12/15 dBm</td><td class="num">8</td><td>Phase 40/40, RSSI 30/40 (with the start). Antenna 2 tilted down after move 1.</td></tr>
+      <tr><td>Nov 10, 16:54</td><td>4zone_12box</td><td>12 boxes, 3 per zone, 12/15 dBm</td><td class="num">2</td><td>Phase 17/24, RSSI 12/24</td></tr>
+      <tr><td>Nov 10, 18:26</td><td>4zone_cal32</td><td>32-box calibration grid, 12/15/20 dBm, 60 s each</td><td class="num">3</td><td>Best 53% leave-one-out; no zone pattern; phase lookup 10/12 on the 12-box layout</td></tr>
+    </tbody></table></div>
+  <p class="note">Data: the session folders in smart_driver_2/sessions. Figures are rebuilt with report/build_data.py. The front, middle and back depths in test 5 are estimates (6, 12 and 18").</p>
+</section>
+</div>
+<div id="tip" hidden></div>
+
+<script id="data" type="application/json">__DATA__</script>
+<script>
+(function () {
+const D = JSON.parse(document.getElementById('data').textContent);
+const NS = 'http://www.w3.org/2000/svg';
+const $ = s => document.querySelector(s);
+function el(tag, a, parent) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in (a || {})) { if (k === 'text') e.textContent = a[k]; else e.setAttribute(k, a[k]); }
+  if (parent) parent.appendChild(e);
+  return e;
+}
+const dbm = v => v == null ? '–' : (v < 0 ? '−' : '') + Math.abs(v).toFixed(0);
+const dbm1 = v => v == null ? '–' : (v < 0 ? '−' : '') + Math.abs(v).toFixed(1);
+const f2 = v => v == null ? '–' : v.toFixed(2);
+
+// tooltip
+const tip = $('#tip');
+function place(e) {
+  const pad = 14, r = tip.getBoundingClientRect();
+  let x = e.clientX + pad, y = e.clientY + pad;
+  if (x + r.width > innerWidth - 8) x = e.clientX - r.width - pad;
+  if (y + r.height > innerHeight - 8) y = e.clientY - r.height - pad;
+  tip.style.left = Math.max(8, x) + 'px'; tip.style.top = Math.max(8, y) + 'px';
+}
+function bindTip(node, html) {
+  node.addEventListener('pointerenter', e => { tip.innerHTML = html; tip.hidden = false; place(e); });
+  node.addEventListener('pointermove', place);
+  node.addEventListener('pointerleave', () => { tip.hidden = true; });
+  node.addEventListener('focus', () => { tip.innerHTML = html; tip.hidden = false; const r = node.getBoundingClientRect(); place({ clientX: r.right, clientY: r.top }); });
+  node.addEventListener('blur', () => { tip.hidden = true; });
+}
+
+// segmented controls
+function seg(id, opts, get, set) {
+  const box = $(id); box.innerHTML = '';
+  opts.forEach(([v, label]) => {
+    const b = document.createElement('button'); b.type = 'button'; b.textContent = label;
+    b.setAttribute('aria-pressed', String(get() === v));
+    b.addEventListener('click', () => { set(v); box.querySelectorAll('button').forEach((x, i) => x.setAttribute('aria-pressed', String(opts[i][0] === v))); });
+    box.appendChild(b);
+  });
+}
+
+// legends
+document.querySelectorAll('.zone-legend').forEach(l => {
+  l.innerHTML = [1, 2, 3, 4].map(z => `<span><span class="sw" style="background:var(--z${z})"></span>Called zone ${z}</span>`).join('') +
+    '<span><span class="sw bad"></span>Wrong zone</span>';
+});
+
+// ── summary tiles ──────────────────────────────────────────────────────────
+(function () {
+  const rot = D.rotation.filter(r => r.power !== 20), tw = D.twelve;
+  const c = (a, k) => a.filter(r => r[k] === r.zone).length;
+  const tiles = [
+    ['Test 1 · 2 antennas, quadrants', [[Math.round(D.two_ant.acc['fingerprint rssi+slope'] * 100) + '%', 'best method'], [Math.round(D.two_ant.acc['strongest antenna'] * 100) + '%', 'strongest antenna']], '48 spots, 17 dBm. Random guess: 25%.'],
+    ['Test 4 · 4 zones, zone centers', [[`${c(rot, 'phase_call')}/${rot.length}`, 'phase pattern'], [`${c(rot, 'rssi_call')}/${rot.length}`, 'strongest RSSI']], '4 boxes × 5 placements × 2 powers.'],
+    ['Test 5 · 3 boxes per zone', [[`${c(tw, 'phase_call')}/${tw.length}`, 'phase pattern'], [`${c(tw, 'rssi_call')}/${tw.length}`, 'strongest RSSI']], '12 boxes × 2 powers; phase lookup from test 4.'],
+    ['Test 6 · 32-box calibration grid', (() => { const g = D.cal32_acc.filter(r => r.set.startsWith('cal')); const mx = k => Math.round(Math.max(...g.map(r => r[k])) * 100) + '%'; return [[mx('phase pattern (kNN)'), 'phase pattern'], [mx('strongest antenna'), 'strongest RSSI']]; })(), 'Best power, each box called from the other 31.'],
+  ];
+  $('#scores').innerHTML = tiles.map(([k, vs, n]) => `<div class="score"><div class="k">${k}</div><div class="v">${vs.map(([b, s]) => `<div><b>${b}</b> <span>${s}</span></div>`).join('')}</div><div class="n">${n}</div></div>`).join('');
+})();
+
+// ── test 1: 2-antenna quadrant grid ────────────────────────────────────────
+const twoState = { m: 'pattern rssi+phase' };
+const METHODS = [['strongest antenna', 'Strongest antenna'], ['fingerprint rssi', 'RSSI lookup'], ['fingerprint rssi+slope', 'RSSI + phase slope'], ['pattern phase', 'Phase pattern'], ['pattern rssi+phase', 'Phase pattern + RSSI']];
+const QCOL = { 1: 1, 2: 2, 3: 3, 4: 4 };
+function renderTwo() {
+  const svg = $('#two-svg'); svg.innerHTML = '';
+  const T = D.two_ant, cw = 72, ch = 56, ox = 70, oy = 40, nx = 8, ny = 6;
+  const W = ox * 2 + nx * cw, H = oy + ny * ch + 40;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  el('rect', { x: ox, y: oy - 14, width: nx * cw, height: 10, class: 'wall' }, svg);
+  el('text', { x: ox + nx * cw / 2, y: oy - 20, 'text-anchor': 'middle', class: 't-lab', text: 'Back wall' }, svg);
+  el('text', { x: ox + nx * cw / 2, y: oy + ny * ch + 26, 'text-anchor': 'middle', class: 't-lab', text: 'Front (aisle side)' }, svg);
+  const X = x => ox + (x - 2) / 4 * cw, Y = y => oy + (ny - 1 - (y - 2) / 4) * ch;
+  let ok = 0;
+  T.spots.forEach(s => {
+    const call = s.calls[twoState.m], good = call === s.true; if (good) ok++;
+    const g = el('g', { transform: `translate(${X(s.x)},${Y(s.y)})`, class: 'cell', tabindex: 0 }, svg);
+    el('rect', { x: 2, y: 2, width: cw - 4, height: ch - 4, rx: 4, class: `cellbg zf${QCOL[call]}` }, g);
+    el('rect', { x: 3, y: 3, width: cw - 6, height: ch - 6, rx: 3, class: good ? `cellbd zs${QCOL[call]}` : 'cellbd wrong' }, g);
+    el('text', { x: cw / 2, y: 25, 'text-anchor': 'middle', class: 't-box', text: (good ? '' : '✗ ') + 'Q' + call }, g);
+    el('text', { x: cw / 2, y: 42, 'text-anchor': 'middle', class: 't-val', text: `${dbm(s.rssi[0])} / ${dbm(s.rssi[1])}` }, g);
+    bindTip(g, `<b>Spot x ${s.x}" · y ${s.y}"</b><br>True quadrant: Q${s.true}<br>` +
+      METHODS.map(([k, l]) => `${l}: Q${s.calls[k]}${s.calls[k] === s.true ? ' ✓' : ' ✗'}`).join('<br>') +
+      `<br>RSSI: antenna 1 ${dbm1(s.rssi[0])} dBm, antenna 2 ${dbm1(s.rssi[1])} dBm`);
+  });
+  // true quadrant boundaries + labels
+  el('line', { x1: ox + 4 * cw, x2: ox + 4 * cw, y1: oy, y2: oy + ny * ch, class: 'divider' }, svg);
+  el('line', { x1: ox, x2: ox + nx * cw, y1: oy + 3 * ch, y2: oy + 3 * ch, class: 'divider' }, svg);
+  [['Q2', ox + 6, oy + 12], ['Q1', ox + nx * cw - 22, oy + 12], ['Q3', ox + 6, oy + ny * ch - 4], ['Q4', ox + nx * cw - 22, oy + ny * ch - 4]]
+    .forEach(([t, x, y]) => el('text', { x, y, class: 't-small', text: 'true ' + t, 'text-anchor': t === 'Q1' || t === 'Q4' ? 'end' : 'start', dx: t === 'Q1' || t === 'Q4' ? 18 : 0 }, svg));
+  // antennas on the side walls
+  [[ox - 18, 'Ant 1', 'end', ox - 22], [ox + nx * cw + 6, 'Ant 2', 'start', ox + nx * cw + 22]].forEach(([x, t, anc, tx]) => {
+    el('rect', { x, y: oy + 3 * ch - 18, width: 12, height: 36, rx: 2, class: 'ant' }, svg);
+    el('text', { x: tx + (anc === 'end' ? -6 : 0), y: oy + 3 * ch + 4, 'text-anchor': anc, class: 't-lab', text: t }, svg);
+  });
+  $('#two-result').innerHTML = `<b>${ok}/48</b> spots in the right quadrant (${Math.round(ok / 48 * 100)}%).`;
+}
+seg('#two-method', METHODS, () => twoState.m, v => { twoState.m = v; renderTwo(); });
+$('#two-legend').innerHTML = [1, 2, 3, 4].map(q => `<span><span class="sw" style="background:var(--z${q})"></span>Called Q${q}</span>`).join('') + '<span><span class="sw bad"></span>Wrong quadrant</span>';
+renderTwo();
+
+// ── tests 2–3: line / scatter charts ──────────────────────────────────────
+function axes(svg, o) {
+  const { W, H, l, r, t, b, xmax, xticks, xlab } = o;
+  const X = v => l + v / xmax * (W - l - r), Y = v => t + (1 - v) * (H - t - b);
+  [0, 0.25, 0.5, 0.75, 1].forEach(v => {
+    el('line', { x1: l, x2: W - r, y1: Y(v), y2: Y(v), class: 'grid' }, svg);
+    if (v % 0.5 === 0) el('text', { x: l - 6, y: Y(v) + 4, 'text-anchor': 'end', class: 't-small', text: v.toFixed(1) }, svg);
+  });
+  el('line', { x1: l, x2: W - r, y1: Y(0), y2: Y(0), class: 'axis' }, svg);
+  xticks.forEach(v => el('text', { x: X(v), y: H - b + 14, 'text-anchor': 'middle', class: 't-small', text: v }, svg));
+  el('text', { x: (l + W - r) / 2, y: H - 4, 'text-anchor': 'middle', class: 't-small', text: xlab }, svg);
+  el('text', { x: 12, y: t - 6, class: 't-small', text: 'match' }, svg);
+  return { X, Y };
+}
+function refLines(svg, X, Y, xmax, W, r) {
+  el('line', { x1: X(0), x2: X(xmax), y1: Y(0.9), y2: Y(0.9), class: 'ref' }, svg);
+  el('text', { x: X(xmax), y: Y(0.9) - 5, 'text-anchor': 'end', class: 't-small', text: 'same spot ≈ 0.9' }, svg);
+  el('line', { x1: X(0), x2: X(xmax), y1: Y(0.15), y2: Y(0.15), class: 'ref' }, svg);
+  el('text', { x: X(xmax), y: Y(0.15) - 5, 'text-anchor': 'end', class: 't-small', text: 'unrelated ≈ 0.15' }, svg);
+}
+(function () {
+  const svg = $('#move-svg'), W = 360, H = 250;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  const { X, Y } = axes(svg, { W, H, l: 34, r: 14, t: 22, b: 34, xmax: 8, xticks: [0, 1, 2, 4, 8], xlab: 'distance moved (inches)' });
+  refLines(svg, X, Y, 8, W, 14);
+  const pts = D.move.filter(m => m.dir !== 'base' || m.id === 'M-base-a');
+  const series = [['left', 'p1', 1, 'Ant 1, moved left'], ['left', 'p2', 2, 'Ant 2, moved left'], ['front', 'p1', 1, 'Ant 1, moved to front'], ['front', 'p2', 2, 'Ant 2, moved to front']];
+  series.forEach(([dir, k, c, name]) => {
+    const rows = [pts.find(m => m.id === 'M-base-a')].concat(pts.filter(m => m.dir === dir)).sort((a, b) => a.d - b.d);
+    const d = rows.map((m, i) => `${i ? 'L' : 'M'}${X(m.d)},${Y(m[k])}`).join('');
+    el('path', { d, fill: 'none', class: `line${c}`, 'stroke-width': 2, 'stroke-dasharray': dir === 'front' ? '6 4' : null }, svg);
+    rows.forEach(m => {
+      const p = el('circle', { cx: X(m.d), cy: Y(m[k]), r: 4.5, class: `dot${c}`, stroke: 'var(--surface)', 'stroke-width': 2 }, svg);
+      bindTip(p, `<b>${name}</b><br>${m.d}" from the spot: match ${f2(m[k])}`);
+    });
+  });
+  $('#move-legend').innerHTML = '<span><span class="sw" style="background:var(--z1)"></span>Antenna 1</span><span><span class="sw" style="background:var(--z2)"></span>Antenna 2</span><span>solid = moved left · dashed = moved toward the front</span>';
+})();
+(function () {
+  const svg = $('#ref-svg'), W = 360, H = 250;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  const xmax = 32;
+  const { X, Y } = axes(svg, { W, H, l: 34, r: 14, t: 22, b: 34, xmax, xticks: [0, 8, 12, 16, 24, 32], xlab: 'distance of the moving box from the tag (inches)' });
+  refLines(svg, X, Y, xmax, W, 14);
+  el('line', { x1: X(12), x2: X(12), y1: Y(0), y2: Y(1), class: 'ref' }, svg);
+  D.ref_stability.forEach(s => [['p1', 1], ['p2', 2]].forEach(([k, c]) => {
+    if (s[k] == null) return;
+    const p = el('circle', { cx: X(s.d), cy: Y(s[k]), r: 3.5, class: `dot${c}`, stroke: 'var(--surface)', 'stroke-width': 1.5 }, svg);
+    bindTip(p, `<b>Antenna ${c}</b><br>Moving box ${s.d}" away: match ${f2(s[k])}<br>RSSI change ${s['dr' + c] == null ? '–' : s['dr' + c].toFixed(1) + ' dB'}`);
+  }));
+  $('#ref-legend').innerHTML = '<span><span class="sw" style="background:var(--z1)"></span>Antenna 1</span><span><span class="sw" style="background:var(--z2)"></span>Antenna 2</span><span>each dot = one of the 48 survey captures</span>';
+})();
+
+// ── 4-zone cells ──────────────────────────────────────────────────────────
+const CW = 156, CH = 136;
+function tipHtml(r) {
+  const row = (lab, arr, f) => `<tr><td>${lab}</td>${arr.map(v => `<td>${f(v)}</td>`).join('')}</tr>`;
+  return `<b>Box ${r.box}</b> · zone ${r.zone}${r.y !== 12 || r.session === '4zone_12box' ? ` · ${r.y}" deep` : ''} · ${r.power} dBm<br>` +
+    `<table><tr><td></td><td>A1</td><td>A2</td><td>A3</td><td>A4</td></tr>` +
+    row('RSSI', r.rssi, dbm1) + row('reads', r.reads, v => v) + row('noise°', r.noise, v => v == null ? '–' : v.toFixed(1)) + `</table>` +
+    `Strongest RSSI → zone ${r.rssi_call ?? '–'}${r.rssi_call === r.zone ? ' ✓' : ' ✗'}${r.margin != null ? ` (lead ${r.margin.toFixed(1)} dB)` : ''}<br>` +
+    `Phase pattern → zone ${r.phase_call ?? '–'}${r.phase_call === r.zone ? ' ✓' : ' ✗'}${r.phase_own != null ? `<br>best match in zone ${r.zone}: ${f2(r.phase_own)}, other zones: ${f2(r.phase_other)}` : ''}`;
+}
+function zoneCell(svg, x, y, r, clf) {
+  const g = el('g', { transform: `translate(${x},${y})`, class: 'cell', tabindex: 0 }, svg);
+  const called = clf === 'rssi' ? r.rssi_call : r.phase_call, ok = called === r.zone;
+  el('rect', { x: 0, y: 0, width: CW, height: CH, rx: 6, class: `cellbg zf${called || 0}` }, g);
+  el('rect', { x: 1, y: 1, width: CW - 2, height: CH - 2, rx: 5, class: ok ? `cellbd zs${called}` : 'cellbd wrong' }, g);
+  el('text', { x: 10, y: 21, class: 't-box', text: `Box ${r.box}` }, g);
+  const bt = called == null ? 'no call' : ok ? `Z${called} ✓` : `✗ Z${called}`, bw = 52;
+  el('rect', { x: CW - bw - 8, y: 8, width: bw, height: 19, rx: 9.5, class: ok ? 'badge-ok' : 'badge-bad' }, g);
+  el('text', { x: CW - 8 - bw / 2, y: 21.5, 'text-anchor': 'middle', class: ok ? 't-badge-ok' : 't-badge-bad', text: bt }, g);
+  const top = 46, base = CH - 30, Hb = base - top;
+  const sc = v => Math.max(0, Math.min(1, (v + 72) / 42)) * Hb;
+  r.rssi.forEach((v, i) => {
+    const bx = 16 + i * 34, bw2 = 22;
+    if (v == null) el('text', { x: bx + bw2 / 2, y: base - 4, 'text-anchor': 'middle', class: 't-small', text: 'no read' }, g);
+    else {
+      const h = Math.max(sc(v), 1.5);
+      el('rect', { x: bx, y: base - h, width: bw2, height: h, rx: 2, class: `zf${i + 1} bar${i + 1 === r.zone ? ' own' : ''}` }, g);
+      el('text', { x: bx + bw2 / 2, y: base - h - 4, 'text-anchor': 'middle', class: 't-val', text: dbm(v) }, g);
+    }
+    el('text', { x: bx + bw2 / 2, y: base + 12, 'text-anchor': 'middle', class: 't-small', text: `A${i + 1}` }, g);
+  });
+  el('line', { x1: 10, x2: CW - 10, y1: base, y2: base, class: 'axis' }, g);
+  const ft = clf === 'rssi' ? (r.margin != null ? `lead ${r.margin.toFixed(1)} dB` : '') :
+    (r.phase_own != null ? `match ${f2(r.phase_own)} vs ${f2(r.phase_other)}` : '');
+  el('text', { x: 10, y: CH - 5, class: 't-small', text: ft }, g);
+  bindTip(g, tipHtml(r));
+}
+
+// ── test 4: rotation grid ─────────────────────────────────────────────────
+const rotState = { clf: 'phase', pw: 15 };
+const ROT = [['4zone_centers', 'Start'], ['4zone_rot1', 'Move 1'], ['4zone_rot2', 'Move 2'], ['4zone_rot3', 'Move 3'], ['4zone_rot4', 'Move 4']];
+function renderRot() {
+  const svg = $('#rot-svg'); svg.innerHTML = '';
+  const LX = 92, gap = 8, top = 30;
+  const W = LX + 4 * (CW + gap), H = top + ROT.length * (CH + gap);
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  for (let z = 1; z <= 4; z++) el('text', { x: LX + (z - 1) * (CW + gap) + CW / 2, y: 18, 'text-anchor': 'middle', class: 't-head', text: `Zone ${z} · Ant ${z}` }, svg);
+  let ok = 0, n = 0;
+  ROT.forEach(([s, lab], i) => {
+    const y = top + i * (CH + gap);
+    el('text', { x: 0, y: y + CH / 2, class: 't-head', text: lab }, svg);
+    if (i === 4) el('text', { x: 0, y: y + CH / 2 + 16, class: 't-small', text: '(back to start)' }, svg);
+    D.rotation.filter(r => r.session === s && r.power === rotState.pw).forEach(r => {
+      zoneCell(svg, LX + (r.zone - 1) * (CW + gap), y, r, rotState.clf); n++;
+      if ((rotState.clf === 'rssi' ? r.rssi_call : r.phase_call) === r.zone) ok++;
+    });
+  });
+  $('#rot-result').innerHTML = `<b>${ok}/${n}</b> boxes in the right zone at ${rotState.pw} dBm with the ${rotState.clf === 'rssi' ? 'strongest antenna' : 'phase pattern'}.`;
+}
+seg('#rot-clf', [['phase', 'Phase pattern'], ['rssi', 'Strongest RSSI']], () => rotState.clf, v => { rotState.clf = v; renderRot(); });
+seg('#rot-pw', [[15, '15 dBm'], [12, '12 dBm']], () => rotState.pw, v => { rotState.pw = v; renderRot(); });
+renderRot();
+
+// pair kinds
+(function () {
+  const K = [['same box, same spot, untouched (other power)', 'Same box, untouched'], ['SAME SPOT, different box', 'Different box, same spot'],
+    ['same box, same spot, put back', 'Same box, put back'], ['same box, different spot', 'Same box, other spot'], ['different box, different spot', 'Different box, other spot']];
+  const svg = $('#pairs-svg'), W = 380, rowH = 34, l = 160, r = 44, t = 8, H = t + K.length * rowH + 22;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  const X = v => l + v * (W - l - r);
+  [0, 0.5, 1].forEach(v => { el('line', { x1: X(v), x2: X(v), y1: t, y2: H - 20, class: 'grid' }, svg); el('text', { x: X(v), y: H - 6, 'text-anchor': 'middle', class: 't-small', text: v.toFixed(1) }, svg); });
+  K.forEach(([k, lab], i) => {
+    const v = D.pair_kinds[k]; if (!v) return;
+    const vals = Object.values(v), m = vals.reduce((a, b) => a + b, 0) / vals.length, y = t + i * rowH;
+    el('text', { x: l - 10, y: y + 20, 'text-anchor': 'end', class: 't-lab', text: lab }, svg);
+    const b = el('rect', { x: X(0), y: y + 8, width: Math.max(X(m) - X(0), 2), height: 18, rx: 3, class: 'zf1' }, svg);
+    el('text', { x: X(m) + 6, y: y + 21, class: 't-val', text: m.toFixed(2) }, svg);
+    bindTip(b, `<b>${lab}</b><br>` + Object.entries(v).map(([p, x]) => `Antenna ${p}: ${x.toFixed(2)}`).join('<br>'));
+  });
+})();
+
+// ── test 5: 12-box grid ───────────────────────────────────────────────────
+const twState = { clf: 'phase', pw: 15 };
+function renderTw() {
+  const svg = $('#tw-svg'); svg.innerHTML = '';
+  const LX = 92, gap = 8, top = 50, rows = [[18, 'Back'], [12, 'Middle'], [6, 'Front']];
+  const W = LX + 4 * (CW + gap), gridB = top + 3 * (CH + gap), H = gridB + 64;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  el('rect', { x: LX, y: 6, width: 4 * (CW + gap) - gap, height: 10, class: 'wall' }, svg);
+  el('text', { x: LX + 2 * (CW + gap), y: 34, 'text-anchor': 'middle', class: 't-lab', text: 'Back wall' }, svg);
+  rows.forEach(([yd, lab], i) => {
+    const y = top + i * (CH + gap);
+    el('text', { x: 0, y: y + CH / 2, class: 't-head', text: lab }, svg);
+    el('text', { x: 0, y: y + CH / 2 + 16, class: 't-small', text: `≈${yd}" deep` }, svg);
+  });
+  let ok = 0, n = 0;
+  D.twelve.filter(r => r.power === twState.pw).forEach(r => {
+    const i = rows.findIndex(([yd]) => yd === r.y);
+    zoneCell(svg, LX + (r.zone - 1) * (CW + gap), top + i * (CH + gap), r, twState.clf); n++;
+    if ((twState.clf === 'rssi' ? r.rssi_call : r.phase_call) === r.zone) ok++;
+  });
+  el('line', { x1: LX, x2: W - gap, y1: gridB + 2, y2: gridB + 2, class: 'divider' }, svg);
+  for (let z = 1; z <= 4; z++) {
+    const cx = LX + (z - 1) * (CW + gap) + CW / 2;
+    el('path', { d: `M${cx},${gridB - 4} l-5,9 h10 z`, class: 'ant' }, svg);
+    el('rect', { x: cx - 20, y: gridB + 10, width: 40, height: 12, rx: 2, class: 'ant' }, svg);
+    el('text', { x: cx, y: gridB + 40, 'text-anchor': 'middle', class: 't-head', text: `Ant ${z} · Zone ${z}` }, svg);
+  }
+  el('text', { x: 0, y: gridB + 20, class: 't-small', text: 'Aisle edge' }, svg);
+  const rowsOk = rows.map(([yd, lab]) => { const a = D.twelve.filter(r => r.power === twState.pw && r.y === yd); return `${lab.toLowerCase()} ${a.filter(r => (twState.clf === 'rssi' ? r.rssi_call : r.phase_call) === r.zone).length}/${a.length}`; });
+  $('#tw-result').innerHTML = `<b>${ok}/${n}</b> boxes in the right zone at ${twState.pw} dBm with the ${twState.clf === 'rssi' ? 'strongest antenna' : 'phase pattern'} (${rowsOk.join(', ')}).`;
+}
+seg('#tw-clf', [['phase', 'Phase pattern'], ['rssi', 'Strongest RSSI']], () => twState.clf, v => { twState.clf = v; renderTw(); });
+seg('#tw-pw', [[15, '15 dBm'], [12, '12 dBm']], () => twState.pw, v => { twState.pw = v; renderTw(); });
+renderTw();
+
+// 12-box table
+(function () {
+  const rows = D.twelve.slice().sort((a, b) => a.power - b.power || a.zone - b.zone || b.y - a.y);
+  $('#tw-table').innerHTML = '<thead><tr><th>Box</th><th class="num">Zone</th><th class="num">Depth</th><th class="num">Power</th>' +
+    [1, 2, 3, 4].map(i => `<th class="num">A${i} dBm</th>`).join('') + '<th class="num">RSSI call</th><th class="num">Phase call</th><th class="num">Match own / other</th></tr></thead><tbody>' +
+    rows.map(r => `<tr><td>${r.box}</td><td class="num">${r.zone}</td><td class="num">${r.y}"</td><td class="num">${r.power}</td>` +
+      r.rssi.map(v => `<td class="num">${dbm1(v)}</td>`).join('') +
+      `<td class="num">${r.rssi_call}${r.rssi_call === r.zone ? ' ✓' : ' ✗'}</td><td class="num">${r.phase_call}${r.phase_call === r.zone ? ' ✓' : ' ✗'}</td>` +
+      `<td class="num">${f2(r.phase_own)} / ${f2(r.phase_other)}</td></tr>`).join('') + '</tbody>';
+})();
+
+// ── test 6: calibration grid ──────────────────────────────────────────────
+const calState = { m: 'phase pattern (kNN)', pw: 15 };
+const CALM = [['strongest antenna', 'Strongest RSSI'], ['RSSI-weighted x', 'RSSI-weighted position'], ['RSSI lookup (kNN)', 'RSSI lookup'], ['phase pattern (kNN)', 'Phase pattern'], ['phase + RSSI (kNN)', 'Phase + RSSI']];
+function renderCal() {
+  const svg = $('#cal-svg'); svg.innerHTML = '';
+  const w = 104, h = 112, gap = 6, zg = 12, LX = 74, top = 46;
+  const colX = i => LX + i * (w + gap) + Math.floor(i / 2) * zg;
+  const W = colX(7) + w + 4, gridB = top + 4 * (h + gap), H = gridB + 62;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  el('rect', { x: LX, y: 6, width: W - LX - 4, height: 10, class: 'wall' }, svg);
+  el('text', { x: (LX + W) / 2, y: 34, 'text-anchor': 'middle', class: 't-lab', text: 'Back wall' }, svg);
+  const ys = [21, 15, 9, 3], xs = [3, 9, 15, 21, 27, 33, 39, 45];
+  ys.forEach((yd, i) => { el('text', { x: 0, y: top + i * (h + gap) + h / 2, class: 't-head', text: `${yd}"` }, svg); el('text', { x: 0, y: top + i * (h + gap) + h / 2 + 15, class: 't-small', text: i === 0 ? 'back' : i === 3 ? 'front' : 'deep' }, svg); });
+  let ok = 0, n = 0;
+  D.cal32.filter(r => r.set.startsWith('cal') && r.power === calState.pw).forEach(r => {
+    const ci = xs.indexOf(r.x), ri = ys.indexOf(r.y); if (ci < 0 || ri < 0) return;
+    const called = r.calls[calState.m], good = called === r.zone; n++; if (good) ok++;
+    const g = el('g', { transform: `translate(${colX(ci)},${top + ri * (h + gap)})`, class: 'cell', tabindex: 0 }, svg);
+    el('rect', { x: 0, y: 0, width: w, height: h, rx: 5, class: `cellbg zf${called}` }, g);
+    el('rect', { x: 1, y: 1, width: w - 2, height: h - 2, rx: 4, class: good ? `cellbd zs${called}` : 'cellbd wrong' }, g);
+    el('text', { x: 8, y: 18, class: 't-box', text: r.box }, g);
+    const bt = good ? `Z${called} ✓` : `✗ Z${called}`;
+    el('rect', { x: w - 50, y: 6, width: 44, height: 17, rx: 8.5, class: good ? 'badge-ok' : 'badge-bad' }, g);
+    el('text', { x: w - 28, y: 18.5, 'text-anchor': 'middle', class: good ? 't-badge-ok' : 't-badge-bad', text: bt }, g);
+    const tp = 40, base = h - 22, Hb = base - tp;
+    r.rssi.forEach((v, i) => {
+      const bx = 9 + i * 23, bw = 16;
+      if (v != null) {
+        const hh = Math.max(Math.max(0, Math.min(1, (v + 72) / 42)) * Hb, 1.5);
+        el('rect', { x: bx, y: base - hh, width: bw, height: hh, rx: 2, class: `zf${i + 1} bar${i + 1 === r.zone ? ' own' : ''}` }, g);
+        el('text', { x: bx + bw / 2, y: base - hh - 3, 'text-anchor': 'middle', class: 't-val', 'font-size': 9, text: dbm(v) }, g);
+      } else el('text', { x: bx + bw / 2, y: base - 3, 'text-anchor': 'middle', class: 't-small', text: '–' }, g);
+      el('text', { x: bx + bw / 2, y: base + 11, 'text-anchor': 'middle', class: 't-small', text: `A${i + 1}` }, g);
+    });
+    el('line', { x1: 6, x2: w - 6, y1: base, y2: base, class: 'axis' }, g);
+    bindTip(g, `<b>Box ${r.box}</b> · zone ${r.zone} · x ${r.x}" y ${r.y}" · ${r.power} dBm<br>` +
+      `RSSI A1–A4: ${r.rssi.map(dbm1).join(' / ')} dBm<br>RSSI-weighted x: ${r.xw}"<br>` +
+      CALM.map(([k, l]) => `${l}: Z${r.calls[k]}${r.calls[k] === r.zone ? ' ✓' : ' ✗'}`).join('<br>') +
+      `<br>Best phase match: ${f2(r.best)} (best in its own zone ${f2(r.best_same)})`);
+  });
+  el('line', { x1: LX, x2: W - 4, y1: gridB + 2, y2: gridB + 2, class: 'divider' }, svg);
+  for (let z = 1; z <= 4; z++) {
+    const cx = (colX(2 * z - 2) + colX(2 * z - 1) + w) / 2;
+    el('path', { d: `M${cx},${gridB - 4} l-5,9 h10 z`, class: 'ant' }, svg);
+    el('rect', { x: cx - 20, y: gridB + 10, width: 40, height: 12, rx: 2, class: 'ant' }, svg);
+    el('text', { x: cx, y: gridB + 40, 'text-anchor': 'middle', class: 't-head', text: `Ant ${z} · Zone ${z}` }, svg);
+  }
+  el('text', { x: 0, y: gridB + 20, class: 't-small', text: 'Aisle edge' }, svg);
+  $('#cal-result').innerHTML = `<b>${ok}/${n}</b> boxes in the right zone at ${calState.pw} dBm (${Math.round(ok / n * 100)}%; a random guess gets 25%).`;
+}
+seg('#cal-m', CALM, () => calState.m, v => { calState.m = v; renderCal(); });
+seg('#cal-pw', [[15, '15 dBm'], [12, '12 dBm'], [20, '20 dBm']], () => calState.pw, v => { calState.pw = v; renderCal(); });
+renderCal();
+(function () {
+  const pws = [12, 15, 20], bins = [[6, '6"'], [8.5, '8.5"'], [12, '12"'], [99, 'over 12"']];
+  const get = (pw, d, s) => D.cal32_dist.find(r => r.power === pw && r.d === d && r.same === s);
+  $('#cal-dist').innerHTML = '<thead><tr><th>Apart</th>' + pws.map(p => `<th class="num">${p} dBm same / other zone</th>`).join('') + '</tr></thead><tbody>' +
+    bins.map(([d, lab]) => `<tr><td>${lab}</td>` + pws.map(p => { const a = get(p, d, true), b = get(p, d, false); return `<td class="num">${a ? a.median.toFixed(2) : '–'} / ${b ? b.median.toFixed(2) : '–'}</td>`; }).join('') + '</tr>').join('') + '</tbody>';
+  const order = D.cal32_acc.slice().sort((a, b) => a.set === b.set ? a.power - b.power : (a.set > b.set ? 1 : -1));
+  $('#cal-acc').innerHTML = '<thead><tr><th>Method</th>' + order.map(r => `<th class="num">${r.set.startsWith('cal') ? 'Grid' : '12-box layout'} ${r.power}</th>`).join('') + '</tr></thead><tbody>' +
+    CALM.map(([k, l]) => `<tr><td>${l}</td>` + order.map(r => `<td class="num">${Math.round(r[k] * 100)}%</td>`).join('') + '</tr>').join('') + '</tbody>';
+})();
+
+// similarity matrix
+(function () {
+  const M = D.twelve_matrix, n = M.boxes.length, cs = 26, l = 74, t = 74;
+  const svg = $('#mx-svg'), W = l + n * cs + 10, H = t + n * cs + 40;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  const RAMP = ['#e8f1fd', '#cde2fb', '#9ec5f4', '#6da7ec', '#3987e5', '#256abf', '#184f95', '#0d366b'];
+  const col = v => RAMP[Math.max(0, Math.min(RAMP.length - 1, Math.round(v * (RAMP.length - 1))))];
+  const dep = y => y === 6 ? 'F' : y === 12 ? 'M' : 'B';
+  M.boxes.forEach((b, i) => {
+    el('text', { x: l - 6, y: t + i * cs + cs / 2 + 4, 'text-anchor': 'end', class: 't-val', text: `${b.box} Z${b.zone}${dep(b.y)}` }, svg);
+    const tx = l + i * cs + cs / 2 + 4;
+    el('text', { x: tx, y: t - 6, transform: `rotate(-60 ${tx} ${t - 6})`, class: 't-val', text: `${b.box} Z${b.zone}${dep(b.y)}` }, svg);
+  });
+  M.m.forEach((row, i) => row.forEach((v, j) => {
+    const c = el('rect', { x: l + j * cs + 1, y: t + i * cs + 1, width: cs - 2, height: cs - 2, rx: 2, fill: i === j ? 'var(--line)' : col(v) }, svg);
+    if (i !== j) bindTip(c, `<b>${M.boxes[i].box} (zone ${M.boxes[i].zone}) vs ${M.boxes[j].box} (zone ${M.boxes[j].zone})</b><br>pattern match ${f2(v)}`);
+  }));
+  for (let z = 0; z < 4; z++) el('rect', { x: l + z * 3 * cs, y: t + z * 3 * cs, width: 3 * cs, height: 3 * cs, fill: 'none', stroke: 'var(--ink)', 'stroke-width': 2 }, svg);
+  // scale
+  const sx = l, sy = t + n * cs + 14;
+  RAMP.forEach((c, i) => el('rect', { x: sx + i * 22, y: sy, width: 22, height: 10, fill: c }, svg));
+  el('text', { x: sx, y: sy + 24, class: 't-small', text: '0 (unrelated)' }, svg);
+  el('text', { x: sx + RAMP.length * 22, y: sy + 24, 'text-anchor': 'end', class: 't-small', text: '1 (identical)' }, svg);
+  el('text', { x: sx + RAMP.length * 22 + 10, y: sy + 9, class: 't-small', text: 'F/M/B = front / middle / back' }, svg);
+})();
+})();
+</script>

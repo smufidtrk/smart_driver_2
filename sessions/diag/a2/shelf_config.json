@@ -1,0 +1,22 @@
+{
+  "_comment": "2-antenna test. Antennas on the left and right side walls at mid-depth (on the front/back boundary), pointing inward. Port 1 = LEFT, port 2 = RIGHT is assumed until the move test confirms it; antenna heights (z) are placeholders. Origin = front-left corner of the shelf floor; x = length (left->right), y = depth (front -> back wall), z = up. Inches.",
+  "zone": { "length_in": 32, "depth_in": 24, "height_in": 20 },
+  "quadrant_labels": { "BR": "1", "BL": "2", "FL": "3", "FR": "4" },
+  "antennas": {
+    "1": { "x_in": 0,  "y_in": 12, "z_in": 10 },
+    "2": { "x_in": 32, "y_in": 12, "z_in": 10 }
+  },
+  "reference_tag": {
+    "_comment": "On-metal tag, centered on the back wall. Never move it.",
+    "epc": "1A0000000000000000000009",
+    "x_in": 16, "y_in": 24, "z_in": 10
+  },
+  "reader": {
+    "ip": "172.16.29.145",
+    "tx_power_dbm": 20,
+    "rx_sens_dbm": -80,
+    "rf_mode": 4120,
+    "session": 2,
+    "population_estimate": 16
+  }
+}

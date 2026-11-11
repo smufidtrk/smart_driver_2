@@ -1,0 +1,23 @@
+{
+  "_comment": "One shelf zone. Origin = front-left corner of the shelf floor. x = along length (left->right), y = depth (front/aisle -> back wall), z = up from shelf floor. Inches. Quadrants split at x = length/2 and y = depth/2: FL, FR (front), BL, BR (back).",
+  "zone": { "length_in": 32, "depth_in": 24, "height_in": 20 },
+  "antennas": {
+    "1": { "x_in": 8,  "y_in": 6,  "z_in": 19 },
+    "2": { "x_in": 24, "y_in": 6,  "z_in": 19 },
+    "3": { "x_in": 8,  "y_in": 18, "z_in": 19 },
+    "4": { "x_in": 24, "y_in": 18, "z_in": 19 }
+  },
+  "reference_tag": {
+    "_comment": "Fixed tag that never moves (e.g. center of back wall, mid height). Must be read by all 4 antennas. Used to remove each port's cable/reader phase slope in EVERY capture (also tracks drift). Set its EPC.",
+    "epc": "",
+    "x_in": 16, "y_in": 23.5, "z_in": 10
+  },
+  "reader": {
+    "ip": "172.16.29.145",
+    "tx_power_dbm": 20,
+    "rx_sens_dbm": -80,
+    "rf_mode": 1002,
+    "session": 2,
+    "population_estimate": 16
+  }
+}

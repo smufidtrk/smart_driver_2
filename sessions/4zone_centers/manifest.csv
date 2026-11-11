@@ -1,0 +1,4 @@
+id,mode,x_in,y_in,z_in,orient,quadrant,epc,file,n_reads,duration_s,tx_power_dbm,started,notes
+scan_20261110_151348-p12,scan,,,,,,,cap_scan_20261110_151348-p12.csv,5008,20.3,12,2026-11-10T15:14:09,
+scan_20261110_151348-p15,scan,,,,,,,cap_scan_20261110_151348-p15.csv,6281,20.3,15,2026-11-10T15:14:29,
+scan_20261110_151348-p20,scan,,,,,,,cap_scan_20261110_151348-p20.csv,7025,20.2,20,2026-11-10T15:14:50,

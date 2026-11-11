@@ -1,0 +1,17 @@
+{
+  "_comment": "2-antenna bring-up test (ports 1 & 2). Antenna x/y/z are PLACEHOLDERS until measured. Origin = front-left corner of the shelf floor; x = length, y = depth (front -> back), z = up. Inches. Quadrants: FL, FR (front), BL, BR (back).",
+  "zone": { "length_in": 32, "depth_in": 24, "height_in": 20 },
+  "antennas": {
+    "1": { "x_in": 8,  "y_in": 12, "z_in": 19 },
+    "2": { "x_in": 24, "y_in": 12, "z_in": 19 }
+  },
+  "reference_tag": { "epc": "", "x_in": 16, "y_in": 23.5, "z_in": 10 },
+  "reader": {
+    "ip": "172.16.29.145",
+    "tx_power_dbm": 20,
+    "rx_sens_dbm": -80,
+    "rf_mode": 4120,
+    "session": 2,
+    "population_estimate": 16
+  }
+}
