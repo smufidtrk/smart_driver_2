@@ -1,0 +1,21 @@
+{
+  "mode": "scan",
+  "reader": "Silion E710 (Sapphire, sdcap)",
+  "epc": "",
+  "ref_epc": "1A0000000000000000000009",
+  "tx_power_dbm": [
+    8.0
+  ],
+  "power_per_antenna_dbm": [
+    8.0
+  ],
+  "RfMode": 4141,
+  "Session": 0,
+  "search": "A",
+  "dwell_s": 30,
+  "ports": [
+    2
+  ],
+  "started": "2026-11-13T11:43:16",
+  "phase_note": "phase_deg = 360 - reader phase (R700 sign convention)"
+}

@@ -1,0 +1,3 @@
+id,mode,x_in,y_in,z_in,orient,quadrant,epc,file,n_reads,duration_s,tx_power_dbm,started,notes
+scan_20261111_131908-p15,scan,,,,,,,cap_scan_20261111_131908-p15.csv,13814,60.6,15,2026-11-11T13:20:09,
+scan_20261111_131908-p20,scan,,,,,,,cap_scan_20261111_131908-p20.csv,14025,60.6,20,2026-11-11T13:21:10,

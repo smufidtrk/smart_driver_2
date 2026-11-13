@@ -1,0 +1,11 @@
+reader,capture,seconds,reads_per_box,boxes_read,channels_per_box_ant,weak_pairs_lt6ch,phase_noise_deg,rssi_spread_db
+R700,4zone_cal32 @12,60,724,32,41.0,17,2.25,0.32
+R700,4zone_cal32 @15,60,859,32,50.0,6,2.18,0.25
+R700,4zone_mode2_c @15,60,347,32,39.5,13,0.97,0.0
+R700,4zone_mode2_d @15,60,349,32,34.0,15,1.58,0.22
+R700,4zone_mode2_c @20,60,315,32,39.0,1,0.7,0.0
+R700,4zone_mode2_d @20,60,315,32,46.0,1,1.93,0.0
+R700,4zone_cal32_repeat @15,61,836,32,48.5,12,2.74,0.35
+R700,4zone_cal32_repeat @12,60,745,31,43.5,31,2.26,0.36
+Silion,silion_cal32 @12,120,557,32,43.0,16,1.08,0.0
+Silion,silion_test_s0 @12,120,558,32,43.0,16,0.94,0.0

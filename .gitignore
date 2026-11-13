@@ -18,3 +18,11 @@ desktop.ini
 
 # stray folders from a mistyped diagnostic run (duplicates of sessions/diag)
 sessions/diag$*/
+
+# colleague firmware repo (reference only, not ours to publish)
+TrackFW_sapphire-proj-smart_driver_impl/
+TrackFW_sapphire-proj-smart_driver_impl.zip
+
+# antenna engineer's package (reference only; 226 MB incl. a packaged .exe)
+Switched_beam_antenna_measurement_wip10/
+Switched_beam_antenna_measurement_wip10.7z

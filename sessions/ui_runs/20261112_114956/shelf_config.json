@@ -1,0 +1,24 @@
+{
+  "_comment": "4 side-by-side zones (1 ft each) along the shelf, one antenna per zone at the AISLE edge, centered on its zone, facing in (toward the back wall) at 45 deg. Ports 1-4 = zones 1-4, left to right seen from the aisle. Origin = front-left corner of the shelf floor (aisle side); x = along the shelf (left -> right), y = depth (aisle -> back wall), z = up. Inches. MEASURE: depth_in, antenna x/z, reference tag position.",
+  "zone": { "length_in": 48, "depth_in": 24, "height_in": 20 },
+  "zones": { "axis": "x", "edges_in": [0, 12, 24, 36, 48], "names": ["1", "2", "3", "4"] },
+  "antennas": {
+    "1": { "x_in": 6,  "y_in": 0, "z_in": 10, "zone": "1" },
+    "2": { "x_in": 18, "y_in": 0, "z_in": 10, "zone": "2" },
+    "3": { "x_in": 30, "y_in": 0, "z_in": 10, "zone": "3" },
+    "4": { "x_in": 42, "y_in": 0, "z_in": 10, "zone": "4" }
+  },
+  "reference_tag": {
+    "_comment": "On-metal tag on the back wall. Never move it. Ideally centered (x = 24) so all 4 antennas read it.",
+    "epc": "1A0000000000000000000009",
+    "x_in": 24, "y_in": 24, "z_in": 10
+  },
+  "reader": {
+    "ip": "172.16.29.145",
+    "tx_power_dbm": 15,
+    "rx_sens_dbm": -80,
+    "rf_mode": 1002,
+    "session": 2,
+    "population_estimate": 16
+  }
+}

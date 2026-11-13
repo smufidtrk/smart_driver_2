@@ -1,0 +1,5 @@
+antenna,reads,channels,steps,slope_median,slope_iqr,raw_path_median_m
+1,44,44,42,32.0,11.4,13.32
+2,45,44,43,50.4,16.4,20.97
+3,46,45,43,49.6,24.8,20.64
+4,41,41,38,60.3,36.9,25.11

@@ -1,0 +1,2 @@
+id,mode,x_in,y_in,z_in,orient,quadrant,epc,file,n_reads,duration_s,tx_power_dbm,started,notes
+scan_20261113_130821-p10,scan,,,,,,,cap_scan_20261113_130821-p10.csv,705,30,10.0,2026-11-13T13:08:21,"Silion E710 sdcap; power per antenna 10 dBm; beam check, zones 3in apart, port 1 alone, 10 dBm"

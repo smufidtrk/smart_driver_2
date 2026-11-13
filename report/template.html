@@ -55,11 +55,12 @@ ul.findings li { display: grid; grid-template-columns: 26px 1fr; gap: 8px; align
 figure { margin: 0; display: grid; gap: 8px; min-width: 0; }
 figure img { width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--line); display: block; }
 figcaption { font-size: 13px; color: var(--ink-2); }
-.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 12px; min-width: 0; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; min-width: 0; }
+.panel > *, .two > * { min-width: 0; }
 .scroll { overflow-x: auto; }
 .scroll svg { display: block; width: 100%; height: auto; }
 .controls { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; }
-.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 7px; overflow: hidden; }
+.seg { display: inline-flex; flex-wrap: wrap; max-width: 100%; border: 1px solid var(--line); border-radius: 7px; overflow: hidden; }
 .seg button { font: 500 13px/1 var(--body); padding: 8px 12px; border: 0; background: transparent; color: var(--ink-2); cursor: pointer; }
 .seg button + button { border-left: 1px solid var(--line); }
 .seg button[aria-pressed="true"] { background: var(--ink); color: var(--surface); }
@@ -100,6 +101,7 @@ svg text { fill: var(--ink); font-family: var(--body); }
 .cellbg { fill-opacity: 0.16; }
 .cellbd { fill: none; stroke-width: 2; }
 .cellbd.wrong { stroke: var(--bad); stroke-width: 3; stroke-dasharray: 6 4; }
+.cellbd.near { stroke: var(--muted); stroke-width: 3; stroke-dasharray: 2 3; }
 .bar.own { stroke: var(--ink); stroke-width: 1.5; }
 .axis { stroke: var(--axis); stroke-width: 1; }
 .grid { stroke: var(--line); stroke-width: 1; }
@@ -115,12 +117,12 @@ svg text { fill: var(--ink); font-family: var(--body); }
 
 <div class="wrap">
 <header>
-  <span class="eyebrow">RFID zone tests · Impinj R700 · Nov 9–10, 2026</span>
+  <span class="eyebrow">RFID zone tests · Impinj R700 and Silion E710 · Nov 9–12, 2026</span>
   <h1>Truck shelf zone tests</h1>
   <p class="lede">Can a reader tell which zone of a truck shelf a box sits in, using RSSI and phase? This page collects every
   test so far. The early tests split the shelf into four quadrants with 2 antennas; the later ones use 4 side-by-side 1&nbsp;ft
   zones with one antenna per zone. Every figure shows each box: where it was, what each antenna heard, and which zone it was assigned.</p>
-  <div class="meta"><span>Reader: Impinj R700, RF mode 1002, session 2</span><span>Power: 12–20 dBm</span><span>Captures: 20–30 s each</span><span>Box tags: 1A1122…06xx</span></div>
+  <div class="meta"><span>Tests 1–6: Impinj R700, RF mode 1002, session 2</span><span>Test 7: Silion E710 (Sapphire), mode 4141, session 0</span><span>Power: 12–20 dBm</span><span>Box tags: 1A1122…06xx</span></div>
 </header>
 
 <section>
@@ -234,6 +236,28 @@ svg text { fill: var(--ink); font-family: var(--body); }
   <p class="callout">No zone pattern shows up. With the shelf full, RSSI loses its structure: antenna 2 is the strongest antenna for middle-row boxes from zone 1 to zone 3, and antenna 1 hears a zone 4 box as loudly as its own. The phase lookup works only when a calibration box sat within about 4" of the box being called (10/12), not at 6" (44–53%).</p>
 </section>
 
+<section id="t-silion">
+  <div class="sec-head"><span class="eyebrow">Test 7 · Nov 12 · Silion E710 on the Sapphire board · 32 calibration boxes</span><h2>Silion E710 against the R700</h2>
+  <p>The R700 was swapped for the Sapphire board's Silion E710 reader on the same four antennas, with the 32 boxes back in the calibration layout. The capture ran 120&nbsp;s in session S0, target A, mode 4141 (Miller 4, the closest E710 mode to the R700's mode 2), with antennas 1–2 at 12&nbsp;dBm and 3–4 at 14&nbsp;dBm to make up for their longer cables. Every method below is scored the same way on both readers.</p></div>
+  <div class="panel">
+    <div class="controls">
+      <span class="ctl-label">Reader</span><div class="seg" id="sl-r"></div>
+      <span class="ctl-label">Test</span><div class="seg" id="sl-t"></div>
+    </div>
+    <div class="controls"><span class="ctl-label">Zone call</span><div class="seg" id="sl-m"></div></div>
+    <div class="controls"><span class="ctl-label">Scoring</span><div class="seg" id="sl-s"></div></div>
+    <div class="result-line" id="sl-result"></div>
+    <div class="legend zone-legend"></div>
+    <div class="scroll"><svg id="sl-svg" role="img" aria-label="Zone call for each of the 32 calibration boxes, by reader, test and method" style="min-width:900px"></svg></div>
+  </div>
+  <div class="panel"><h3>Zone accuracy by method</h3><div class="scroll"><table id="sl-acc"></table></div>
+    <p class="note"><b>6" neighbours</b>: each box called from the other 31 of the same capture, so its nearest calibration box is 6" away. <b>Same spot</b>: a later capture with the boxes untouched, called from the calibration capture. <b>WCL</b> is a weighted centroid: the antenna positions averaged with weights from RSSI (mW), or from the relative phase slope and RSSI, then the zone the estimate falls in. <b>FW vote</b> is the firmware's Zircon rule (10<sup>signal/8</sup> × reads × stability). <b>Locator</b> is the Zone Locator's combined call. <b>Border-tolerant</b>: a box in a column next to a zone line also counts as right when it is called the zone across that line (655 at 9" may be Z1 or Z2, 664 at 21" may be Z2 or Z3 but not Z1). The shelf-end columns at 3" and 45" (650, 213) must be called exactly. 24 of the 32 boxes sit next to a line, so this score is lenient; the small figure under each cell is the exact score. The R700 has no 12/14&nbsp;dBm capture, so its rows use 12 or 15&nbsp;dBm, and its same-spot test is mode 2 against the mode 1002 calibration.</p></div>
+  <div class="panel"><h3>Signal quality</h3><div class="scroll"><table id="sl-q"></table></div>
+    <p class="note">Calibration boxes only. Channels: distinct hop channels per box per antenna (median). Weak pairs: box–antenna pairs read on fewer than 6 channels, too few for a phase pattern. Phase noise: spread of repeated reads on the same channel (median). RSSI spread: the same, in dB; the Silion reports whole dB and repeats exactly on a channel.</p></div>
+  <ul class="findings" id="sl-findings"></ul>
+  <p class="callout">The Silion E710 does this job as well as the R700, with cleaner phase, but not better: each box's zone is still only reliable when a calibration box sat on the same spot. The limit is the reflections on the metal shelf, not the reader.</p>
+</section>
+
 <section id="t-geo">
   <div class="sec-head"><span class="eyebrow">Geometry</span><h2>Antenna height sets the zone separation</h2>
   <p>A free-space model of the roof antennas (patch, 70° beam, tilted down toward the back wall) gives how much stronger a middle box reads on its own antenna than on the neighbouring zone's antenna. Tilt mostly moves coverage between the front and back rows; the separation between zones depends on height.</p></div>
@@ -272,6 +296,10 @@ svg text { fill: var(--ink); font-family: var(--body); }
       <tr><td>Nov 10, 15:25–15:36</td><td>4zone_rot1–rot4</td><td>Boxes rotated one zone per capture, 12/15 dBm</td><td class="num">8</td><td>Phase 40/40, RSSI 30/40 (with the start). Antenna 2 tilted down after move 1.</td></tr>
       <tr><td>Nov 10, 16:54</td><td>4zone_12box</td><td>12 boxes, 3 per zone, 12/15 dBm</td><td class="num">2</td><td>Phase 17/24, RSSI 12/24</td></tr>
       <tr><td>Nov 10, 18:26</td><td>4zone_cal32</td><td>32-box calibration grid, 12/15/20 dBm, 60 s each</td><td class="num">3</td><td>Best 53% leave-one-out; no zone pattern; phase lookup 10/12 on the 12-box layout</td></tr>
+      <tr><td>Nov 11, 10:27</td><td>4zone_cal32_repeat</td><td>Same grid, next morning, 12/15/20 dBm</td><td class="num">3</td><td>Phase lookup against the day before: 75–88%</td></tr>
+      <tr><td>Nov 11, 12:51–13:23</td><td>4zone_mode*</td><td>Same grid, RF modes 1002, 2, 4, 4141, 4180</td><td class="num">20</td><td>Mode 2 cleanest phase (0.6°), 32/32 against the day before</td></tr>
+      <tr><td>Nov 12, 15:12</td><td>silion_cal32</td><td>Silion E710 (Sapphire), same grid, mode 4141, S0, 12/12/14/14 dBm, 120 s</td><td class="num">1</td><td>18,631 reads, even across antennas; 18/32 leave-one-out</td></tr>
+      <tr><td>Nov 12, 15:19</td><td>silion_test_s0</td><td>Silion E710, boxes untouched, same settings, 120 s</td><td class="num">1</td><td>Locator 32/32, phase pattern 31/32 against silion_cal32</td></tr>
     </tbody></table></div>
   <p class="note">Data: the session folders in smart_driver_2/sessions. Figures are rebuilt with report/build_data.py. The front, middle and back depths in test 5 are estimates (6, 12 and 18").</p>
 </section>
@@ -338,6 +366,10 @@ document.querySelectorAll('.zone-legend').forEach(l => {
     ['Test 5 · 3 boxes per zone', [[`${c(tw, 'phase_call')}/${tw.length}`, 'phase pattern'], [`${c(tw, 'rssi_call')}/${tw.length}`, 'strongest RSSI']], '12 boxes × 2 powers; phase lookup from test 4.'],
     ['Test 6 · 32-box calibration grid', (() => { const g = D.cal32_acc.filter(r => r.set.startsWith('cal')); const mx = k => Math.round(Math.max(...g.map(r => r[k])) * 100) + '%'; return [[mx('phase pattern (kNN)'), 'phase pattern'], [mx('strongest antenna'), 'strongest RSSI']]; })(), 'Best power, each box called from the other 31.'],
   ];
+  if (D.readers) {
+    const f = (t) => { const c = D.readers.compare.find(r => r.reader === 'Silion' && r.test === t); return c ? `${c.acc.locator[0]}/${c.acc.locator[1]}` : '–'; };
+    tiles.push(['Test 7 · Silion E710, same grid', [[f('same spot, minutes'), 'untouched boxes'], [f('6in neighbours'), '6" from a calibration box']], 'Zone Locator call, 12/14 dBm. R700: 32/32 and 16–18/32.']);
+  }
   $('#scores').innerHTML = tiles.map(([k, vs, n]) => `<div class="score"><div class="k">${k}</div><div class="v">${vs.map(([b, s]) => `<div><b>${b}</b> <span>${s}</span></div>`).join('')}</div><div class="n">${n}</div></div>`).join('');
 })();
 
@@ -623,6 +655,93 @@ renderCal();
   const order = D.cal32_acc.slice().sort((a, b) => a.set === b.set ? a.power - b.power : (a.set > b.set ? 1 : -1));
   $('#cal-acc').innerHTML = '<thead><tr><th>Method</th>' + order.map(r => `<th class="num">${r.set.startsWith('cal') ? 'Grid' : '12-box layout'} ${r.power}</th>`).join('') + '</tr></thead><tbody>' +
     CALM.map(([k, l]) => `<tr><td>${l}</td>` + order.map(r => `<td class="num">${Math.round(r[k] * 100)}%</td>`).join('') + '</tr>').join('') + '</tbody>';
+})();
+
+// ── test 7: Silion E710 vs R700 ───────────────────────────────────────────
+(function () {
+  const R = D.readers; if (!R) { $('#t-silion').hidden = true; return; }
+  const LAB = { 'strongest': 'Strongest RSSI', 'fw vote': 'FW vote', 'WCL RSSI': 'WCL RSSI', 'WCL slope+RSSI': 'WCL slope+RSSI',
+    'slope': 'Phase slope', 'RSSI lookup': 'RSSI lookup', 'phase lookup': 'Phase pattern', 'locator': 'Locator' };
+  const TESTS = [...new Set(R.boxes.map(b => b.test))];
+  const pwOf = (r, t) => { const ps = [...new Set(R.boxes.filter(b => b.reader === r && b.test === t).map(b => b.power))].sort((a, b) => a - b); return ps[0]; };
+  const st = { r: 'Silion', t: '6in neighbours', m: 'locator', s: 'exact' };
+  // zone just across the line a box sits next to (inner columns), null for the shelf-end columns
+  const nearZone = (z, x) => { for (const e of [12, 24, 36]) if (Math.abs(x - e) <= 6) return x < e ? z + 1 : z - 1; return null; };
+  const hasB = R.compare.every(c => c.acc_border);
+  const has = (r, t) => R.boxes.some(b => b.reader === r && b.test === t);
+  function render() {
+    if (!has(st.r, st.t)) st.t = TESTS.find(t => has(st.r, t));
+    const pw = pwOf(st.r, st.t);
+    const rows = R.boxes.filter(b => b.reader === st.r && b.test === st.t && b.power === pw);
+    const svg = $('#sl-svg'); svg.innerHTML = '';
+    const w = 104, h = 112, gap = 6, zg = 12, LX = 74, top = 46;
+    const colX = i => LX + i * (w + gap) + Math.floor(i / 2) * zg;
+    const W = colX(7) + w + 4, gridB = top + 4 * (h + gap), H = gridB + 62;
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    el('rect', { x: LX, y: 6, width: W - LX - 4, height: 10, class: 'wall' }, svg);
+    el('text', { x: (LX + W) / 2, y: 34, 'text-anchor': 'middle', class: 't-lab', text: 'Back wall' }, svg);
+    const ys = [21, 15, 9, 3], xs = [3, 9, 15, 21, 27, 33, 39, 45];
+    ys.forEach((yd, i) => el('text', { x: 0, y: top + i * (h + gap) + h / 2, class: 't-head', text: `${yd}"` }, svg));
+    let ok = 0, n = 0;
+    rows.forEach(r => {
+      const ci = xs.indexOf(r.x), ri = ys.indexOf(r.y); if (ci < 0 || ri < 0) return;
+      const called = r.calls[st.m], exact = called === r.zone, nz = nearZone(r.zone, r.x);
+      const near = !exact && st.s === 'border' && called != null && called === nz, good = exact || near;
+      n++; if (good) ok++;
+      const g = el('g', { transform: `translate(${colX(ci)},${top + ri * (h + gap)})`, class: 'cell', tabindex: 0 }, svg);
+      el('rect', { x: 0, y: 0, width: w, height: h, rx: 5, class: `cellbg zf${called || 0}` }, g);
+      el('rect', { x: 1, y: 1, width: w - 2, height: h - 2, rx: 4, class: exact ? `cellbd zs${called}` : near ? 'cellbd near' : 'cellbd wrong' }, g);
+      el('text', { x: 8, y: 18, class: 't-box', text: r.box }, g);
+      const bt = called == null ? '–' : exact ? `Z${called} ✓` : near ? `Z${called} ~` : `✗ Z${called}`;
+      el('rect', { x: w - 50, y: 6, width: 44, height: 17, rx: 8.5, class: good ? 'badge-ok' : 'badge-bad' }, g);
+      el('text', { x: w - 28, y: 18.5, 'text-anchor': 'middle', class: good ? 't-badge-ok' : 't-badge-bad', text: bt }, g);
+      const tp = 40, base = h - 22, Hb = base - tp, lo = st.r === 'Silion' ? -66 : -72, span = 42;
+      r.rssi.forEach((v, i) => {
+        const bx = 9 + i * 23, bw = 16;
+        if (v != null) {
+          const hh = Math.max(Math.max(0, Math.min(1, (v - lo) / span)) * Hb, 1.5);
+          el('rect', { x: bx, y: base - hh, width: bw, height: hh, rx: 2, class: `zf${i + 1} bar${i + 1 === r.zone ? ' own' : ''}` }, g);
+          el('text', { x: bx + bw / 2, y: base - hh - 3, 'text-anchor': 'middle', class: 't-val', 'font-size': 9, text: dbm(v) }, g);
+        } else el('text', { x: bx + bw / 2, y: base - 3, 'text-anchor': 'middle', class: 't-small', text: '–' }, g);
+        el('text', { x: bx + bw / 2, y: base + 11, 'text-anchor': 'middle', class: 't-small', text: `A${i + 1}` }, g);
+      });
+      el('line', { x1: 6, x2: w - 6, y1: base, y2: base, class: 'axis' }, g);
+      bindTip(g, `<b>Box ${r.box}</b> · zone ${r.zone} · x ${r.x}" y ${r.y}" · ${st.r}<br>` +
+        (nz ? `Next to the Z${Math.min(r.zone, nz)}/Z${Math.max(r.zone, nz)} line: Z${nz} is OK when border-tolerant<br>` : 'Shelf-end column: only its own zone is OK<br>') + `RSSI A1–A4: ${r.rssi.map(dbm1).join(' / ')} dBm<br>` +
+        R.methods.map(k => `${LAB[k]}: ${r.calls[k] == null ? '–' : 'Z' + r.calls[k] + (r.calls[k] === r.zone ? ' ✓' : ' ✗')}`).join('<br>') +
+        `<br>Best phase match: ${f2(r.best)}`);
+    });
+    el('line', { x1: LX, x2: W - 4, y1: gridB + 2, y2: gridB + 2, class: 'divider' }, svg);
+    for (let z = 1; z <= 4; z++) {
+      const cx = (colX(2 * z - 2) + colX(2 * z - 1) + w) / 2;
+      el('path', { d: `M${cx},${gridB - 4} l-5,9 h10 z`, class: 'ant' }, svg);
+      el('rect', { x: cx - 20, y: gridB + 10, width: 40, height: 12, rx: 2, class: 'ant' }, svg);
+      el('text', { x: cx, y: gridB + 40, 'text-anchor': 'middle', class: 't-head', text: `Ant ${z} · Zone ${z}` }, svg);
+    }
+    const pwTxt = st.r === 'Silion' ? '12/14 dBm' : `${pw} dBm`;
+    $('#sl-result').innerHTML = `<b>${ok}/${n}</b> boxes ${st.s === 'border' ? 'right or one zone over across their nearest line' : 'in the right zone'} · ${st.r} · ${st.t.replace('6in', '6"')} · ${LAB[st.m]} · ${pwTxt} (${Math.round(ok / Math.max(n, 1) * 100)}%).`;
+    seg('#sl-t', TESTS.filter(t => has(st.r, t)).map(t => [t, t.replace('6in', '6"')]), () => st.t, v => { st.t = v; render(); });
+  }
+  seg('#sl-r', [['Silion', 'Silion E710'], ['R700', 'Impinj R700']], () => st.r, v => { st.r = v; render(); });
+  seg('#sl-m', R.methods.map(k => [k, LAB[k]]), () => st.m, v => { st.m = v; render(); });
+  // accuracy table: one column per (reader, test, power)
+  const cols = R.compare.slice().sort((a, b) => (a.test > b.test ? 1 : a.test < b.test ? -1 : 0) || (a.reader > b.reader ? -1 : 1) || (a.dBm - b.dBm));
+  const head = c => `${c.reader === 'Silion' ? 'Silion' : 'R700'}<br>${c.test.replace('6in', '6"')}<br>${c.reader === 'Silion' ? '12/14' : c.dBm} dBm`;
+  function table() {
+    const A = c => (st.s === 'border' ? c.acc_border : c.acc);
+    $('#sl-acc').innerHTML = '<thead><tr><th>Method</th>' + cols.map(c => `<th class="num">${head(c)}</th>`).join('') + '</tr></thead><tbody>' +
+      R.methods.map(m => `<tr><td>${LAB[m]}</td>` + cols.map(c => {
+        const [k, n] = A(c)[m], best = Math.max(...R.methods.map(x => A(c)[x][0]));
+        const ex = st.s === 'border' ? `<br><span class="note">exact ${c.acc[m][0]}</span>` : '';
+        return `<td class="num"${k === best ? ' style="font-weight:700"' : ''}>${k}/${n}<br><span class="note">${Math.round(k / n * 100)}%</span>${ex}</td>`;
+      }).join('') + '</tr>').join('') + '</tbody>';
+  }
+  if (hasB) seg('#sl-s', [['exact', 'Exact zone'], ['border', 'Border-tolerant']], () => st.s, v => { st.s = v; render(); table(); });
+  else $('#sl-s').parentElement.hidden = true;
+  render(); table();
+  $('#sl-q').innerHTML = '<thead><tr><th>Reader</th><th>Capture</th><th class="num">Seconds</th><th class="num">Reads per box</th><th class="num">Channels</th><th class="num">Weak pairs</th><th class="num">Phase noise</th><th class="num">RSSI spread</th></tr></thead><tbody>' +
+    R.quality.map(q => `<tr><td>${q.reader}</td><td>${q.capture}</td><td class="num">${q.seconds}</td><td class="num">${q.reads_per_box}</td><td class="num">${q.channels_per_box_ant}</td><td class="num">${q.weak_pairs_lt6ch}/128</td><td class="num">${q.phase_noise_deg.toFixed(1)}°</td><td class="num">${q.rssi_spread_db.toFixed(2)} dB</td></tr>`).join('') + '</tbody>';
+  $('#sl-findings').innerHTML = (R.findings || []).map(([p, cls, t]) => `<li><span class="pill ${cls}">${p}</span><span>${t}</span></li>`).join('');
 })();
 
 // similarity matrix

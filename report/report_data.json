@@ -4356,292 +4356,772 @@ null,
 "best_same": 0.816
 },
 {
-"set": "test 4zone_12box",
+"set": "test 4zone_cal32_repeat",
 "power": 12.0,
-"box": "649",
+"box": "653",
 "zone": 1,
-"x": 5.999999999999999,
-"y": 6.0,
-"xw": 24.4,
+"x": 3.0,
+"y": 21.0,
+"xw": 11.8,
 "rssi": [
--57.25,
--49.5,
--55.0,
--53.0
+-52.0,
+null,
+-57.0,
+null
 ],
 "calls": {
-"strongest antenna": 2,
-"RSSI-weighted x": 3,
-"RSSI lookup (kNN)": 4,
-"phase pattern (kNN)": 1,
-"phase + RSSI (kNN)": 4
+"strongest antenna": 1,
+"RSSI-weighted x": 1,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 2,
+"phase + RSSI (kNN)": 1
 },
-"best": 0.771,
-"best_same": 0.771
+"best": 0.972,
+"best_same": 0.914
 },
 {
-"set": "test 4zone_12box",
+"set": "test 4zone_cal32_repeat",
 "power": 12.0,
-"box": "650",
+"box": "657",
 "zone": 1,
-"x": 5.999999999999999,
-"y": 12.0,
-"xw": 13.1,
+"x": 9.0,
+"y": 21.0,
+"xw": 10.9,
 "rssi": [
--40.0,
--41.5,
--49.5,
+-53.0,
+null,
+-59.0,
+null
+],
+"calls": {
+"strongest antenna": 1,
+"RSSI-weighted x": 1,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 2,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.995,
+"best_same": 0.947
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "661",
+"zone": 2,
+"x": 15.0,
+"y": 21.0,
+"xw": 20.9,
+"rssi": [
+-54.0,
+null,
+null,
+-55.5
+],
+"calls": {
+"strongest antenna": 1,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 2,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.992,
+"best_same": 0.992
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "666",
+"zone": 2,
+"x": 21.0,
+"y": 21.0,
+"xw": 24.0,
+"rssi": [
+null,
+null,
+null,
+null
+],
+"calls": {
+"strongest antenna": 0,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 3,
+"phase pattern (kNN)": 1,
+"phase + RSSI (kNN)": 3
+},
+"best": 0.0,
+"best_same": 0.0
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "202",
+"zone": 3,
+"x": 27.0,
+"y": 21.0,
+"xw": 26.7,
+"rssi": [
+-54.5,
+-53.5,
+-53.0,
 -52.0
 ],
 "calls": {
-"strongest antenna": 1,
-"RSSI-weighted x": 2,
-"RSSI lookup (kNN)": 1,
-"phase pattern (kNN)": 1,
-"phase + RSSI (kNN)": 1
-},
-"best": 0.867,
-"best_same": 0.867
-},
-{
-"set": "test 4zone_12box",
-"power": 12.0,
-"box": "651",
-"zone": 1,
-"x": 5.999999999999999,
-"y": 18.0,
-"xw": 15.7,
-"rssi": [
--49.0,
--56.0,
--53.5,
--57.0
-],
-"calls": {
-"strongest antenna": 1,
-"RSSI-weighted x": 2,
-"RSSI lookup (kNN)": 1,
-"phase pattern (kNN)": 1,
-"phase + RSSI (kNN)": 1
-},
-"best": 0.774,
-"best_same": 0.774
-},
-{
-"set": "test 4zone_12box",
-"power": 12.0,
-"box": "653",
-"zone": 2,
-"x": 17.999999999999996,
-"y": 6.0,
-"xw": 24.8,
-"rssi": [
--57.25,
--52.0,
--53.5,
--55.0
-],
-"calls": {
-"strongest antenna": 2,
-"RSSI-weighted x": 3,
-"RSSI lookup (kNN)": 4,
-"phase pattern (kNN)": 1,
-"phase + RSSI (kNN)": 3
-},
-"best": 0.799,
-"best_same": 0.726
-},
-{
-"set": "test 4zone_12box",
-"power": 12.0,
-"box": "654",
-"zone": 2,
-"x": 17.999999999999996,
-"y": 12.0,
-"xw": 17.8,
-"rssi": [
--47.0,
--42.0,
--54.0,
--51.5
-],
-"calls": {
-"strongest antenna": 2,
-"RSSI-weighted x": 2,
-"RSSI lookup (kNN)": 1,
-"phase pattern (kNN)": 2,
-"phase + RSSI (kNN)": 2
-},
-"best": 0.887,
-"best_same": 0.887
-},
-{
-"set": "test 4zone_12box",
-"power": 12.0,
-"box": "655",
-"zone": 2,
-"x": 17.999999999999996,
-"y": 18.0,
-"xw": 29.9,
-"rssi": [
--55.0,
--57.5,
--56.0,
--51.0
-],
-"calls": {
 "strongest antenna": 4,
 "RSSI-weighted x": 3,
 "RSSI lookup (kNN)": 3,
 "phase pattern (kNN)": 2,
-"phase + RSSI (kNN)": 2
+"phase + RSSI (kNN)": 3
 },
-"best": 0.943,
-"best_same": 0.943
+"best": 0.904,
+"best_same": 0.88
 },
 {
-"set": "test 4zone_12box",
+"set": "test 4zone_cal32_repeat",
 "power": 12.0,
-"box": "656",
+"box": "206",
 "zone": 3,
-"x": 30.0,
-"y": 6.0,
-"xw": 33.0,
+"x": 33.0,
+"y": 21.0,
+"xw": 13.1,
 "rssi": [
--57.0,
 -51.0,
--50.0,
--46.5
-],
-"calls": {
-"strongest antenna": 4,
-"RSSI-weighted x": 3,
-"RSSI lookup (kNN)": 4,
-"phase pattern (kNN)": 2,
-"phase + RSSI (kNN)": 3
-},
-"best": 0.943,
-"best_same": 0.662
-},
-{
-"set": "test 4zone_12box",
-"power": 12.0,
-"box": "657",
-"zone": 3,
-"x": 30.0,
-"y": 12.0,
-"xw": 31.5,
-"rssi": [
--56.0,
--47.0,
--46.0,
--44.5
-],
-"calls": {
-"strongest antenna": 4,
-"RSSI-weighted x": 3,
-"RSSI lookup (kNN)": 4,
-"phase pattern (kNN)": 2,
-"phase + RSSI (kNN)": 4
-},
-"best": 0.979,
-"best_same": 0.818
-},
-{
-"set": "test 4zone_12box",
-"power": 12.0,
-"box": "658",
-"zone": 3,
-"x": 30.0,
-"y": 18.0,
-"xw": 20.9,
-"rssi": [
--55.5,
--57.5,
--56.5,
--59.0
+-55.0,
+-56.25,
+null
 ],
 "calls": {
 "strongest antenna": 1,
 "RSSI-weighted x": 2,
-"RSSI lookup (kNN)": 3,
-"phase pattern (kNN)": 2,
-"phase + RSSI (kNN)": 3
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 1,
+"phase + RSSI (kNN)": 1
 },
-"best": 0.878,
-"best_same": 0.849
-},
-{
-"set": "test 4zone_12box",
-"power": 12.0,
-"box": "659",
-"zone": 4,
-"x": 42.0,
-"y": 6.0,
-"xw": 31.6,
-"rssi": [
--56.0,
--50.0,
--52.5,
--47.0
-],
-"calls": {
-"strongest antenna": 4,
-"RSSI-weighted x": 3,
-"RSSI lookup (kNN)": 4,
-"phase pattern (kNN)": 4,
-"phase + RSSI (kNN)": 4
-},
-"best": 0.785,
-"best_same": 0.785
+"best": 0.994,
+"best_same": 0.993
 },
 {
-"set": "test 4zone_12box",
+"set": "test 4zone_cal32_repeat",
 "power": 12.0,
-"box": "660",
+"box": "210",
 "zone": 4,
-"x": 42.0,
-"y": 12.0,
-"xw": 34.5,
-"rssi": [
--52.0,
--50.5,
--45.0,
--42.0
-],
-"calls": {
-"strongest antenna": 4,
-"RSSI-weighted x": 3,
-"RSSI lookup (kNN)": 4,
-"phase pattern (kNN)": 4,
-"phase + RSSI (kNN)": 4
-},
-"best": 0.886,
-"best_same": 0.886
-},
-{
-"set": "test 4zone_12box",
-"power": 12.0,
-"box": "661",
-"zone": 4,
-"x": 42.0,
-"y": 18.0,
-"xw": 26.3,
+"x": 39.0,
+"y": 21.0,
+"xw": 27.5,
 "rssi": [
 null,
--55.5,
--60.0,
--59.0
+-52.5,
+-55.0,
+-55.0
 ],
 "calls": {
 "strongest antenna": 2,
 "RSSI-weighted x": 3,
 "RSSI lookup (kNN)": 2,
 "phase pattern (kNN)": 4,
+"phase + RSSI (kNN)": 4
+},
+"best": 0.953,
+"best_same": 0.953
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "215",
+"zone": 4,
+"x": 45.0,
+"y": 21.0,
+"xw": 26.1,
+"rssi": [
+null,
+-51.5,
+-55.0,
+-55.5
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 2,
+"phase pattern (kNN)": 2,
+"phase + RSSI (kNN)": 4
+},
+"best": 0.988,
+"best_same": 0.907
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "651",
+"zone": 1,
+"x": 3.0,
+"y": 15.0,
+"xw": 18.5,
+"rssi": [
+-45.0,
+-56.5,
+-48.5,
+-50.0
+],
+"calls": {
+"strongest antenna": 1,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 1,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.954,
+"best_same": 0.954
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "656",
+"zone": 1,
+"x": 9.0,
+"y": 15.0,
+"xw": 20.4,
+"rssi": [
+-49.5,
+-48.0,
+-48.0,
+-56.5
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 1,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.977,
+"best_same": 0.977
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "660",
+"zone": 2,
+"x": 15.0,
+"y": 15.0,
+"xw": 23.7,
+"rssi": [
+-49.5,
+-46.0,
+-56.0,
+-47.5
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 2,
+"phase pattern (kNN)": 2,
 "phase + RSSI (kNN)": 2
 },
-"best": 0.943,
-"best_same": 0.943
+"best": 0.917,
+"best_same": 0.917
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "665",
+"zone": 2,
+"x": 21.0,
+"y": 15.0,
+"xw": 32.4,
+"rssi": [
+null,
+-54.5,
+-59.0,
+-52.5
+],
+"calls": {
+"strongest antenna": 4,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 2,
+"phase pattern (kNN)": 2,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.991,
+"best_same": 0.991
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "201",
+"zone": 3,
+"x": 27.0,
+"y": 15.0,
+"xw": 25.2,
+"rssi": [
+null,
+-49.0,
+-50.0,
+-56.0
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 2,
+"phase pattern (kNN)": 2,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.994,
+"best_same": 0.962
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "205",
+"zone": 3,
+"x": 33.0,
+"y": 15.0,
+"xw": 34.2,
+"rssi": [
+-52.5,
+-55.5,
+-46.0,
+-44.0
+],
+"calls": {
+"strongest antenna": 4,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 4,
+"phase pattern (kNN)": 3,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.972,
+"best_same": 0.972
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "209",
+"zone": 4,
+"x": 39.0,
+"y": 15.0,
+"xw": 28.8,
+"rssi": [
+-49.5,
+-54.0,
+-54.5,
+-46.5
+],
+"calls": {
+"strongest antenna": 4,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 2,
+"phase pattern (kNN)": 4,
+"phase + RSSI (kNN)": 4
+},
+"best": 0.896,
+"best_same": 0.896
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "214",
+"zone": 4,
+"x": 45.0,
+"y": 15.0,
+"xw": 28.0,
+"rssi": [
+-58.0,
+-47.0,
+-51.5,
+-48.0
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 4,
+"phase pattern (kNN)": 4,
+"phase + RSSI (kNN)": 4
+},
+"best": 0.936,
+"best_same": 0.936
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "650",
+"zone": 1,
+"x": 3.0,
+"y": 9.0,
+"xw": 10.6,
+"rssi": [
+-43.5,
+-47.0,
+-55.5,
+null
+],
+"calls": {
+"strongest antenna": 1,
+"RSSI-weighted x": 1,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 1,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.975,
+"best_same": 0.975
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "655",
+"zone": 1,
+"x": 9.0,
+"y": 9.0,
+"xw": 12.3,
+"rssi": [
+-43.0,
+-44.5,
+-56.5,
+-56.0
+],
+"calls": {
+"strongest antenna": 1,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 2,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.97,
+"best_same": 0.957
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "659",
+"zone": 2,
+"x": 15.0,
+"y": 9.0,
+"xw": 11.0,
+"rssi": [
+-43.0,
+-48.0,
+-55.5,
+-55.5
+],
+"calls": {
+"strongest antenna": 1,
+"RSSI-weighted x": 1,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 1,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.975,
+"best_same": 0.957
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "664",
+"zone": 2,
+"x": 21.0,
+"y": 9.0,
+"xw": 16.4,
+"rssi": [
+-47.0,
+-42.0,
+-54.5,
+-56.5
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 2,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.925,
+"best_same": 0.925
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "200",
+"zone": 3,
+"x": 27.0,
+"y": 9.0,
+"xw": 17.4,
+"rssi": [
+-45.5,
+-41.5,
+-49.5,
+-52.5
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 1,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.927,
+"best_same": 0.83
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "204",
+"zone": 3,
+"x": 33.0,
+"y": 9.0,
+"xw": 35.4,
+"rssi": [
+-55.5,
+-46.0,
+-46.0,
+-40.0
+],
+"calls": {
+"strongest antenna": 4,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 3,
+"phase pattern (kNN)": 2,
+"phase + RSSI (kNN)": 3
+},
+"best": 0.939,
+"best_same": 0.905
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "208",
+"zone": 4,
+"x": 39.0,
+"y": 9.0,
+"xw": 35.3,
+"rssi": [
+-55.5,
+-51.0,
+-46.5,
+-43.0
+],
+"calls": {
+"strongest antenna": 4,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 3,
+"phase pattern (kNN)": 1,
+"phase + RSSI (kNN)": 4
+},
+"best": 0.916,
+"best_same": 0.907
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "213",
+"zone": 4,
+"x": 45.0,
+"y": 9.0,
+"xw": 32.9,
+"rssi": [
+-55.5,
+-57.25,
+-44.5,
+-46.5
+],
+"calls": {
+"strongest antenna": 3,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 4,
+"phase pattern (kNN)": 4,
+"phase + RSSI (kNN)": 4
+},
+"best": 0.963,
+"best_same": 0.963
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "649",
+"zone": 1,
+"x": 3.0,
+"y": 3.0,
+"xw": 13.4,
+"rssi": [
+-50.0,
+-48.0,
+null,
+null
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 4,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.991,
+"best_same": 0.932
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "654",
+"zone": 1,
+"x": 9.0,
+"y": 3.0,
+"xw": 11.2,
+"rssi": [
+-46.5,
+-53.5,
+null,
+-55.5
+],
+"calls": {
+"strongest antenna": 1,
+"RSSI-weighted x": 1,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 2,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.945,
+"best_same": 0.835
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "658",
+"zone": 2,
+"x": 15.0,
+"y": 3.0,
+"xw": 20.2,
+"rssi": [
+null,
+-50.0,
+-56.5,
+null
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 2,
+"phase pattern (kNN)": 1,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.963,
+"best_same": 0.959
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "662",
+"zone": 2,
+"x": 21.0,
+"y": 3.0,
+"xw": 19.5,
+"rssi": [
+null,
+-47.5,
+-56.0,
+null
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 2,
+"phase pattern (kNN)": 2,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.912,
+"best_same": 0.912
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "199",
+"zone": 3,
+"x": 27.0,
+"y": 3.0,
+"xw": 26.9,
+"rssi": [
+-54.5,
+-53.0,
+-51.0,
+-52.0
+],
+"calls": {
+"strongest antenna": 3,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 3,
+"phase pattern (kNN)": 3,
+"phase + RSSI (kNN)": 3
+},
+"best": 0.951,
+"best_same": 0.951
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "203",
+"zone": 3,
+"x": 33.0,
+"y": 3.0,
+"xw": 29.1,
+"rssi": [
+-56.5,
+-55.0,
+-43.5,
+-54.5
+],
+"calls": {
+"strongest antenna": 3,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 3,
+"phase pattern (kNN)": 3,
+"phase + RSSI (kNN)": 3
+},
+"best": 0.954,
+"best_same": 0.954
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "207",
+"zone": 4,
+"x": 39.0,
+"y": 3.0,
+"xw": 38.8,
+"rssi": [
+null,
+-59.0,
+-53.0,
+-46.5
+],
+"calls": {
+"strongest antenna": 4,
+"RSSI-weighted x": 4,
+"RSSI lookup (kNN)": 4,
+"phase pattern (kNN)": 2,
+"phase + RSSI (kNN)": 4
+},
+"best": 0.958,
+"best_same": 0.809
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 12.0,
+"box": "211",
+"zone": 4,
+"x": 45.0,
+"y": 3.0,
+"xw": 33.1,
+"rssi": [
+null,
+null,
+-46.5,
+-51.0
+],
+"calls": {
+"strongest antenna": 3,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 4,
+"phase pattern (kNN)": 4,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.906,
+"best_same": 0.906
 },
 {
 "set": "cal (leave-one-out)",
@@ -5412,42 +5892,402 @@ null,
 "best_same": 0.741
 },
 {
-"set": "test 4zone_12box",
+"set": "test 4zone_cal32_repeat",
 "power": 15.0,
-"box": "649",
+"box": "653",
 "zone": 1,
-"x": 5.999999999999999,
-"y": 6.0,
-"xw": 26.9,
+"x": 3.0,
+"y": 21.0,
+"xw": 15.3,
 "rssi": [
--56.5,
+-48.0,
+null,
+-55.5,
+-54.0
+],
+"calls": {
+"strongest antenna": 1,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 2,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.879,
+"best_same": 0.868
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 15.0,
+"box": "657",
+"zone": 1,
+"x": 9.0,
+"y": 21.0,
+"xw": 11.4,
+"rssi": [
+-50.5,
+null,
+-59.5,
+-60.5
+],
+"calls": {
+"strongest antenna": 1,
+"RSSI-weighted x": 1,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 4,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.917,
+"best_same": 0.901
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 15.0,
+"box": "661",
+"zone": 2,
+"x": 15.0,
+"y": 21.0,
+"xw": 20.9,
+"rssi": [
+-51.0,
+null,
+null,
+-52.5
+],
+"calls": {
+"strongest antenna": 1,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 2,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.951,
+"best_same": 0.951
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 15.0,
+"box": "666",
+"zone": 2,
+"x": 21.0,
+"y": 21.0,
+"xw": 33.3,
+"rssi": [
+null,
+-58.0,
+null,
+-55.5
+],
+"calls": {
+"strongest antenna": 4,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 2,
+"phase pattern (kNN)": 3,
+"phase + RSSI (kNN)": 3
+},
+"best": 0.963,
+"best_same": 0.878
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 15.0,
+"box": "202",
+"zone": 3,
+"x": 27.0,
+"y": 21.0,
+"xw": 25.9,
+"rssi": [
+-52.0,
+-51.0,
+-52.0,
+-50.0
+],
+"calls": {
+"strongest antenna": 4,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 3,
+"phase pattern (kNN)": 3,
+"phase + RSSI (kNN)": 3
+},
+"best": 0.844,
+"best_same": 0.844
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 15.0,
+"box": "206",
+"zone": 3,
+"x": 33.0,
+"y": 21.0,
+"xw": 17.7,
+"rssi": [
+-49.75,
+-55.0,
+-53.5,
+-55.5
+],
+"calls": {
+"strongest antenna": 1,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 4,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.924,
+"best_same": 0.917
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 15.0,
+"box": "210",
+"zone": 4,
+"x": 39.0,
+"y": 21.0,
+"xw": 26.8,
+"rssi": [
+-57.5,
+-53.0,
+-54.0,
+-53.5
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 3,
+"phase pattern (kNN)": 4,
+"phase + RSSI (kNN)": 3
+},
+"best": 0.826,
+"best_same": 0.826
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 15.0,
+"box": "215",
+"zone": 4,
+"x": 45.0,
+"y": 21.0,
+"xw": 23.0,
+"rssi": [
+-57.5,
+-49.5,
+-52.0,
+-56.5
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 4,
+"phase pattern (kNN)": 4,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.821,
+"best_same": 0.821
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 15.0,
+"box": "651",
+"zone": 1,
+"x": 3.0,
+"y": 15.0,
+"xw": 19.2,
+"rssi": [
+-42.5,
+-52.0,
+-45.0,
+-47.5
+],
+"calls": {
+"strongest antenna": 1,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 1,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.936,
+"best_same": 0.936
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 15.0,
+"box": "656",
+"zone": 1,
+"x": 9.0,
+"y": 15.0,
+"xw": 19.9,
+"rssi": [
+-46.5,
+-45.5,
+-45.5,
+-54.5
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 1,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.972,
+"best_same": 0.972
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 15.0,
+"box": "660",
+"zone": 2,
+"x": 15.0,
+"y": 15.0,
+"xw": 25.4,
+"rssi": [
 -47.0,
--54.5,
--48.5
+-43.0,
+-54.0,
+-43.5
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 2,
+"phase pattern (kNN)": 2,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.905,
+"best_same": 0.905
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 15.0,
+"box": "665",
+"zone": 2,
+"x": 21.0,
+"y": 15.0,
+"xw": 32.6,
+"rssi": [
+-58.0,
+-53.5,
+-53.5,
+-49.0
+],
+"calls": {
+"strongest antenna": 4,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 2,
+"phase pattern (kNN)": 1,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.864,
+"best_same": 0.85
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 15.0,
+"box": "201",
+"zone": 3,
+"x": 27.0,
+"y": 15.0,
+"xw": 23.2,
+"rssi": [
+-58.0,
+-45.5,
+-47.5,
+-55.5
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 2,
+"phase pattern (kNN)": 3,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.917,
+"best_same": 0.917
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 15.0,
+"box": "205",
+"zone": 3,
+"x": 33.0,
+"y": 15.0,
+"xw": 34.2,
+"rssi": [
+-49.5,
+-53.5,
+-44.0,
+-41.5
+],
+"calls": {
+"strongest antenna": 4,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 2,
+"phase pattern (kNN)": 3,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.939,
+"best_same": 0.939
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 15.0,
+"box": "209",
+"zone": 4,
+"x": 39.0,
+"y": 15.0,
+"xw": 28.5,
+"rssi": [
+-46.5,
+-54.0,
+-51.5,
+-44.0
+],
+"calls": {
+"strongest antenna": 4,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 2,
+"phase pattern (kNN)": 4,
+"phase + RSSI (kNN)": 4
+},
+"best": 0.863,
+"best_same": 0.863
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 15.0,
+"box": "214",
+"zone": 4,
+"x": 45.0,
+"y": 15.0,
+"xw": 28.5,
+"rssi": [
+-55.0,
+-44.5,
+-49.0,
+-45.0
 ],
 "calls": {
 "strongest antenna": 2,
 "RSSI-weighted x": 3,
 "RSSI lookup (kNN)": 4,
-"phase pattern (kNN)": 1,
+"phase pattern (kNN)": 4,
 "phase + RSSI (kNN)": 4
 },
-"best": 0.683,
-"best_same": 0.683
+"best": 0.94,
+"best_same": 0.94
 },
 {
-"set": "test 4zone_12box",
+"set": "test 4zone_cal32_repeat",
 "power": 15.0,
 "box": "650",
 "zone": 1,
-"x": 5.999999999999999,
-"y": 12.0,
-"xw": 11.5,
+"x": 3.0,
+"y": 9.0,
+"xw": 11.4,
 "rssi": [
--36.0,
--39.0,
--48.5,
--50.0
+-40.5,
+-44.5,
+-51.5,
+-54.0
 ],
 "calls": {
 "strongest antenna": 1,
@@ -5456,70 +6296,70 @@ null,
 "phase pattern (kNN)": 1,
 "phase + RSSI (kNN)": 1
 },
-"best": 0.858,
-"best_same": 0.858
+"best": 0.919,
+"best_same": 0.919
 },
 {
-"set": "test 4zone_12box",
+"set": "test 4zone_cal32_repeat",
 "power": 15.0,
-"box": "651",
+"box": "655",
 "zone": 1,
-"x": 5.999999999999999,
-"y": 18.0,
-"xw": 14.4,
+"x": 9.0,
+"y": 9.0,
+"xw": 11.9,
 "rssi": [
--44.0,
--53.5,
--48.0,
--56.0
+-40.5,
+-42.0,
+-53.0,
+-58.5
 ],
 "calls": {
 "strongest antenna": 1,
-"RSSI-weighted x": 2,
-"RSSI lookup (kNN)": 1,
+"RSSI-weighted x": 1,
+"RSSI lookup (kNN)": 2,
 "phase pattern (kNN)": 1,
 "phase + RSSI (kNN)": 1
 },
-"best": 0.912,
-"best_same": 0.912
+"best": 0.941,
+"best_same": 0.941
 },
 {
-"set": "test 4zone_12box",
+"set": "test 4zone_cal32_repeat",
 "power": 15.0,
-"box": "653",
+"box": "659",
 "zone": 2,
-"x": 17.999999999999996,
-"y": 6.0,
-"xw": 25.1,
+"x": 15.0,
+"y": 9.0,
+"xw": 10.7,
 "rssi": [
--55.0,
--48.5,
--49.5,
--52.0
+-40.0,
+-45.0,
+-54.75,
+-52.5
 ],
 "calls": {
-"strongest antenna": 2,
-"RSSI-weighted x": 3,
-"RSSI lookup (kNN)": 4,
+"strongest antenna": 1,
+"RSSI-weighted x": 1,
+"RSSI lookup (kNN)": 1,
 "phase pattern (kNN)": 2,
 "phase + RSSI (kNN)": 2
 },
-"best": 0.736,
-"best_same": 0.736
+"best": 0.911,
+"best_same": 0.911
 },
 {
-"set": "test 4zone_12box",
+"set": "test 4zone_cal32_repeat",
 "power": 15.0,
-"box": "654",
+"box": "664",
 "zone": 2,
-"x": 17.999999999999996,
-"y": 12.0,
-"xw": 17.2,
+"x": 21.0,
+"y": 9.0,
+"xw": 16.1,
 "rssi": [
--43.0,
+-44.0,
 -39.5,
--52.0,
--48.0
+-51.5,
+-54.75
 ],
 "calls": {
 "strongest antenna": 2,
@@ -5528,176 +6368,296 @@ null,
 "phase pattern (kNN)": 2,
 "phase + RSSI (kNN)": 2
 },
-"best": 0.786,
-"best_same": 0.786
+"best": 0.863,
+"best_same": 0.863
 },
 {
-"set": "test 4zone_12box",
+"set": "test 4zone_cal32_repeat",
 "power": 15.0,
-"box": "655",
-"zone": 2,
-"x": 17.999999999999996,
-"y": 18.0,
-"xw": 31.8,
+"box": "200",
+"zone": 3,
+"x": 27.0,
+"y": 9.0,
+"xw": 16.9,
 "rssi": [
--53.5,
--55.5,
--53.5,
--48.0
+-42.0,
+-39.0,
+-47.5,
+-49.0
 ],
 "calls": {
-"strongest antenna": 4,
-"RSSI-weighted x": 3,
-"RSSI lookup (kNN)": 3,
+"strongest antenna": 2,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 1,
 "phase pattern (kNN)": 2,
-"phase + RSSI (kNN)": 2
+"phase + RSSI (kNN)": 1
 },
-"best": 0.939,
-"best_same": 0.939
+"best": 0.734,
+"best_same": 0.721
 },
 {
-"set": "test 4zone_12box",
+"set": "test 4zone_cal32_repeat",
 "power": 15.0,
-"box": "656",
+"box": "204",
 "zone": 3,
-"x": 30.0,
-"y": 6.0,
-"xw": 35.0,
+"x": 33.0,
+"y": 9.0,
+"xw": 35.2,
 "rssi": [
--54.0,
--49.5,
--47.5,
--42.5
+-53.5,
+-42.5,
+-43.0,
+-37.0
 ],
 "calls": {
 "strongest antenna": 4,
 "RSSI-weighted x": 3,
 "RSSI lookup (kNN)": 2,
-"phase pattern (kNN)": 2,
-"phase + RSSI (kNN)": 2
+"phase pattern (kNN)": 3,
+"phase + RSSI (kNN)": 3
 },
-"best": 0.717,
-"best_same": 0.608
+"best": 0.898,
+"best_same": 0.898
 },
 {
-"set": "test 4zone_12box",
+"set": "test 4zone_cal32_repeat",
 "power": 15.0,
-"box": "657",
-"zone": 3,
-"x": 30.0,
-"y": 12.0,
-"xw": 32.0,
+"box": "208",
+"zone": 4,
+"x": 39.0,
+"y": 9.0,
+"xw": 35.8,
 "rssi": [
--53.0,
+-54.0,
+-49.5,
 -44.0,
--42.5,
--41.0
+-40.5
 ],
 "calls": {
 "strongest antenna": 4,
 "RSSI-weighted x": 3,
 "RSSI lookup (kNN)": 4,
-"phase pattern (kNN)": 2,
-"phase + RSSI (kNN)": 2
+"phase pattern (kNN)": 4,
+"phase + RSSI (kNN)": 4
 },
-"best": 0.82,
-"best_same": 0.766
+"best": 0.775,
+"best_same": 0.775
 },
 {
-"set": "test 4zone_12box",
+"set": "test 4zone_cal32_repeat",
 "power": 15.0,
-"box": "658",
-"zone": 3,
-"x": 30.0,
-"y": 18.0,
-"xw": 19.2,
+"box": "213",
+"zone": 4,
+"x": 45.0,
+"y": 9.0,
+"xw": 32.9,
 "rssi": [
+-55.0,
+-54.5,
+-41.0,
+-44.0
+],
+"calls": {
+"strongest antenna": 3,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 4,
+"phase pattern (kNN)": 4,
+"phase + RSSI (kNN)": 4
+},
+"best": 0.919,
+"best_same": 0.919
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 15.0,
+"box": "649",
+"zone": 1,
+"x": 3.0,
+"y": 3.0,
+"xw": 15.1,
+"rssi": [
+-49.25,
+-45.75,
+-56.75,
+null
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 4,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.93,
+"best_same": 0.891
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 15.0,
+"box": "654",
+"zone": 1,
+"x": 9.0,
+"y": 3.0,
+"xw": 12.0,
+"rssi": [
+-43.0,
 -53.0,
--54.75,
--56.5,
--57.0
+-57.5,
+-51.0
 ],
 "calls": {
 "strongest antenna": 1,
+"RSSI-weighted x": 1,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 3,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.805,
+"best_same": 0.789
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 15.0,
+"box": "658",
+"zone": 2,
+"x": 15.0,
+"y": 3.0,
+"xw": 20.2,
+"rssi": [
+-57.5,
+-46.5,
+-53.5,
+-58.5
+],
+"calls": {
+"strongest antenna": 2,
 "RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 2,
+"phase pattern (kNN)": 2,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.889,
+"best_same": 0.889
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 15.0,
+"box": "662",
+"zone": 2,
+"x": 21.0,
+"y": 3.0,
+"xw": 19.1,
+"rssi": [
+-58.5,
+-44.5,
+-54.0,
+-61.5
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 2,
+"phase pattern (kNN)": 2,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.855,
+"best_same": 0.855
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 15.0,
+"box": "199",
+"zone": 3,
+"x": 27.0,
+"y": 3.0,
+"xw": 28.2,
+"rssi": [
+-52.0,
+-49.5,
+-53.0,
+-47.5
+],
+"calls": {
+"strongest antenna": 4,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 2,
+"phase pattern (kNN)": 3,
+"phase + RSSI (kNN)": 3
+},
+"best": 0.894,
+"best_same": 0.894
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 15.0,
+"box": "203",
+"zone": 3,
+"x": 33.0,
+"y": 3.0,
+"xw": 28.9,
+"rssi": [
+-54.5,
+-53.0,
+-41.0,
+-54.0
+],
+"calls": {
+"strongest antenna": 3,
+"RSSI-weighted x": 3,
 "RSSI lookup (kNN)": 3,
 "phase pattern (kNN)": 3,
 "phase + RSSI (kNN)": 3
 },
-"best": 0.764,
-"best_same": 0.764
+"best": 0.95,
+"best_same": 0.95
 },
 {
-"set": "test 4zone_12box",
+"set": "test 4zone_cal32_repeat",
 "power": 15.0,
-"box": "659",
+"box": "207",
 "zone": 4,
-"x": 42.0,
-"y": 6.0,
-"xw": 34.5,
+"x": 39.0,
+"y": 3.0,
+"xw": 39.0,
 "rssi": [
--57.5,
--48.5,
+null,
+-58.0,
 -49.5,
 -43.5
 ],
 "calls": {
 "strongest antenna": 4,
-"RSSI-weighted x": 3,
-"RSSI lookup (kNN)": 2,
-"phase pattern (kNN)": 4,
-"phase + RSSI (kNN)": 2
-},
-"best": 0.691,
-"best_same": 0.691
-},
-{
-"set": "test 4zone_12box",
-"power": 15.0,
-"box": "660",
-"zone": 4,
-"x": 42.0,
-"y": 12.0,
-"xw": 33.7,
-"rssi": [
--47.5,
--47.5,
--41.5,
--39.0
-],
-"calls": {
-"strongest antenna": 4,
-"RSSI-weighted x": 3,
-"RSSI lookup (kNN)": 2,
-"phase pattern (kNN)": 4,
-"phase + RSSI (kNN)": 4
-},
-"best": 0.725,
-"best_same": 0.725
-},
-{
-"set": "test 4zone_12box",
-"power": 15.0,
-"box": "661",
-"zone": 4,
-"x": 42.0,
-"y": 18.0,
-"xw": 25.3,
-"rssi": [
-null,
--53.5,
--58.5,
--58.0
-],
-"calls": {
-"strongest antenna": 2,
-"RSSI-weighted x": 3,
+"RSSI-weighted x": 4,
 "RSSI lookup (kNN)": 4,
 "phase pattern (kNN)": 4,
 "phase + RSSI (kNN)": 4
 },
-"best": 0.801,
-"best_same": 0.801
+"best": 0.789,
+"best_same": 0.789
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 15.0,
+"box": "211",
+"zone": 4,
+"x": 45.0,
+"y": 3.0,
+"xw": 30.9,
+"rssi": [
+-57.0,
+-55.5,
+-43.5,
+-49.5
+],
+"calls": {
+"strongest antenna": 3,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 3,
+"phase pattern (kNN)": 4,
+"phase + RSSI (kNN)": 4
+},
+"best": 0.962,
+"best_same": 0.962
 },
 {
 "set": "cal (leave-one-out)",
@@ -6466,6 +7426,774 @@ null,
 },
 "best": 0.598,
 "best_same": 0.526
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "653",
+"zone": 1,
+"x": 3.0,
+"y": 21.0,
+"xw": 12.6,
+"rssi": [
+-44.5,
+-59.0,
+-52.5,
+-53.5
+],
+"calls": {
+"strongest antenna": 1,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 1,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.679,
+"best_same": 0.679
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "657",
+"zone": 1,
+"x": 9.0,
+"y": 21.0,
+"xw": 10.7,
+"rssi": [
+-47.0,
+-58.25,
+-58.5,
+-57.5
+],
+"calls": {
+"strongest antenna": 1,
+"RSSI-weighted x": 1,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 3,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.81,
+"best_same": 0.766
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "661",
+"zone": 2,
+"x": 15.0,
+"y": 21.0,
+"xw": 21.3,
+"rssi": [
+-47.0,
+-56.0,
+-56.0,
+-48.5
+],
+"calls": {
+"strongest antenna": 1,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 2,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.844,
+"best_same": 0.844
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "666",
+"zone": 2,
+"x": 21.0,
+"y": 21.0,
+"xw": 29.1,
+"rssi": [
+-56.0,
+-56.5,
+-57.0,
+-52.0
+],
+"calls": {
+"strongest antenna": 4,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 3,
+"phase pattern (kNN)": 3,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.809,
+"best_same": 0.809
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "202",
+"zone": 3,
+"x": 27.0,
+"y": 21.0,
+"xw": 26.1,
+"rssi": [
+-48.5,
+-48.5,
+-48.0,
+-46.75
+],
+"calls": {
+"strongest antenna": 4,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 3,
+"phase pattern (kNN)": 3,
+"phase + RSSI (kNN)": 3
+},
+"best": 0.763,
+"best_same": 0.763
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "206",
+"zone": 3,
+"x": 33.0,
+"y": 21.0,
+"xw": 27.3,
+"rssi": [
+-53.5,
+-53.0,
+-50.5,
+-51.0
+],
+"calls": {
+"strongest antenna": 3,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 3,
+"phase pattern (kNN)": 3,
+"phase + RSSI (kNN)": 3
+},
+"best": 0.825,
+"best_same": 0.825
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "210",
+"zone": 4,
+"x": 39.0,
+"y": 21.0,
+"xw": 28.6,
+"rssi": [
+-55.5,
+-49.5,
+-50.0,
+-49.0
+],
+"calls": {
+"strongest antenna": 4,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 4,
+"phase pattern (kNN)": 4,
+"phase + RSSI (kNN)": 3
+},
+"best": 0.688,
+"best_same": 0.688
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "215",
+"zone": 4,
+"x": 45.0,
+"y": 21.0,
+"xw": 22.5,
+"rssi": [
+-55.5,
+-44.5,
+-48.5,
+-53.0
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 2,
+"phase pattern (kNN)": 4,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.728,
+"best_same": 0.728
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "651",
+"zone": 1,
+"x": 3.0,
+"y": 15.0,
+"xw": 16.9,
+"rssi": [
+-38.0,
+-47.5,
+-42.0,
+-44.5
+],
+"calls": {
+"strongest antenna": 1,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 1,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.937,
+"best_same": 0.937
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "656",
+"zone": 1,
+"x": 9.0,
+"y": 15.0,
+"xw": 19.2,
+"rssi": [
+-42.5,
+-42.0,
+-42.5,
+-50.5
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 1,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.952,
+"best_same": 0.952
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "660",
+"zone": 2,
+"x": 15.0,
+"y": 15.0,
+"xw": 26.5,
+"rssi": [
+-44.0,
+-39.5,
+-51.0,
+-39.5
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 3,
+"phase pattern (kNN)": 2,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.893,
+"best_same": 0.893
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "665",
+"zone": 2,
+"x": 21.0,
+"y": 15.0,
+"xw": 35.7,
+"rssi": [
+-55.5,
+-56.5,
+-52.0,
+-46.0
+],
+"calls": {
+"strongest antenna": 4,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 4,
+"phase pattern (kNN)": 2,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.774,
+"best_same": 0.774
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "201",
+"zone": 3,
+"x": 27.0,
+"y": 15.0,
+"xw": 23.8,
+"rssi": [
+-56.5,
+-42.5,
+-44.0,
+-52.0
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 2,
+"phase pattern (kNN)": 3,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.866,
+"best_same": 0.866
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "205",
+"zone": 3,
+"x": 33.0,
+"y": 15.0,
+"xw": 34.7,
+"rssi": [
+-46.5,
+-49.5,
+-40.0,
+-37.5
+],
+"calls": {
+"strongest antenna": 4,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 2,
+"phase pattern (kNN)": 3,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.914,
+"best_same": 0.914
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "209",
+"zone": 4,
+"x": 39.0,
+"y": 15.0,
+"xw": 30.2,
+"rssi": [
+-44.0,
+-51.5,
+-47.0,
+-40.5
+],
+"calls": {
+"strongest antenna": 4,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 4,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.843,
+"best_same": 0.843
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "214",
+"zone": 4,
+"x": 45.0,
+"y": 15.0,
+"xw": 28.2,
+"rssi": [
+-53.0,
+-41.0,
+-45.5,
+-42.0
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 4,
+"phase pattern (kNN)": 4,
+"phase + RSSI (kNN)": 4
+},
+"best": 0.949,
+"best_same": 0.949
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "650",
+"zone": 1,
+"x": 3.0,
+"y": 9.0,
+"xw": 11.3,
+"rssi": [
+-36.5,
+-41.5,
+-47.25,
+-49.5
+],
+"calls": {
+"strongest antenna": 1,
+"RSSI-weighted x": 1,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 1,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.92,
+"best_same": 0.92
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "655",
+"zone": 1,
+"x": 9.0,
+"y": 9.0,
+"xw": 11.7,
+"rssi": [
+-37.0,
+-39.0,
+-48.5,
+-55.0
+],
+"calls": {
+"strongest antenna": 1,
+"RSSI-weighted x": 1,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 1,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.939,
+"best_same": 0.939
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "659",
+"zone": 2,
+"x": 15.0,
+"y": 9.0,
+"xw": 11.2,
+"rssi": [
+-36.25,
+-40.5,
+-53.0,
+-47.5
+],
+"calls": {
+"strongest antenna": 1,
+"RSSI-weighted x": 1,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 2,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.889,
+"best_same": 0.889
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "664",
+"zone": 2,
+"x": 21.0,
+"y": 9.0,
+"xw": 15.2,
+"rssi": [
+-40.0,
+-37.0,
+-49.0,
+-52.0
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 2,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.887,
+"best_same": 0.887
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "200",
+"zone": 3,
+"x": 27.0,
+"y": 9.0,
+"xw": 16.9,
+"rssi": [
+-38.0,
+-35.0,
+-44.5,
+-44.5
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 2,
+"phase pattern (kNN)": 2,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.731,
+"best_same": 0.698
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "204",
+"zone": 3,
+"x": 33.0,
+"y": 9.0,
+"xw": 35.5,
+"rssi": [
+-52.5,
+-39.0,
+-40.0,
+-33.5
+],
+"calls": {
+"strongest antenna": 4,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 4,
+"phase pattern (kNN)": 3,
+"phase + RSSI (kNN)": 4
+},
+"best": 0.796,
+"best_same": 0.796
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "208",
+"zone": 4,
+"x": 39.0,
+"y": 9.0,
+"xw": 35.8,
+"rssi": [
+-50.5,
+-45.0,
+-41.5,
+-37.0
+],
+"calls": {
+"strongest antenna": 4,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 2,
+"phase pattern (kNN)": 4,
+"phase + RSSI (kNN)": 4
+},
+"best": 0.772,
+"best_same": 0.772
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "213",
+"zone": 4,
+"x": 45.0,
+"y": 9.0,
+"xw": 33.4,
+"rssi": [
+-53.25,
+-52.0,
+-38.0,
+-40.5
+],
+"calls": {
+"strongest antenna": 3,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 4,
+"phase pattern (kNN)": 4,
+"phase + RSSI (kNN)": 4
+},
+"best": 0.803,
+"best_same": 0.803
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "649",
+"zone": 1,
+"x": 3.0,
+"y": 3.0,
+"xw": 14.9,
+"rssi": [
+-45.0,
+-42.0,
+-55.0,
+-59.0
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 1,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.815,
+"best_same": 0.815
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "654",
+"zone": 1,
+"x": 9.0,
+"y": 3.0,
+"xw": 10.9,
+"rssi": [
+-38.0,
+-48.5,
+-56.0,
+-47.0
+],
+"calls": {
+"strongest antenna": 1,
+"RSSI-weighted x": 1,
+"RSSI lookup (kNN)": 1,
+"phase pattern (kNN)": 1,
+"phase + RSSI (kNN)": 1
+},
+"best": 0.717,
+"best_same": 0.717
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "658",
+"zone": 2,
+"x": 15.0,
+"y": 3.0,
+"xw": 19.8,
+"rssi": [
+-58.5,
+-41.5,
+-50.0,
+-57.0
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 2,
+"phase pattern (kNN)": 2,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.644,
+"best_same": 0.644
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "662",
+"zone": 2,
+"x": 21.0,
+"y": 3.0,
+"xw": 19.3,
+"rssi": [
+-57.5,
+-41.0,
+-50.5,
+-58.5
+],
+"calls": {
+"strongest antenna": 2,
+"RSSI-weighted x": 2,
+"RSSI lookup (kNN)": 2,
+"phase pattern (kNN)": 3,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.729,
+"best_same": 0.711
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "199",
+"zone": 3,
+"x": 27.0,
+"y": 3.0,
+"xw": 29.1,
+"rssi": [
+-51.5,
+-43.5,
+-49.0,
+-43.0
+],
+"calls": {
+"strongest antenna": 4,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 3,
+"phase pattern (kNN)": 3,
+"phase + RSSI (kNN)": 2
+},
+"best": 0.798,
+"best_same": 0.798
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "203",
+"zone": 3,
+"x": 33.0,
+"y": 3.0,
+"xw": 29.0,
+"rssi": [
+-51.0,
+-52.0,
+-37.0,
+-53.5
+],
+"calls": {
+"strongest antenna": 3,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 4,
+"phase pattern (kNN)": 3,
+"phase + RSSI (kNN)": 3
+},
+"best": 0.865,
+"best_same": 0.865
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "207",
+"zone": 4,
+"x": 39.0,
+"y": 3.0,
+"xw": 39.1,
+"rssi": [
+-63.5,
+-54.5,
+-46.5,
+-40.0
+],
+"calls": {
+"strongest antenna": 4,
+"RSSI-weighted x": 4,
+"RSSI lookup (kNN)": 4,
+"phase pattern (kNN)": 4,
+"phase + RSSI (kNN)": 4
+},
+"best": 0.756,
+"best_same": 0.756
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
+"box": "211",
+"zone": 4,
+"x": 45.0,
+"y": 3.0,
+"xw": 31.7,
+"rssi": [
+-54.5,
+-55.5,
+-39.5,
+-45.0
+],
+"calls": {
+"strongest antenna": 3,
+"RSSI-weighted x": 3,
+"RSSI lookup (kNN)": 4,
+"phase pattern (kNN)": 4,
+"phase + RSSI (kNN)": 4
+},
+"best": 0.589,
+"best_same": 0.589
 }
 ],
 "cal32_acc": [
@@ -6500,24 +8228,34 @@ null,
 "n": 32
 },
 {
-"set": "test 4zone_12box",
+"set": "test 4zone_cal32_repeat",
 "power": 12.0,
-"strongest antenna": 0.5,
-"RSSI-weighted x": 0.25,
-"RSSI lookup (kNN)": 0.417,
-"phase pattern (kNN)": 0.667,
-"phase + RSSI (kNN)": 0.667,
-"n": 12
+"strongest antenna": 0.469,
+"RSSI-weighted x": 0.5,
+"RSSI lookup (kNN)": 0.625,
+"phase pattern (kNN)": 0.5,
+"phase + RSSI (kNN)": 0.781,
+"n": 32
 },
 {
-"set": "test 4zone_12box",
+"set": "test 4zone_cal32_repeat",
 "power": 15.0,
+"strongest antenna": 0.438,
+"RSSI-weighted x": 0.438,
+"RSSI lookup (kNN)": 0.594,
+"phase pattern (kNN)": 0.75,
+"phase + RSSI (kNN)": 0.719,
+"n": 32
+},
+{
+"set": "test 4zone_cal32_repeat",
+"power": 20.0,
 "strongest antenna": 0.5,
-"RSSI-weighted x": 0.333,
-"RSSI lookup (kNN)": 0.333,
-"phase pattern (kNN)": 0.833,
-"phase + RSSI (kNN)": 0.667,
-"n": 12
+"RSSI-weighted x": 0.469,
+"RSSI lookup (kNN)": 0.562,
+"phase pattern (kNN)": 0.875,
+"phase + RSSI (kNN)": 0.75,
+"n": 32
 }
 ],
 "cal32_dist": [
@@ -6689,5 +8427,8293 @@ null,
 "median": 0.467,
 "n": 32
 }
+],
+"readers": {
+"methods": [
+"strongest",
+"fw vote",
+"WCL RSSI",
+"WCL slope+RSSI",
+"slope",
+"RSSI lookup",
+"phase lookup",
+"locator"
+],
+"compare": [
+{
+"reader": "R700",
+"test": "6in neighbours",
+"dBm": "12",
+"boxes": 32,
+"acc": {
+"strongest": [
+14,
+32
+],
+"fw vote": [
+14,
+32
+],
+"WCL RSSI": [
+11,
+32
+],
+"WCL slope+RSSI": [
+20,
+32
+],
+"slope": [
+22,
+32
+],
+"RSSI lookup": [
+10,
+32
+],
+"phase lookup": [
+9,
+32
+],
+"locator": [
+16,
+32
 ]
+},
+"acc_border": {
+"strongest": [
+20,
+32
+],
+"fw vote": [
+22,
+32
+],
+"WCL RSSI": [
+20,
+32
+],
+"WCL slope+RSSI": [
+27,
+32
+],
+"slope": [
+28,
+32
+],
+"RSSI lookup": [
+22,
+32
+],
+"phase lookup": [
+21,
+32
+],
+"locator": [
+26,
+32
+]
+}
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"dBm": "15",
+"boxes": 32,
+"acc": {
+"strongest": [
+14,
+32
+],
+"fw vote": [
+14,
+32
+],
+"WCL RSSI": [
+13,
+32
+],
+"WCL slope+RSSI": [
+19,
+32
+],
+"slope": [
+20,
+32
+],
+"RSSI lookup": [
+6,
+32
+],
+"phase lookup": [
+14,
+32
+],
+"locator": [
+18,
+32
+]
+},
+"acc_border": {
+"strongest": [
+21,
+32
+],
+"fw vote": [
+23,
+32
+],
+"WCL RSSI": [
+22,
+32
+],
+"WCL slope+RSSI": [
+26,
+32
+],
+"slope": [
+27,
+32
+],
+"RSSI lookup": [
+18,
+32
+],
+"phase lookup": [
+19,
+32
+],
+"locator": [
+24,
+32
+]
+}
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"dBm": "15",
+"boxes": 32,
+"acc": {
+"strongest": [
+14,
+32
+],
+"fw vote": [
+15,
+32
+],
+"WCL RSSI": [
+14,
+32
+],
+"WCL slope+RSSI": [
+19,
+32
+],
+"slope": [
+21,
+32
+],
+"RSSI lookup": [
+30,
+32
+],
+"phase lookup": [
+31,
+32
+],
+"locator": [
+32,
+32
+]
+},
+"acc_border": {
+"strongest": [
+23,
+32
+],
+"fw vote": [
+23,
+32
+],
+"WCL RSSI": [
+22,
+32
+],
+"WCL slope+RSSI": [
+24,
+32
+],
+"slope": [
+28,
+32
+],
+"RSSI lookup": [
+31,
+32
+],
+"phase lookup": [
+31,
+32
+],
+"locator": [
+32,
+32
+]
+}
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"dBm": "20",
+"boxes": 32,
+"acc": {
+"strongest": [
+15,
+32
+],
+"fw vote": [
+14,
+32
+],
+"WCL RSSI": [
+14,
+32
+],
+"WCL slope+RSSI": [
+17,
+32
+],
+"slope": [
+16,
+32
+],
+"RSSI lookup": [
+30,
+32
+],
+"phase lookup": [
+32,
+32
+],
+"locator": [
+32,
+32
+]
+},
+"acc_border": {
+"strongest": [
+24,
+32
+],
+"fw vote": [
+21,
+32
+],
+"WCL RSSI": [
+23,
+32
+],
+"WCL slope+RSSI": [
+24,
+32
+],
+"slope": [
+22,
+32
+],
+"RSSI lookup": [
+31,
+32
+],
+"phase lookup": [
+32,
+32
+],
+"locator": [
+32,
+32
+]
+}
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"dBm": "15",
+"boxes": 32,
+"acc": {
+"strongest": [
+14,
+32
+],
+"fw vote": [
+15,
+32
+],
+"WCL RSSI": [
+14,
+32
+],
+"WCL slope+RSSI": [
+18,
+32
+],
+"slope": [
+20,
+32
+],
+"RSSI lookup": [
+27,
+32
+],
+"phase lookup": [
+21,
+32
+],
+"locator": [
+28,
+32
+]
+},
+"acc_border": {
+"strongest": [
+23,
+32
+],
+"fw vote": [
+23,
+32
+],
+"WCL RSSI": [
+22,
+32
+],
+"WCL slope+RSSI": [
+24,
+32
+],
+"slope": [
+27,
+32
+],
+"RSSI lookup": [
+28,
+32
+],
+"phase lookup": [
+25,
+32
+],
+"locator": [
+30,
+32
+]
+}
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"dBm": "12",
+"boxes": 31,
+"acc": {
+"strongest": [
+15,
+31
+],
+"fw vote": [
+17,
+31
+],
+"WCL RSSI": [
+16,
+31
+],
+"WCL slope+RSSI": [
+21,
+31
+],
+"slope": [
+23,
+31
+],
+"RSSI lookup": [
+26,
+31
+],
+"phase lookup": [
+16,
+31
+],
+"locator": [
+23,
+31
+]
+},
+"acc_border": {
+"strongest": [
+22,
+31
+],
+"fw vote": [
+24,
+31
+],
+"WCL RSSI": [
+24,
+31
+],
+"WCL slope+RSSI": [
+24,
+31
+],
+"slope": [
+28,
+31
+],
+"RSSI lookup": [
+29,
+31
+],
+"phase lookup": [
+23,
+31
+],
+"locator": [
+28,
+31
+]
+}
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"dBm": "15",
+"boxes": 32,
+"acc": {
+"strongest": [
+14,
+32
+],
+"fw vote": [
+15,
+32
+],
+"WCL RSSI": [
+14,
+32
+],
+"WCL slope+RSSI": [
+18,
+32
+],
+"slope": [
+25,
+32
+],
+"RSSI lookup": [
+26,
+32
+],
+"phase lookup": [
+24,
+32
+],
+"locator": [
+28,
+32
+]
+},
+"acc_border": {
+"strongest": [
+21,
+32
+],
+"fw vote": [
+22,
+32
+],
+"WCL RSSI": [
+23,
+32
+],
+"WCL slope+RSSI": [
+25,
+32
+],
+"slope": [
+28,
+32
+],
+"RSSI lookup": [
+29,
+32
+],
+"phase lookup": [
+27,
+32
+],
+"locator": [
+31,
+32
+]
+}
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"dBm": "12",
+"boxes": 32,
+"acc": {
+"strongest": [
+15,
+32
+],
+"fw vote": [
+15,
+32
+],
+"WCL RSSI": [
+11,
+32
+],
+"WCL slope+RSSI": [
+18,
+32
+],
+"slope": [
+20,
+32
+],
+"RSSI lookup": [
+11,
+32
+],
+"phase lookup": [
+12,
+32
+],
+"locator": [
+18,
+32
+]
+},
+"acc_border": {
+"strongest": [
+23,
+32
+],
+"fw vote": [
+23,
+32
+],
+"WCL RSSI": [
+21,
+32
+],
+"WCL slope+RSSI": [
+23,
+32
+],
+"slope": [
+23,
+32
+],
+"RSSI lookup": [
+16,
+32
+],
+"phase lookup": [
+18,
+32
+],
+"locator": [
+24,
+32
+]
+}
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"dBm": "12",
+"boxes": 32,
+"acc": {
+"strongest": [
+13,
+32
+],
+"fw vote": [
+14,
+32
+],
+"WCL RSSI": [
+10,
+32
+],
+"WCL slope+RSSI": [
+15,
+32
+],
+"slope": [
+19,
+32
+],
+"RSSI lookup": [
+31,
+32
+],
+"phase lookup": [
+31,
+32
+],
+"locator": [
+32,
+32
+]
+},
+"acc_border": {
+"strongest": [
+22,
+32
+],
+"fw vote": [
+23,
+32
+],
+"WCL RSSI": [
+20,
+32
+],
+"WCL slope+RSSI": [
+22,
+32
+],
+"slope": [
+22,
+32
+],
+"RSSI lookup": [
+32,
+32
+],
+"phase lookup": [
+31,
+32
+],
+"locator": [
+32,
+32
+]
+}
+}
+],
+"quality": [
+{
+"reader": "R700",
+"capture": "4zone_cal32 @12",
+"seconds": 60,
+"reads_per_box": 724,
+"boxes_read": 32,
+"channels_per_box_ant": 41.0,
+"weak_pairs_lt6ch": 17,
+"phase_noise_deg": 2.25,
+"rssi_spread_db": 0.32
+},
+{
+"reader": "R700",
+"capture": "4zone_cal32 @15",
+"seconds": 60,
+"reads_per_box": 859,
+"boxes_read": 32,
+"channels_per_box_ant": 50.0,
+"weak_pairs_lt6ch": 6,
+"phase_noise_deg": 2.18,
+"rssi_spread_db": 0.25
+},
+{
+"reader": "R700",
+"capture": "4zone_mode2_c @15",
+"seconds": 60,
+"reads_per_box": 347,
+"boxes_read": 32,
+"channels_per_box_ant": 39.5,
+"weak_pairs_lt6ch": 13,
+"phase_noise_deg": 0.97,
+"rssi_spread_db": 0.0
+},
+{
+"reader": "R700",
+"capture": "4zone_mode2_d @15",
+"seconds": 60,
+"reads_per_box": 349,
+"boxes_read": 32,
+"channels_per_box_ant": 34.0,
+"weak_pairs_lt6ch": 15,
+"phase_noise_deg": 1.58,
+"rssi_spread_db": 0.22
+},
+{
+"reader": "R700",
+"capture": "4zone_mode2_c @20",
+"seconds": 60,
+"reads_per_box": 315,
+"boxes_read": 32,
+"channels_per_box_ant": 39.0,
+"weak_pairs_lt6ch": 1,
+"phase_noise_deg": 0.7,
+"rssi_spread_db": 0.0
+},
+{
+"reader": "R700",
+"capture": "4zone_mode2_d @20",
+"seconds": 60,
+"reads_per_box": 315,
+"boxes_read": 32,
+"channels_per_box_ant": 46.0,
+"weak_pairs_lt6ch": 1,
+"phase_noise_deg": 1.93,
+"rssi_spread_db": 0.0
+},
+{
+"reader": "R700",
+"capture": "4zone_cal32_repeat @15",
+"seconds": 61,
+"reads_per_box": 836,
+"boxes_read": 32,
+"channels_per_box_ant": 48.5,
+"weak_pairs_lt6ch": 12,
+"phase_noise_deg": 2.74,
+"rssi_spread_db": 0.35
+},
+{
+"reader": "R700",
+"capture": "4zone_cal32_repeat @12",
+"seconds": 60,
+"reads_per_box": 745,
+"boxes_read": 31,
+"channels_per_box_ant": 43.5,
+"weak_pairs_lt6ch": 31,
+"phase_noise_deg": 2.26,
+"rssi_spread_db": 0.36
+},
+{
+"reader": "Silion",
+"capture": "silion_cal32 @12",
+"seconds": 120,
+"reads_per_box": 557,
+"boxes_read": 32,
+"channels_per_box_ant": 43.0,
+"weak_pairs_lt6ch": 16,
+"phase_noise_deg": 1.08,
+"rssi_spread_db": 0.0
+},
+{
+"reader": "Silion",
+"capture": "silion_test_s0 @12",
+"seconds": 120,
+"reads_per_box": 558,
+"boxes_read": 32,
+"channels_per_box_ant": 43.0,
+"weak_pairs_lt6ch": 16,
+"phase_noise_deg": 0.94,
+"rssi_spread_db": 0.0
+}
+],
+"boxes": [
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "653",
+"zone": 1,
+"x": 3.0,
+"y": 21.0,
+"rssi": [
+-51.0,
+null,
+-58.0,
+-56.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 2,
+"locator": 1
+},
+"best": 0.97
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "657",
+"zone": 1,
+"x": 9.0,
+"y": 21.0,
+"rssi": [
+-54.0,
+null,
+-61.0,
+-63.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 2,
+"locator": 1
+},
+"best": 0.975
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "661",
+"zone": 2,
+"x": 15.0,
+"y": 21.0,
+"rssi": [
+-55.5,
+null,
+-57.5,
+-55.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 1,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.973
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "666",
+"zone": 2,
+"x": 21.0,
+"y": 21.0,
+"rssi": [
+null,
+-57.5,
+null,
+-56.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 1,
+"locator": 2
+},
+"best": 0.97
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "202",
+"zone": 3,
+"x": 27.0,
+"y": 21.0,
+"rssi": [
+-54.0,
+-52.5,
+-53.0,
+-51.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 3,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.95
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "206",
+"zone": 3,
+"x": 33.0,
+"y": 21.0,
+"rssi": [
+-51.5,
+-54.5,
+-56.0,
+-56.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.969
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "210",
+"zone": 4,
+"x": 39.0,
+"y": 21.0,
+"rssi": [
+-57.5,
+-54.0,
+-55.0,
+-57.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 3,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 4,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.969
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "215",
+"zone": 4,
+"x": 45.0,
+"y": 21.0,
+"rssi": [
+-60.5,
+-53.5,
+-55.0,
+-57.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.929
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "651",
+"zone": 1,
+"x": 3.0,
+"y": 15.0,
+"rssi": [
+-47.0,
+-55.0,
+-48.0,
+-50.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.884
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "656",
+"zone": 1,
+"x": 9.0,
+"y": 15.0,
+"rssi": [
+-49.5,
+-48.5,
+-49.5,
+-58.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 4,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.887
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "660",
+"zone": 2,
+"x": 15.0,
+"y": 15.0,
+"rssi": [
+-50.0,
+-46.5,
+-53.5,
+-47.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 4,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.951
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "665",
+"zone": 2,
+"x": 21.0,
+"y": 15.0,
+"rssi": [
+null,
+-57.5,
+-55.5,
+-52.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.91
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "201",
+"zone": 3,
+"x": 27.0,
+"y": 15.0,
+"rssi": [
+null,
+-50.0,
+-50.8,
+-57.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.922
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "205",
+"zone": 3,
+"x": 33.0,
+"y": 15.0,
+"rssi": [
+-53.0,
+-56.5,
+-47.0,
+-44.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 4,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.95
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "209",
+"zone": 4,
+"x": 39.0,
+"y": 15.0,
+"rssi": [
+-49.0,
+-55.0,
+-57.0,
+-47.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 1,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.923
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "214",
+"zone": 4,
+"x": 45.0,
+"y": 15.0,
+"rssi": [
+-54.0,
+-48.0,
+-53.5,
+-48.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 2,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.79
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "650",
+"zone": 1,
+"x": 3.0,
+"y": 9.0,
+"rssi": [
+-45.0,
+-48.0,
+-57.0,
+-54.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.97
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "655",
+"zone": 1,
+"x": 9.0,
+"y": 9.0,
+"rssi": [
+-43.0,
+-45.0,
+-56.5,
+-59.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 1,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.966
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "659",
+"zone": 2,
+"x": 15.0,
+"y": 9.0,
+"rssi": [
+-43.5,
+-48.5,
+-57.0,
+-54.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 1,
+"WCL slope+RSSI": 1,
+"slope": 2,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.975
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "664",
+"zone": 2,
+"x": 21.0,
+"y": 9.0,
+"rssi": [
+-46.5,
+-42.0,
+-54.0,
+-57.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 1,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.918
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "200",
+"zone": 3,
+"x": 27.0,
+"y": 9.0,
+"rssi": [
+-46.5,
+-42.0,
+-52.5,
+-49.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 3,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.855
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "204",
+"zone": 3,
+"x": 33.0,
+"y": 9.0,
+"rssi": [
+-57.0,
+-47.0,
+-48.0,
+-40.2
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 4,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 4,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.943
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "208",
+"zone": 4,
+"x": 39.0,
+"y": 9.0,
+"rssi": [
+-57.0,
+-50.0,
+-48.0,
+-42.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 4,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.923
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "213",
+"zone": 4,
+"x": 45.0,
+"y": 9.0,
+"rssi": [
+-54.5,
+-57.5,
+-46.5,
+-47.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.83
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "649",
+"zone": 1,
+"x": 3.0,
+"y": 3.0,
+"rssi": [
+-50.5,
+-49.0,
+-59.0,
+null
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 1,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.953
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "654",
+"zone": 1,
+"x": 9.0,
+"y": 3.0,
+"rssi": [
+-47.0,
+-54.0,
+null,
+-52.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.848
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "658",
+"zone": 2,
+"x": 15.0,
+"y": 3.0,
+"rssi": [
+null,
+-50.2,
+-57.5,
+-58.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 1,
+"locator": 2
+},
+"best": 0.935
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "662",
+"zone": 2,
+"x": 21.0,
+"y": 3.0,
+"rssi": [
+null,
+-49.0,
+-55.2,
+-60.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 1,
+"locator": 2
+},
+"best": 0.957
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "199",
+"zone": 3,
+"x": 27.0,
+"y": 3.0,
+"rssi": [
+-55.0,
+-54.5,
+-54.5,
+-51.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 3,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.797
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "203",
+"zone": 3,
+"x": 33.0,
+"y": 3.0,
+"rssi": [
+-59.5,
+-56.5,
+-44.5,
+-54.5
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 4,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.899
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "207",
+"zone": 4,
+"x": 39.0,
+"y": 3.0,
+"rssi": [
+null,
+-60.0,
+-53.0,
+-46.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 4,
+"WCL slope+RSSI": 4,
+"slope": 3,
+"RSSI lookup": 4,
+"phase lookup": 2,
+"locator": 4
+},
+"best": 0.939
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "211",
+"zone": 4,
+"x": 45.0,
+"y": 3.0,
+"rssi": [
+null,
+-55.0,
+-47.0,
+-52.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 2,
+"phase lookup": 1,
+"locator": 4
+},
+"best": 0.93
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "653",
+"zone": 1,
+"x": 3.0,
+"y": 21.0,
+"rssi": [
+-49.0,
+null,
+-56.0,
+-55.8
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.911
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "657",
+"zone": 1,
+"x": 9.0,
+"y": 21.0,
+"rssi": [
+-52.0,
+-58.0,
+-60.0,
+-59.8
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.828
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "661",
+"zone": 2,
+"x": 15.0,
+"y": 21.0,
+"rssi": [
+-53.5,
+null,
+-55.5,
+-52.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 1,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 2,
+"locator": 1
+},
+"best": 0.92
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "666",
+"zone": 2,
+"x": 21.0,
+"y": 21.0,
+"rssi": [
+-57.5,
+-57.5,
+-57.0,
+-54.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 3,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.92
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "202",
+"zone": 3,
+"x": 27.0,
+"y": 21.0,
+"rssi": [
+-51.5,
+-50.5,
+-51.0,
+-49.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 2,
+"phase lookup": 4,
+"locator": 3
+},
+"best": 0.794
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "206",
+"zone": 3,
+"x": 33.0,
+"y": 21.0,
+"rssi": [
+-54.5,
+-54.0,
+-53.0,
+-53.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 1,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 1,
+"locator": 4
+},
+"best": 0.775
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "210",
+"zone": 4,
+"x": 39.0,
+"y": 21.0,
+"rssi": [
+-57.5,
+-54.0,
+-53.5,
+-55.5
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.71
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "215",
+"zone": 4,
+"x": 45.0,
+"y": 21.0,
+"rssi": [
+-62.0,
+-50.5,
+-52.5,
+-54.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.875
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "651",
+"zone": 1,
+"x": 3.0,
+"y": 15.0,
+"rssi": [
+-43.5,
+-50.5,
+-44.5,
+-48.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 2,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.885
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "656",
+"zone": 1,
+"x": 9.0,
+"y": 15.0,
+"rssi": [
+-46.5,
+-45.0,
+-46.5,
+-54.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 3,
+"phase lookup": 2,
+"locator": 1
+},
+"best": 0.839
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "660",
+"zone": 2,
+"x": 15.0,
+"y": 15.0,
+"rssi": [
+-47.0,
+-44.5,
+-51.5,
+-44.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 4,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.779
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "665",
+"zone": 2,
+"x": 21.0,
+"y": 15.0,
+"rssi": [
+-60.0,
+-55.0,
+-53.0,
+-50.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 1,
+"locator": 4
+},
+"best": 0.755
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "201",
+"zone": 3,
+"x": 27.0,
+"y": 15.0,
+"rssi": [
+-56.0,
+-47.5,
+-47.5,
+-54.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 4,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.683
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "205",
+"zone": 3,
+"x": 33.0,
+"y": 15.0,
+"rssi": [
+-50.0,
+-53.5,
+-44.5,
+-41.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 4,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.817
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "209",
+"zone": 4,
+"x": 39.0,
+"y": 15.0,
+"rssi": [
+-46.0,
+-54.5,
+-55.5,
+-45.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 1,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.903
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "214",
+"zone": 4,
+"x": 45.0,
+"y": 15.0,
+"rssi": [
+-51.0,
+-45.0,
+-50.0,
+-46.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 2,
+"locator": 4
+},
+"best": 0.823
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "650",
+"zone": 1,
+"x": 3.0,
+"y": 9.0,
+"rssi": [
+-42.5,
+-45.5,
+-53.8,
+-51.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.918
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "655",
+"zone": 1,
+"x": 9.0,
+"y": 9.0,
+"rssi": [
+-40.5,
+-42.5,
+-52.0,
+-57.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 1,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 2,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.748
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "659",
+"zone": 2,
+"x": 15.0,
+"y": 9.0,
+"rssi": [
+-41.0,
+-44.0,
+-56.5,
+-50.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": 3,
+"RSSI lookup": 1,
+"phase lookup": 2,
+"locator": 3
+},
+"best": 0.708
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "664",
+"zone": 2,
+"x": 21.0,
+"y": 9.0,
+"rssi": [
+-44.0,
+-40.0,
+-51.0,
+-55.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 1,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.8
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "200",
+"zone": 3,
+"x": 27.0,
+"y": 9.0,
+"rssi": [
+-42.5,
+-39.5,
+-51.5,
+-47.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.713
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "204",
+"zone": 3,
+"x": 33.0,
+"y": 9.0,
+"rssi": [
+-54.0,
+-43.0,
+-46.0,
+-37.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 4,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.843
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "208",
+"zone": 4,
+"x": 39.0,
+"y": 9.0,
+"rssi": [
+-54.5,
+-47.0,
+-45.0,
+-40.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.903
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "213",
+"zone": 4,
+"x": 45.0,
+"y": 9.0,
+"rssi": [
+-52.0,
+-54.5,
+-43.5,
+-44.5
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 1,
+"locator": 4
+},
+"best": 0.731
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "649",
+"zone": 1,
+"x": 3.0,
+"y": 3.0,
+"rssi": [
+-48.0,
+-45.5,
+-57.0,
+null
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 1,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.88
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "654",
+"zone": 1,
+"x": 9.0,
+"y": 3.0,
+"rssi": [
+-44.0,
+-51.0,
+null,
+-49.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 1
+},
+"best": 0.818
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "658",
+"zone": 2,
+"x": 15.0,
+"y": 3.0,
+"rssi": [
+-59.5,
+-46.5,
+-56.0,
+-59.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 1,
+"locator": 2
+},
+"best": 0.833
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "662",
+"zone": 2,
+"x": 21.0,
+"y": 3.0,
+"rssi": [
+-59.0,
+-45.5,
+-53.8,
+-57.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.8
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "199",
+"zone": 3,
+"x": 27.0,
+"y": 3.0,
+"rssi": [
+-52.5,
+-50.0,
+-51.5,
+-47.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 3,
+"locator": 2
+},
+"best": 0.742
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "203",
+"zone": 3,
+"x": 33.0,
+"y": 3.0,
+"rssi": [
+-58.0,
+-55.0,
+-42.0,
+-53.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 4,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.843
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "207",
+"zone": 4,
+"x": 39.0,
+"y": 3.0,
+"rssi": [
+-60.5,
+-57.5,
+-49.5,
+-44.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 4,
+"WCL slope+RSSI": 4,
+"slope": 3,
+"RSSI lookup": 4,
+"phase lookup": 1,
+"locator": 3
+},
+"best": 0.745
+},
+{
+"reader": "R700",
+"test": "6in neighbours",
+"power": 15.0,
+"box": "211",
+"zone": 4,
+"x": 45.0,
+"y": 3.0,
+"rssi": [
+null,
+-55.0,
+-43.5,
+-49.5
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 1,
+"locator": 4
+},
+"best": 0.77
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "653",
+"zone": 1,
+"x": 3.0,
+"y": 21.0,
+"rssi": [
+-48.5,
+null,
+-53.5,
+-56.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.984
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "657",
+"zone": 1,
+"x": 9.0,
+"y": 21.0,
+"rssi": [
+-50.5,
+-57.5,
+-62.0,
+null
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 1,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.984
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "661",
+"zone": 2,
+"x": 15.0,
+"y": 21.0,
+"rssi": [
+-54.0,
+null,
+null,
+-55.8
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.991
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "666",
+"zone": 2,
+"x": 21.0,
+"y": 21.0,
+"rssi": [
+null,
+-57.8,
+-57.0,
+-56.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.992
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "202",
+"zone": 3,
+"x": 27.0,
+"y": 21.0,
+"rssi": [
+-53.0,
+-52.0,
+-52.0,
+-50.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.983
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "206",
+"zone": 3,
+"x": 33.0,
+"y": 21.0,
+"rssi": [
+-49.2,
+-55.0,
+-54.5,
+-53.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.976
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "210",
+"zone": 4,
+"x": 39.0,
+"y": 21.0,
+"rssi": [
+null,
+-50.5,
+-55.0,
+-56.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.981
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "215",
+"zone": 4,
+"x": 45.0,
+"y": 21.0,
+"rssi": [
+-59.5,
+-49.0,
+-54.5,
+-59.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 1,
+"locator": 4
+},
+"best": 0.984
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "651",
+"zone": 1,
+"x": 3.0,
+"y": 15.0,
+"rssi": [
+-43.0,
+-50.0,
+-45.5,
+-47.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.995
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "656",
+"zone": 1,
+"x": 9.0,
+"y": 15.0,
+"rssi": [
+-46.5,
+-43.5,
+-47.5,
+-55.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.985
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "660",
+"zone": 2,
+"x": 15.0,
+"y": 15.0,
+"rssi": [
+-50.5,
+-43.5,
+-54.5,
+-44.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.99
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "665",
+"zone": 2,
+"x": 21.0,
+"y": 15.0,
+"rssi": [
+-61.0,
+-51.0,
+-50.0,
+-50.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.988
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "201",
+"zone": 3,
+"x": 27.0,
+"y": 15.0,
+"rssi": [
+null,
+-46.5,
+-46.5,
+-55.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 4,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.993
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "205",
+"zone": 3,
+"x": 33.0,
+"y": 15.0,
+"rssi": [
+-49.0,
+-54.0,
+-44.0,
+-43.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.992
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "209",
+"zone": 4,
+"x": 39.0,
+"y": 15.0,
+"rssi": [
+-46.5,
+-58.5,
+-53.5,
+-45.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.99
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "214",
+"zone": 4,
+"x": 45.0,
+"y": 15.0,
+"rssi": [
+-57.5,
+-43.5,
+-51.0,
+-46.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.991
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "650",
+"zone": 1,
+"x": 3.0,
+"y": 9.0,
+"rssi": [
+-41.5,
+-43.0,
+-54.0,
+-51.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.99
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "655",
+"zone": 1,
+"x": 9.0,
+"y": 9.0,
+"rssi": [
+-40.5,
+-43.0,
+-52.0,
+-58.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 1,
+"WCL slope+RSSI": 1,
+"slope": 2,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.981
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "659",
+"zone": 2,
+"x": 15.0,
+"y": 9.0,
+"rssi": [
+-40.5,
+-43.5,
+-60.0,
+-57.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 1,
+"WCL slope+RSSI": 1,
+"slope": 3,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.983
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "664",
+"zone": 2,
+"x": 21.0,
+"y": 9.0,
+"rssi": [
+-45.5,
+-39.5,
+-51.0,
+-56.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 3,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.992
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "200",
+"zone": 3,
+"x": 27.0,
+"y": 9.0,
+"rssi": [
+-43.5,
+-39.0,
+-47.8,
+-48.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 3,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.993
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "204",
+"zone": 3,
+"x": 33.0,
+"y": 9.0,
+"rssi": [
+-53.5,
+-42.0,
+-43.0,
+-38.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.995
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "208",
+"zone": 4,
+"x": 39.0,
+"y": 9.0,
+"rssi": [
+-54.5,
+-47.5,
+-45.0,
+-39.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 4,
+"WCL slope+RSSI": 4,
+"slope": 3,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.989
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "213",
+"zone": 4,
+"x": 45.0,
+"y": 9.0,
+"rssi": [
+-56.0,
+-56.5,
+-41.5,
+-44.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.993
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "649",
+"zone": 1,
+"x": 3.0,
+"y": 3.0,
+"rssi": [
+-45.0,
+-44.5,
+-59.5,
+-59.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.998
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "654",
+"zone": 1,
+"x": 9.0,
+"y": 3.0,
+"rssi": [
+-45.0,
+-52.5,
+-60.2,
+-50.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.989
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "658",
+"zone": 2,
+"x": 15.0,
+"y": 3.0,
+"rssi": [
+-63.5,
+-46.0,
+-55.2,
+-61.8
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.983
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "662",
+"zone": 2,
+"x": 21.0,
+"y": 3.0,
+"rssi": [
+-58.0,
+-43.5,
+-55.0,
+-61.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.989
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "199",
+"zone": 3,
+"x": 27.0,
+"y": 3.0,
+"rssi": [
+-55.5,
+-46.0,
+-48.0,
+-48.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.981
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "203",
+"zone": 3,
+"x": 33.0,
+"y": 3.0,
+"rssi": [
+-55.0,
+-58.0,
+-40.0,
+-53.5
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.988
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "207",
+"zone": 4,
+"x": 39.0,
+"y": 3.0,
+"rssi": [
+null,
+-57.8,
+-52.5,
+-45.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 4,
+"WCL slope+RSSI": 4,
+"slope": 3,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.989
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 15.0,
+"box": "211",
+"zone": 4,
+"x": 45.0,
+"y": 3.0,
+"rssi": [
+null,
+-55.0,
+-45.0,
+-49.5
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.986
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "653",
+"zone": 1,
+"x": 3.0,
+"y": 21.0,
+"rssi": [
+-46.0,
+-58.5,
+-49.5,
+-51.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.912
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "657",
+"zone": 1,
+"x": 9.0,
+"y": 21.0,
+"rssi": [
+-47.0,
+-53.0,
+-60.0,
+-63.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 1,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.977
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "661",
+"zone": 2,
+"x": 15.0,
+"y": 21.0,
+"rssi": [
+-50.0,
+-62.8,
+-58.8,
+-50.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 4,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.957
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "666",
+"zone": 2,
+"x": 21.0,
+"y": 21.0,
+"rssi": [
+-56.5,
+-55.0,
+-54.5,
+-55.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.961
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "202",
+"zone": 3,
+"x": 27.0,
+"y": 21.0,
+"rssi": [
+-48.0,
+-49.0,
+-48.5,
+-46.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.952
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "206",
+"zone": 3,
+"x": 33.0,
+"y": 21.0,
+"rssi": [
+-52.5,
+-50.5,
+-49.5,
+-48.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 1,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 1,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.929
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "210",
+"zone": 4,
+"x": 39.0,
+"y": 21.0,
+"rssi": [
+-57.5,
+-49.8,
+-50.5,
+-51.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 1,
+"RSSI lookup": 3,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.93
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "215",
+"zone": 4,
+"x": 45.0,
+"y": 21.0,
+"rssi": [
+-57.5,
+-45.0,
+-50.0,
+-57.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.816
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "651",
+"zone": 1,
+"x": 3.0,
+"y": 15.0,
+"rssi": [
+-38.0,
+-45.0,
+-42.5,
+-43.2
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.978
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "656",
+"zone": 1,
+"x": 9.0,
+"y": 15.0,
+"rssi": [
+-42.0,
+-39.0,
+-43.5,
+-52.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.958
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "660",
+"zone": 2,
+"x": 15.0,
+"y": 15.0,
+"rssi": [
+-46.0,
+-40.0,
+-48.5,
+-40.2
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.975
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "665",
+"zone": 2,
+"x": 21.0,
+"y": 15.0,
+"rssi": [
+-56.5,
+-52.0,
+-49.0,
+-45.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.944
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "201",
+"zone": 3,
+"x": 27.0,
+"y": 15.0,
+"rssi": [
+-57.0,
+-43.5,
+-43.0,
+-51.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.955
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "205",
+"zone": 3,
+"x": 33.0,
+"y": 15.0,
+"rssi": [
+-46.0,
+-50.0,
+-40.0,
+-38.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.984
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "209",
+"zone": 4,
+"x": 39.0,
+"y": 15.0,
+"rssi": [
+-43.5,
+-54.0,
+-48.5,
+-39.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 1,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.979
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "214",
+"zone": 4,
+"x": 45.0,
+"y": 15.0,
+"rssi": [
+-54.0,
+-40.5,
+-46.0,
+-42.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.96
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "650",
+"zone": 1,
+"x": 3.0,
+"y": 9.0,
+"rssi": [
+-37.0,
+-38.5,
+-47.0,
+-47.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.973
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "655",
+"zone": 1,
+"x": 9.0,
+"y": 9.0,
+"rssi": [
+-37.5,
+-39.0,
+-47.5,
+-57.8
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.978
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "659",
+"zone": 2,
+"x": 15.0,
+"y": 9.0,
+"rssi": [
+-36.5,
+-39.0,
+-54.0,
+-50.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 1,
+"WCL slope+RSSI": 1,
+"slope": 3,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.967
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "664",
+"zone": 2,
+"x": 21.0,
+"y": 9.0,
+"rssi": [
+-41.0,
+-36.5,
+-46.8,
+-52.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.988
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "200",
+"zone": 3,
+"x": 27.0,
+"y": 9.0,
+"rssi": [
+-39.5,
+-34.5,
+-44.0,
+-42.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.973
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "204",
+"zone": 3,
+"x": 33.0,
+"y": 9.0,
+"rssi": [
+-49.5,
+-38.8,
+-39.5,
+-33.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.976
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "208",
+"zone": 4,
+"x": 39.0,
+"y": 9.0,
+"rssi": [
+-50.5,
+-43.8,
+-42.0,
+-35.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 4,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.984
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "213",
+"zone": 4,
+"x": 45.0,
+"y": 9.0,
+"rssi": [
+-51.2,
+-52.0,
+-37.5,
+-40.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.973
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "649",
+"zone": 1,
+"x": 3.0,
+"y": 3.0,
+"rssi": [
+-43.0,
+-42.0,
+-56.5,
+-57.2
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.945
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "654",
+"zone": 1,
+"x": 9.0,
+"y": 3.0,
+"rssi": [
+-39.5,
+-49.0,
+-59.0,
+-46.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": 2,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.936
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "658",
+"zone": 2,
+"x": 15.0,
+"y": 3.0,
+"rssi": [
+-57.5,
+-41.5,
+-52.2,
+-55.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.941
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "662",
+"zone": 2,
+"x": 21.0,
+"y": 3.0,
+"rssi": [
+-54.5,
+-40.0,
+-52.0,
+-57.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.928
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "199",
+"zone": 3,
+"x": 27.0,
+"y": 3.0,
+"rssi": [
+-52.0,
+-42.0,
+-44.0,
+-44.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.963
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "203",
+"zone": 3,
+"x": 33.0,
+"y": 3.0,
+"rssi": [
+-54.2,
+-56.0,
+-36.0,
+-54.5
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.926
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "207",
+"zone": 4,
+"x": 39.0,
+"y": 3.0,
+"rssi": [
+-61.5,
+-54.0,
+-47.0,
+-39.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 4,
+"WCL slope+RSSI": 4,
+"slope": 3,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.935
+},
+{
+"reader": "R700",
+"test": "same spot, minutes",
+"power": 20.0,
+"box": "211",
+"zone": 4,
+"x": 45.0,
+"y": 3.0,
+"rssi": [
+-58.5,
+-55.5,
+-40.0,
+-43.5
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.954
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "653",
+"zone": 1,
+"x": 3.0,
+"y": 21.0,
+"rssi": [
+-48.5,
+null,
+-53.5,
+-56.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.935
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "657",
+"zone": 1,
+"x": 9.0,
+"y": 21.0,
+"rssi": [
+-50.5,
+-57.5,
+-62.0,
+null
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 1,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 2,
+"locator": 1
+},
+"best": 0.971
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "661",
+"zone": 2,
+"x": 15.0,
+"y": 21.0,
+"rssi": [
+-54.0,
+null,
+null,
+-55.8
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 2,
+"phase lookup": 1,
+"locator": 2
+},
+"best": 0.954
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "666",
+"zone": 2,
+"x": 21.0,
+"y": 21.0,
+"rssi": [
+null,
+-57.8,
+-57.0,
+-56.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 1,
+"locator": 2
+},
+"best": 0.988
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "202",
+"zone": 3,
+"x": 27.0,
+"y": 21.0,
+"rssi": [
+-53.0,
+-52.0,
+-52.0,
+-50.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 3,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.925
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "206",
+"zone": 3,
+"x": 33.0,
+"y": 21.0,
+"rssi": [
+-49.2,
+-55.0,
+-54.5,
+-53.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.944
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "210",
+"zone": 4,
+"x": 39.0,
+"y": 21.0,
+"rssi": [
+null,
+-50.5,
+-55.0,
+-56.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.941
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "215",
+"zone": 4,
+"x": 45.0,
+"y": 21.0,
+"rssi": [
+-59.5,
+-49.0,
+-54.5,
+-59.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 2,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.845
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "651",
+"zone": 1,
+"x": 3.0,
+"y": 15.0,
+"rssi": [
+-43.0,
+-50.0,
+-45.5,
+-47.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.937
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "656",
+"zone": 1,
+"x": 9.0,
+"y": 15.0,
+"rssi": [
+-46.5,
+-43.5,
+-47.5,
+-55.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.949
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "660",
+"zone": 2,
+"x": 15.0,
+"y": 15.0,
+"rssi": [
+-50.5,
+-43.5,
+-54.5,
+-44.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.975
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "665",
+"zone": 2,
+"x": 21.0,
+"y": 15.0,
+"rssi": [
+-61.0,
+-51.0,
+-50.0,
+-50.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 1,
+"locator": 2
+},
+"best": 0.962
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "201",
+"zone": 3,
+"x": 27.0,
+"y": 15.0,
+"rssi": [
+null,
+-46.5,
+-46.5,
+-55.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 4,
+"phase lookup": 1,
+"locator": 3
+},
+"best": 0.914
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "205",
+"zone": 3,
+"x": 33.0,
+"y": 15.0,
+"rssi": [
+-49.0,
+-54.0,
+-44.0,
+-43.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.955
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "209",
+"zone": 4,
+"x": 39.0,
+"y": 15.0,
+"rssi": [
+-46.5,
+-58.5,
+-53.5,
+-45.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.922
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "214",
+"zone": 4,
+"x": 45.0,
+"y": 15.0,
+"rssi": [
+-57.5,
+-43.5,
+-51.0,
+-46.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.943
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "650",
+"zone": 1,
+"x": 3.0,
+"y": 9.0,
+"rssi": [
+-41.5,
+-43.0,
+-54.0,
+-51.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.965
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "655",
+"zone": 1,
+"x": 9.0,
+"y": 9.0,
+"rssi": [
+-40.5,
+-43.0,
+-52.0,
+-58.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 1,
+"WCL slope+RSSI": 1,
+"slope": 2,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.962
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "659",
+"zone": 2,
+"x": 15.0,
+"y": 9.0,
+"rssi": [
+-40.5,
+-43.5,
+-60.0,
+-57.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 1,
+"WCL slope+RSSI": 1,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.963
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "664",
+"zone": 2,
+"x": 21.0,
+"y": 9.0,
+"rssi": [
+-45.5,
+-39.5,
+-51.0,
+-56.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.896
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "200",
+"zone": 3,
+"x": 27.0,
+"y": 9.0,
+"rssi": [
+-43.5,
+-39.0,
+-47.8,
+-48.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.915
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "204",
+"zone": 3,
+"x": 33.0,
+"y": 9.0,
+"rssi": [
+-53.5,
+-42.0,
+-43.0,
+-38.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.939
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "208",
+"zone": 4,
+"x": 39.0,
+"y": 9.0,
+"rssi": [
+-54.5,
+-47.5,
+-45.0,
+-39.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 4,
+"WCL slope+RSSI": 4,
+"slope": 3,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.881
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "213",
+"zone": 4,
+"x": 45.0,
+"y": 9.0,
+"rssi": [
+-56.0,
+-56.5,
+-41.5,
+-44.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.963
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "649",
+"zone": 1,
+"x": 3.0,
+"y": 3.0,
+"rssi": [
+-45.0,
+-44.5,
+-59.5,
+-59.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.971
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "654",
+"zone": 1,
+"x": 9.0,
+"y": 3.0,
+"rssi": [
+-45.0,
+-52.5,
+-60.2,
+-50.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.924
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "658",
+"zone": 2,
+"x": 15.0,
+"y": 3.0,
+"rssi": [
+-63.5,
+-46.0,
+-55.2,
+-61.8
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.948
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "662",
+"zone": 2,
+"x": 21.0,
+"y": 3.0,
+"rssi": [
+-58.0,
+-43.5,
+-55.0,
+-61.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.975
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "199",
+"zone": 3,
+"x": 27.0,
+"y": 3.0,
+"rssi": [
+-55.5,
+-46.0,
+-48.0,
+-48.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 4,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.955
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "203",
+"zone": 3,
+"x": 33.0,
+"y": 3.0,
+"rssi": [
+-55.0,
+-58.0,
+-40.0,
+-53.5
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 3,
+"phase lookup": 2,
+"locator": 3
+},
+"best": 0.918
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "207",
+"zone": 4,
+"x": 39.0,
+"y": 3.0,
+"rssi": [
+null,
+-57.8,
+-52.5,
+-45.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 4,
+"WCL slope+RSSI": 4,
+"slope": 3,
+"RSSI lookup": 4,
+"phase lookup": 2,
+"locator": 4
+},
+"best": 0.862
+},
+{
+"reader": "R700",
+"test": "same spot, other mode",
+"power": 15.0,
+"box": "211",
+"zone": 4,
+"x": 45.0,
+"y": 3.0,
+"rssi": [
+null,
+-55.0,
+-45.0,
+-49.5
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.932
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "653",
+"zone": 1,
+"x": 3.0,
+"y": 21.0,
+"rssi": [
+-52.0,
+null,
+-57.0,
+null
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 1,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 2,
+"locator": 1
+},
+"best": 0.972
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "657",
+"zone": 1,
+"x": 9.0,
+"y": 21.0,
+"rssi": [
+-53.0,
+null,
+-59.0,
+null
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 1,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 2,
+"locator": 1
+},
+"best": 0.995
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "661",
+"zone": 2,
+"x": 15.0,
+"y": 21.0,
+"rssi": [
+-54.0,
+null,
+null,
+-55.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 2,
+"locator": 1
+},
+"best": 0.992
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "202",
+"zone": 3,
+"x": 27.0,
+"y": 21.0,
+"rssi": [
+-54.5,
+-53.5,
+-53.0,
+-52.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 3,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.904
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "206",
+"zone": 3,
+"x": 33.0,
+"y": 21.0,
+"rssi": [
+-51.0,
+-55.0,
+-56.2,
+null
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": null,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.994
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "210",
+"zone": 4,
+"x": 39.0,
+"y": 21.0,
+"rssi": [
+null,
+-52.5,
+-55.0,
+-55.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 4,
+"locator": 3
+},
+"best": 0.953
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "215",
+"zone": 4,
+"x": 45.0,
+"y": 21.0,
+"rssi": [
+null,
+-51.5,
+-55.0,
+-55.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.988
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "651",
+"zone": 1,
+"x": 3.0,
+"y": 15.0,
+"rssi": [
+-45.0,
+-56.5,
+-48.5,
+-50.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.954
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "656",
+"zone": 1,
+"x": 9.0,
+"y": 15.0,
+"rssi": [
+-49.5,
+-48.0,
+-48.0,
+-56.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 3,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.977
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "660",
+"zone": 2,
+"x": 15.0,
+"y": 15.0,
+"rssi": [
+-49.5,
+-46.0,
+-56.0,
+-47.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.917
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "665",
+"zone": 2,
+"x": 21.0,
+"y": 15.0,
+"rssi": [
+null,
+-54.5,
+-59.0,
+-52.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": null,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.991
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "201",
+"zone": 3,
+"x": 27.0,
+"y": 15.0,
+"rssi": [
+null,
+-49.0,
+-50.0,
+-56.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 3,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.994
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "205",
+"zone": 3,
+"x": 33.0,
+"y": 15.0,
+"rssi": [
+-52.5,
+-55.5,
+-46.0,
+-44.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.972
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "209",
+"zone": 4,
+"x": 39.0,
+"y": 15.0,
+"rssi": [
+-49.5,
+-54.0,
+-54.5,
+-46.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.896
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "214",
+"zone": 4,
+"x": 45.0,
+"y": 15.0,
+"rssi": [
+-58.0,
+-47.0,
+-51.5,
+-48.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.936
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "650",
+"zone": 1,
+"x": 3.0,
+"y": 9.0,
+"rssi": [
+-43.5,
+-47.0,
+-55.5,
+null
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 1,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.975
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "655",
+"zone": 1,
+"x": 9.0,
+"y": 9.0,
+"rssi": [
+-43.0,
+-44.5,
+-56.5,
+-56.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 1,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.97
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "659",
+"zone": 2,
+"x": 15.0,
+"y": 9.0,
+"rssi": [
+-43.0,
+-48.0,
+-55.5,
+-55.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 1,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 1,
+"locator": 2
+},
+"best": 0.975
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "664",
+"zone": 2,
+"x": 21.0,
+"y": 9.0,
+"rssi": [
+-47.0,
+-42.0,
+-54.5,
+-56.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.925
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "200",
+"zone": 3,
+"x": 27.0,
+"y": 9.0,
+"rssi": [
+-45.5,
+-41.5,
+-49.5,
+-52.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 3,
+"RSSI lookup": 3,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.927
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "204",
+"zone": 3,
+"x": 33.0,
+"y": 9.0,
+"rssi": [
+-55.5,
+-46.0,
+-46.0,
+-40.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 4,
+"phase lookup": 2,
+"locator": 3
+},
+"best": 0.939
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "208",
+"zone": 4,
+"x": 39.0,
+"y": 9.0,
+"rssi": [
+-55.5,
+-51.0,
+-46.5,
+-43.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 1,
+"locator": 4
+},
+"best": 0.916
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "213",
+"zone": 4,
+"x": 45.0,
+"y": 9.0,
+"rssi": [
+-55.5,
+-57.2,
+-44.5,
+-46.5
+],
+"calls": {
+"strongest": 3,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.963
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "649",
+"zone": 1,
+"x": 3.0,
+"y": 3.0,
+"rssi": [
+-50.0,
+-48.0,
+null,
+null
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 1,
+"phase lookup": 4,
+"locator": 1
+},
+"best": 0.991
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "654",
+"zone": 1,
+"x": 9.0,
+"y": 3.0,
+"rssi": [
+-46.5,
+-53.5,
+null,
+-55.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 1,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 2,
+"locator": 1
+},
+"best": 0.945
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "658",
+"zone": 2,
+"x": 15.0,
+"y": 3.0,
+"rssi": [
+null,
+-50.0,
+-56.5,
+null
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 1,
+"locator": 2
+},
+"best": 0.963
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "662",
+"zone": 2,
+"x": 21.0,
+"y": 3.0,
+"rssi": [
+null,
+-47.5,
+-56.0,
+null
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.912
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "199",
+"zone": 3,
+"x": 27.0,
+"y": 3.0,
+"rssi": [
+-54.5,
+-53.0,
+-51.0,
+-52.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.951
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "203",
+"zone": 3,
+"x": 33.0,
+"y": 3.0,
+"rssi": [
+-56.5,
+-55.0,
+-43.5,
+-54.5
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.954
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "207",
+"zone": 4,
+"x": 39.0,
+"y": 3.0,
+"rssi": [
+null,
+-59.0,
+-53.0,
+-46.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 4,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 2,
+"locator": 4
+},
+"best": 0.958
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 12.0,
+"box": "211",
+"zone": 4,
+"x": 45.0,
+"y": 3.0,
+"rssi": [
+null,
+null,
+-46.5,
+-51.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.906
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "653",
+"zone": 1,
+"x": 3.0,
+"y": 21.0,
+"rssi": [
+-48.0,
+null,
+-55.5,
+-54.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 2,
+"locator": 1
+},
+"best": 0.879
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "657",
+"zone": 1,
+"x": 9.0,
+"y": 21.0,
+"rssi": [
+-50.5,
+null,
+-59.5,
+-60.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 1,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 4,
+"locator": 1
+},
+"best": 0.917
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "661",
+"zone": 2,
+"x": 15.0,
+"y": 21.0,
+"rssi": [
+-51.0,
+null,
+null,
+-52.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 4,
+"RSSI lookup": 1,
+"phase lookup": 2,
+"locator": 1
+},
+"best": 0.951
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "666",
+"zone": 2,
+"x": 21.0,
+"y": 21.0,
+"rssi": [
+null,
+-58.0,
+null,
+-55.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.963
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "202",
+"zone": 3,
+"x": 27.0,
+"y": 21.0,
+"rssi": [
+-52.0,
+-51.0,
+-52.0,
+-50.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.844
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "206",
+"zone": 3,
+"x": 33.0,
+"y": 21.0,
+"rssi": [
+-49.8,
+-55.0,
+-53.5,
+-55.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 4,
+"RSSI lookup": 1,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.924
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "210",
+"zone": 4,
+"x": 39.0,
+"y": 21.0,
+"rssi": [
+-57.5,
+-53.0,
+-54.0,
+-53.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.826
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "215",
+"zone": 4,
+"x": 45.0,
+"y": 21.0,
+"rssi": [
+-57.5,
+-49.5,
+-52.0,
+-56.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.821
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "651",
+"zone": 1,
+"x": 3.0,
+"y": 15.0,
+"rssi": [
+-42.5,
+-52.0,
+-45.0,
+-47.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.936
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "656",
+"zone": 1,
+"x": 9.0,
+"y": 15.0,
+"rssi": [
+-46.5,
+-45.5,
+-45.5,
+-54.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 3,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.972
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "660",
+"zone": 2,
+"x": 15.0,
+"y": 15.0,
+"rssi": [
+-47.0,
+-43.0,
+-54.0,
+-43.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.905
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "665",
+"zone": 2,
+"x": 21.0,
+"y": 15.0,
+"rssi": [
+-58.0,
+-53.5,
+-53.5,
+-49.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 2,
+"phase lookup": 1,
+"locator": 4
+},
+"best": 0.864
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "201",
+"zone": 3,
+"x": 27.0,
+"y": 15.0,
+"rssi": [
+-58.0,
+-45.5,
+-47.5,
+-55.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 3,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 3,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.917
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "205",
+"zone": 3,
+"x": 33.0,
+"y": 15.0,
+"rssi": [
+-49.5,
+-53.5,
+-44.0,
+-41.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.939
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "209",
+"zone": 4,
+"x": 39.0,
+"y": 15.0,
+"rssi": [
+-46.5,
+-54.0,
+-51.5,
+-44.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.863
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "214",
+"zone": 4,
+"x": 45.0,
+"y": 15.0,
+"rssi": [
+-55.0,
+-44.5,
+-49.0,
+-45.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.94
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "650",
+"zone": 1,
+"x": 3.0,
+"y": 9.0,
+"rssi": [
+-40.5,
+-44.5,
+-51.5,
+-54.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 1,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.919
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "655",
+"zone": 1,
+"x": 9.0,
+"y": 9.0,
+"rssi": [
+-40.5,
+-42.0,
+-53.0,
+-58.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 1,
+"WCL slope+RSSI": 1,
+"slope": 2,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.941
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "659",
+"zone": 2,
+"x": 15.0,
+"y": 9.0,
+"rssi": [
+-40.0,
+-45.0,
+-54.8,
+-52.5
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 1,
+"WCL slope+RSSI": 1,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.911
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "664",
+"zone": 2,
+"x": 21.0,
+"y": 9.0,
+"rssi": [
+-44.0,
+-39.5,
+-51.5,
+-54.8
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.863
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "200",
+"zone": 3,
+"x": 27.0,
+"y": 9.0,
+"rssi": [
+-42.0,
+-39.0,
+-47.5,
+-49.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 3,
+"RSSI lookup": 3,
+"phase lookup": 2,
+"locator": 3
+},
+"best": 0.734
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "204",
+"zone": 3,
+"x": 33.0,
+"y": 9.0,
+"rssi": [
+-53.5,
+-42.5,
+-43.0,
+-37.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.898
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "208",
+"zone": 4,
+"x": 39.0,
+"y": 9.0,
+"rssi": [
+-54.0,
+-49.5,
+-44.0,
+-40.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.775
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "213",
+"zone": 4,
+"x": 45.0,
+"y": 9.0,
+"rssi": [
+-55.0,
+-54.5,
+-41.0,
+-44.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.919
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "649",
+"zone": 1,
+"x": 3.0,
+"y": 3.0,
+"rssi": [
+-49.2,
+-45.8,
+-56.8,
+null
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 1,
+"phase lookup": 4,
+"locator": 1
+},
+"best": 0.93
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "654",
+"zone": 1,
+"x": 9.0,
+"y": 3.0,
+"rssi": [
+-43.0,
+-53.0,
+-57.5,
+-51.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 1,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 2,
+"phase lookup": 3,
+"locator": 1
+},
+"best": 0.805
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "658",
+"zone": 2,
+"x": 15.0,
+"y": 3.0,
+"rssi": [
+-57.5,
+-46.5,
+-53.5,
+-58.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.889
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "662",
+"zone": 2,
+"x": 21.0,
+"y": 3.0,
+"rssi": [
+-58.5,
+-44.5,
+-54.0,
+-61.5
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.855
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "199",
+"zone": 3,
+"x": 27.0,
+"y": 3.0,
+"rssi": [
+-52.0,
+-49.5,
+-53.0,
+-47.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.894
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "203",
+"zone": 3,
+"x": 33.0,
+"y": 3.0,
+"rssi": [
+-54.5,
+-53.0,
+-41.0,
+-54.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.95
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "207",
+"zone": 4,
+"x": 39.0,
+"y": 3.0,
+"rssi": [
+null,
+-58.0,
+-49.5,
+-43.5
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 4,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.789
+},
+{
+"reader": "R700",
+"test": "same spot, overnight",
+"power": 15.0,
+"box": "211",
+"zone": 4,
+"x": 45.0,
+"y": 3.0,
+"rssi": [
+-57.0,
+-55.5,
+-43.5,
+-49.5
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.962
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "653",
+"zone": 1,
+"x": 3.0,
+"y": 21.0,
+"rssi": [
+-49.0,
+-53.0,
+-52.0,
+-50.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 3,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.915
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "657",
+"zone": 1,
+"x": 9.0,
+"y": 21.0,
+"rssi": [
+-50.0,
+null,
+null,
+-59.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 1,
+"WCL slope+RSSI": 1,
+"slope": null,
+"RSSI lookup": 3,
+"phase lookup": 1,
+"locator": 2
+},
+"best": 0.942
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "661",
+"zone": 2,
+"x": 15.0,
+"y": 21.0,
+"rssi": [
+-49.0,
+null,
+-53.0,
+-52.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.933
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "666",
+"zone": 2,
+"x": 21.0,
+"y": 21.0,
+"rssi": [
+null,
+-53.0,
+null,
+null
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": null,
+"RSSI lookup": 2,
+"phase lookup": null,
+"locator": 2
+},
+"best": null
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "202",
+"zone": 3,
+"x": 27.0,
+"y": 21.0,
+"rssi": [
+-47.0,
+-46.0,
+-46.0,
+-50.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 4,
+"locator": 1
+},
+"best": 0.806
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "206",
+"zone": 3,
+"x": 33.0,
+"y": 21.0,
+"rssi": [
+-47.0,
+null,
+-53.0,
+-49.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 4,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 2,
+"phase lookup": 4,
+"locator": 3
+},
+"best": 0.904
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "210",
+"zone": 4,
+"x": 39.0,
+"y": 21.0,
+"rssi": [
+-52.0,
+-49.0,
+-47.0,
+-51.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.904
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "215",
+"zone": 4,
+"x": 45.0,
+"y": 21.0,
+"rssi": [
+null,
+-50.0,
+-49.0,
+-53.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.933
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "651",
+"zone": 1,
+"x": 3.0,
+"y": 15.0,
+"rssi": [
+-40.0,
+-41.0,
+-39.0,
+-43.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 3,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.925
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "656",
+"zone": 1,
+"x": 9.0,
+"y": 15.0,
+"rssi": [
+-47.0,
+-41.0,
+-43.0,
+-51.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 3,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.827
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "660",
+"zone": 2,
+"x": 15.0,
+"y": 15.0,
+"rssi": [
+-50.0,
+-39.0,
+-51.0,
+-42.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 4,
+"phase lookup": 3,
+"locator": 2
+},
+"best": 0.818
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "665",
+"zone": 2,
+"x": 21.0,
+"y": 15.0,
+"rssi": [
+-60.0,
+-53.0,
+-58.0,
+-52.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 1,
+"locator": 4
+},
+"best": 0.903
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "201",
+"zone": 3,
+"x": 27.0,
+"y": 15.0,
+"rssi": [
+-50.0,
+-46.0,
+-48.0,
+-52.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 3,
+"phase lookup": 2,
+"locator": 3
+},
+"best": 0.796
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "205",
+"zone": 3,
+"x": 33.0,
+"y": 15.0,
+"rssi": [
+-47.0,
+null,
+-44.0,
+-47.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 1,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 2,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.858
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "209",
+"zone": 4,
+"x": 39.0,
+"y": 15.0,
+"rssi": [
+-42.0,
+-51.0,
+-55.0,
+-47.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 1,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.823
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "214",
+"zone": 4,
+"x": 45.0,
+"y": 15.0,
+"rssi": [
+-49.0,
+-42.0,
+-50.0,
+-44.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 1,
+"locator": 2
+},
+"best": 0.859
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "650",
+"zone": 1,
+"x": 3.0,
+"y": 9.0,
+"rssi": [
+-40.0,
+-40.0,
+-50.0,
+-49.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.933
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "655",
+"zone": 1,
+"x": 9.0,
+"y": 9.0,
+"rssi": [
+-39.0,
+-37.0,
+-47.0,
+-57.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 2,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.942
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "659",
+"zone": 2,
+"x": 15.0,
+"y": 9.0,
+"rssi": [
+-38.0,
+-37.0,
+-55.0,
+-51.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.925
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "664",
+"zone": 2,
+"x": 21.0,
+"y": 9.0,
+"rssi": [
+-41.0,
+-36.0,
+-45.0,
+-53.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 1,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.799
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "200",
+"zone": 3,
+"x": 27.0,
+"y": 9.0,
+"rssi": [
+-40.0,
+-38.0,
+-42.0,
+-42.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.791
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "204",
+"zone": 3,
+"x": 33.0,
+"y": 9.0,
+"rssi": [
+-51.0,
+-47.0,
+-38.0,
+-34.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 4,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 2,
+"locator": 4
+},
+"best": 0.818
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "208",
+"zone": 4,
+"x": 39.0,
+"y": 9.0,
+"rssi": [
+-49.0,
+-48.0,
+-39.0,
+-34.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 4,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.939
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "213",
+"zone": 4,
+"x": 45.0,
+"y": 9.0,
+"rssi": [
+null,
+-54.0,
+-40.0,
+-39.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 4,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.939
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "649",
+"zone": 1,
+"x": 3.0,
+"y": 3.0,
+"rssi": [
+-43.0,
+-44.0,
+-49.0,
+-56.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": 2,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.846
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "654",
+"zone": 1,
+"x": 9.0,
+"y": 3.0,
+"rssi": [
+-46.5,
+-47.0,
+-50.0,
+-43.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 1,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 3,
+"locator": 1
+},
+"best": 0.741
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "658",
+"zone": 2,
+"x": 15.0,
+"y": 3.0,
+"rssi": [
+-52.0,
+-43.0,
+-54.0,
+-55.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.759
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "662",
+"zone": 2,
+"x": 21.0,
+"y": 3.0,
+"rssi": [
+-52.0,
+-44.0,
+-50.0,
+-53.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 1,
+"phase lookup": 3,
+"locator": 2
+},
+"best": 0.732
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "199",
+"zone": 3,
+"x": 27.0,
+"y": 3.0,
+"rssi": [
+-45.0,
+-46.5,
+-49.0,
+-47.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 4,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 1,
+"phase lookup": 4,
+"locator": 3
+},
+"best": 0.781
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "203",
+"zone": 3,
+"x": 33.0,
+"y": 3.0,
+"rssi": [
+-47.0,
+-53.0,
+-41.0,
+-52.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 1,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.758
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "207",
+"zone": 4,
+"x": 39.0,
+"y": 3.0,
+"rssi": [
+-51.0,
+-56.0,
+-54.0,
+-43.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 3,
+"RSSI lookup": 4,
+"phase lookup": 2,
+"locator": 3
+},
+"best": 0.695
+},
+{
+"reader": "Silion",
+"test": "6in neighbours",
+"power": 12.0,
+"box": "211",
+"zone": 4,
+"x": 45.0,
+"y": 3.0,
+"rssi": [
+-54.0,
+-45.0,
+-42.0,
+-47.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.868
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "653",
+"zone": 1,
+"x": 3.0,
+"y": 21.0,
+"rssi": [
+-49.0,
+-54.0,
+-52.0,
+-51.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.997
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "657",
+"zone": 1,
+"x": 9.0,
+"y": 21.0,
+"rssi": [
+-50.0,
+null,
+null,
+null
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 1,
+"WCL slope+RSSI": 1,
+"slope": null,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.999
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "661",
+"zone": 2,
+"x": 15.0,
+"y": 21.0,
+"rssi": [
+-49.0,
+null,
+-53.0,
+-52.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.999
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "666",
+"zone": 2,
+"x": 21.0,
+"y": 21.0,
+"rssi": [
+null,
+-53.0,
+null,
+null
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": null,
+"RSSI lookup": 2,
+"phase lookup": null,
+"locator": 2
+},
+"best": null
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "202",
+"zone": 3,
+"x": 27.0,
+"y": 21.0,
+"rssi": [
+-47.0,
+-46.0,
+-46.0,
+-52.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.994
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "206",
+"zone": 3,
+"x": 33.0,
+"y": 21.0,
+"rssi": [
+-47.0,
+null,
+-53.0,
+-48.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 4,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.983
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "210",
+"zone": 4,
+"x": 39.0,
+"y": 21.0,
+"rssi": [
+-52.0,
+-49.0,
+-47.0,
+-51.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.996
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "215",
+"zone": 4,
+"x": 45.0,
+"y": 21.0,
+"rssi": [
+null,
+-50.0,
+-49.0,
+-53.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 2,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.995
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "651",
+"zone": 1,
+"x": 3.0,
+"y": 15.0,
+"rssi": [
+-40.0,
+-40.0,
+-39.0,
+-44.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.995
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "656",
+"zone": 1,
+"x": 9.0,
+"y": 15.0,
+"rssi": [
+-47.0,
+-40.0,
+-43.0,
+-52.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.995
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "660",
+"zone": 2,
+"x": 15.0,
+"y": 15.0,
+"rssi": [
+-50.0,
+-39.0,
+-52.0,
+-42.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.995
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "665",
+"zone": 2,
+"x": 21.0,
+"y": 15.0,
+"rssi": [
+-60.0,
+-53.0,
+-58.0,
+-52.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.992
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "201",
+"zone": 3,
+"x": 27.0,
+"y": 15.0,
+"rssi": [
+-50.0,
+-46.0,
+-48.0,
+-52.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.998
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "205",
+"zone": 3,
+"x": 33.0,
+"y": 15.0,
+"rssi": [
+-47.0,
+null,
+-44.5,
+-48.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 1,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.986
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "209",
+"zone": 4,
+"x": 39.0,
+"y": 15.0,
+"rssi": [
+-42.0,
+-51.5,
+-55.0,
+-47.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.991
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "214",
+"zone": 4,
+"x": 45.0,
+"y": 15.0,
+"rssi": [
+-48.0,
+-41.0,
+-50.0,
+-45.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.996
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "650",
+"zone": 1,
+"x": 3.0,
+"y": 9.0,
+"rssi": [
+-40.0,
+-40.0,
+-49.5,
+-49.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 1,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.997
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "655",
+"zone": 1,
+"x": 9.0,
+"y": 9.0,
+"rssi": [
+-39.0,
+-37.0,
+-47.0,
+-51.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 2,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.988
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "659",
+"zone": 2,
+"x": 15.0,
+"y": 9.0,
+"rssi": [
+-37.0,
+-37.0,
+-55.0,
+-51.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.984
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "664",
+"zone": 2,
+"x": 21.0,
+"y": 9.0,
+"rssi": [
+-41.0,
+-36.0,
+-45.0,
+-54.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.996
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "200",
+"zone": 3,
+"x": 27.0,
+"y": 9.0,
+"rssi": [
+-40.0,
+-38.0,
+-42.0,
+-42.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.991
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "204",
+"zone": 3,
+"x": 33.0,
+"y": 9.0,
+"rssi": [
+-51.0,
+-47.0,
+-38.0,
+-34.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 4,
+"WCL slope+RSSI": 4,
+"slope": 2,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.992
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "208",
+"zone": 4,
+"x": 39.0,
+"y": 9.0,
+"rssi": [
+-49.0,
+-47.0,
+-39.0,
+-35.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 4,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.995
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "213",
+"zone": 4,
+"x": 45.0,
+"y": 9.0,
+"rssi": [
+null,
+-54.0,
+-40.0,
+-40.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.994
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "649",
+"zone": 1,
+"x": 3.0,
+"y": 3.0,
+"rssi": [
+-43.0,
+-44.0,
+-49.0,
+-56.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 1,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.995
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "654",
+"zone": 1,
+"x": 9.0,
+"y": 3.0,
+"rssi": [
+-47.0,
+-47.0,
+-50.0,
+-43.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 1,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 2,
+"slope": 1,
+"RSSI lookup": 1,
+"phase lookup": 1,
+"locator": 1
+},
+"best": 0.996
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "658",
+"zone": 2,
+"x": 15.0,
+"y": 3.0,
+"rssi": [
+-53.0,
+-43.0,
+-53.5,
+-55.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.994
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "662",
+"zone": 2,
+"x": 21.0,
+"y": 3.0,
+"rssi": [
+-52.0,
+-44.0,
+-50.0,
+-53.0
+],
+"calls": {
+"strongest": 2,
+"fw vote": 2,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 2,
+"slope": 2,
+"RSSI lookup": 2,
+"phase lookup": 2,
+"locator": 2
+},
+"best": 0.991
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "199",
+"zone": 3,
+"x": 27.0,
+"y": 3.0,
+"rssi": [
+-46.0,
+-46.0,
+-49.0,
+-47.0
+],
+"calls": {
+"strongest": 1,
+"fw vote": 4,
+"WCL RSSI": 2,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.996
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "203",
+"zone": 3,
+"x": 33.0,
+"y": 3.0,
+"rssi": [
+-47.0,
+-53.0,
+-41.0,
+-53.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 3,
+"RSSI lookup": 3,
+"phase lookup": 3,
+"locator": 3
+},
+"best": 0.971
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "207",
+"zone": 4,
+"x": 39.0,
+"y": 3.0,
+"rssi": [
+-52.0,
+-56.0,
+-55.0,
+-44.0
+],
+"calls": {
+"strongest": 4,
+"fw vote": 4,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 4,
+"slope": 3,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.997
+},
+{
+"reader": "Silion",
+"test": "same spot, minutes",
+"power": 12.0,
+"box": "211",
+"zone": 4,
+"x": 45.0,
+"y": 3.0,
+"rssi": [
+-54.5,
+-45.0,
+-43.0,
+-48.0
+],
+"calls": {
+"strongest": 3,
+"fw vote": 3,
+"WCL RSSI": 3,
+"WCL slope+RSSI": 3,
+"slope": 4,
+"RSSI lookup": 4,
+"phase lookup": 4,
+"locator": 4
+},
+"best": 0.99
+}
+],
+"findings": [
+[
+"SAME",
+"ok",
+"<b>On untouched boxes both readers are near perfect, as long as the lookup and the test use the same RF mode.</b> Silion: locator 32/32, phase pattern 31/32. R700 with mode 2 for both: 32/32 and 31/32. The R700 with a mode 1002 lookup and a mode 2 test drops to 28/32 (phase 21/32), so the lookup has to be captured in the mode that will be used."
+],
+[
+"6\"",
+"no",
+"<b>Away from calibrated spots the Silion is no better.</b> Called from the other 31 boxes (6\" away): Silion locator 18/32, R700 16\u201318/32. The phase slope does best on both, 20/32 on the Silion and 20\u201322/32 on the R700."
+],
+[
+"RSSI",
+"no",
+"<b>Methods without a lookup stay near 50% on both readers.</b> Strongest RSSI 13\u201315/32, firmware vote 14\u201315/32, WCL with RSSI weights 10\u201314/32, WCL with slope and RSSI weights 15\u201321/32."
+],
+[
+"BORDER",
+"mid",
+"<b>Most wrong calls are one zone over, across the line the box sits next to.</b> If a box beside a zone line may also be called the zone across that line (655 as Z1 or Z2; the end boxes such as 650 must be exact), the 6\" test rises to Silion locator 24/32 and R700 24\u201326/32, and phase slope to 23/32 and 27\u201328/32. Strongest RSSI and the firmware vote reach 20\u201323/32. This is a lenient score: 24 of the 32 boxes sit next to a line."
+],
+[
+"PHASE",
+"ok",
+"<b>The Silion's phase is cleaner.</b> Repeated reads on a channel agree to 0.9\u20131.1\u00b0, against 1.6\u20132.7\u00b0 on the R700, with no 180\u00b0 flips. An untouched box's pattern repeats at 0.995 (R700, same mode: 0.989)."
+],
+[
+"POWER",
+"mid",
+"<b>12 dBm on antennas 1\u20132 and 14 dBm on 3\u20134 gave even coverage.</b> Reads per antenna 4,150\u20135,270 in 120 s, a median 43 channels per box per antenna, and 16 of 128 box\u2013antenna pairs under 6 channels (R700: 6\u201331)."
+]
+]
+}
 }

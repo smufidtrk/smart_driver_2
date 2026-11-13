@@ -150,6 +150,43 @@ DD = pd.DataFrame(dist)
 DD["bin"] = DD.d.where(DD.d <= 12, 99)
 out["cal32_dist"] = [dict(power=pw, d=float(b), same=bool(s), median=round(float(g.m.median()), 3), n=len(g))
                      for (pw, b, s), g in DD.groupby(["power", "bin", "same"])]
+# ── G. Silion E710 vs R700 (analysis/reader_compare.py output) ─────────────
+RC = S("reader_compare")
+if os.path.exists(os.path.join(RC, "reader_compare.csv")):
+    cmp_ = pd.read_csv(os.path.join(RC, "reader_compare.csv"), dtype=str)
+    qual = pd.read_csv(os.path.join(RC, "quality.csv"))
+    pb = pd.read_csv(os.path.join(RC, "per_box.csv"))
+    RM = ["strongest", "fw vote", "WCL RSSI", "WCL slope+RSSI", "slope", "RSSI lookup", "phase lookup", "locator"]
+    toi = lambda v: None if pd.isna(v) else int(v)
+    bpath = os.path.join(RC, "reader_compare_border.csv")
+    cmpb = pd.read_csv(bpath, dtype=str) if os.path.exists(bpath) else None
+    accb = lambda r: None if cmpb is None else {m: [int(x) for x in cmpb[(cmpb.reader == r.reader) & (cmpb.test == r.test) & (cmpb.dBm == r.dBm)][m].iloc[0].split("/")] for m in RM}
+    out["readers"] = dict(
+        methods=RM,
+        compare=[dict(reader=r.reader, test=r.test, dBm=r.dBm, boxes=int(r.boxes),
+                      acc={m: [int(x) for x in r[m].split("/")] for m in RM}, acc_border=accb(r)) for _, r in cmp_.iterrows()],
+        quality=json.loads(qual.to_json(orient="records")),
+        boxes=[dict(reader=r.reader, test=r.test, power=float(r.power), box=str(r.box), zone=int(r.zone),
+                    x=float(r.x), y=float(r.y), rssi=json.loads(r.rssi), calls={m: toi(r[m]) for m in RM},
+                    best=nan2none(r.best_match)) for _, r in pb.iterrows()])
+    out["readers"]["findings"] = [
+        ["SAME", "ok", "<b>On untouched boxes both readers are near perfect, as long as the lookup and the test use the same RF mode.</b> "
+         "Silion: locator 32/32, phase pattern 31/32. R700 with mode 2 for both: 32/32 and 31/32. The R700 with a mode 1002 lookup and a "
+         "mode 2 test drops to 28/32 (phase 21/32), so the lookup has to be captured in the mode that will be used."],
+        ["6\"", "no", "<b>Away from calibrated spots the Silion is no better.</b> Called from the other 31 boxes (6\" away): Silion locator "
+         "18/32, R700 16–18/32. The phase slope does best on both, 20/32 on the Silion and 20–22/32 on the R700."],
+        ["RSSI", "no", "<b>Methods without a lookup stay near 50% on both readers.</b> Strongest RSSI 13–15/32, firmware vote 14–15/32, "
+         "WCL with RSSI weights 10–14/32, WCL with slope and RSSI weights 15–21/32."],
+        ["BORDER", "mid", "<b>Most wrong calls are one zone over, across the line the box sits next to.</b> If a box beside a zone line may "
+         "also be called the zone across that line (655 as Z1 or Z2; the end boxes such as 650 must be exact), the 6\" test rises to "
+         "Silion locator 24/32 and R700 24–26/32, and phase slope to 23/32 and 27–28/32. Strongest RSSI and the firmware vote reach "
+         "20–23/32. This is a lenient score: 24 of the 32 boxes sit next to a line."],
+        ["PHASE", "ok", "<b>The Silion's phase is cleaner.</b> Repeated reads on a channel agree to 0.9–1.1°, against 1.6–2.7° on the R700, "
+         "with no 180° flips. An untouched box's pattern repeats at 0.995 (R700, same mode: 0.989)."],
+        ["POWER", "mid", "<b>12 dBm on antennas 1–2 and 14 dBm on 3–4 gave even coverage.</b> Reads per antenna 4,150–5,270 in 120 s, "
+         "a median 43 channels per box per antenna, and 16 of 128 box–antenna pairs under 6 channels (R700: 6–31)."],
+    ]
+
 json.dump(out, open(os.path.join(ROOT, "report", "report_data.json"), "w"), indent=0)
 tpl = open(os.path.join(ROOT, "report", "template.html"), encoding="utf-8").read()
 blob = json.dumps(out, separators=(",", ":"), allow_nan=False).replace("</", "<\\/")

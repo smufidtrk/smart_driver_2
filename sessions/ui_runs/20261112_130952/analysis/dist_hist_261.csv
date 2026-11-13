@@ -1,0 +1,5 @@
+antenna,reads,channels,rssi_median,rssi_p10,rssi_p90,dist_median_in,dist_p10_in,dist_p90_in,slope_dx_in,fit
+1,99,50,-45.5,-50.0,-39.0,13.8,12.0,23.2,17.7,"RSSI = -22.6 -20.1 log10(d), scatter 5.2 dB"
+2,78,42,-51.5,-55.8,-43.7,27.7,12.4,43.6,44.1,"RSSI = -20.0 -21.8 log10(d), scatter 4.6 dB"
+3,61,31,-46.0,-56.5,-43.5,12.0,12.0,48.6,35.2,"RSSI = -28.5 -16.6 log10(d), scatter 4.4 dB"
+4,75,43,-51.0,-56.8,-44.5,26.8,12.5,53.1,60.0,"RSSI = -23.1 -19.5 log10(d), scatter 5.0 dB"

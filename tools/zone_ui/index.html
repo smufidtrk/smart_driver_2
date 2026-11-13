@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zone Locator</title>
+<style>
+:root {
+  --bg: #f3f4f6; --surface: #ffffff; --ink: #14171c; --ink-2: #4b535d; --muted: #7d858f; --line: #dde1e6;
+  --accent: #3f3ab8; --z1: #2a78d6; --z2: #eb6834; --z3: #1baf7a; --z4: #eda100; --good: #0a8a0a; --bad: #d03b3b;
+  --mono: ui-monospace, "Cascadia Mono", Consolas, monospace; --sans: system-ui, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root {
+  --bg: #111316; --surface: #1a1d21; --ink: #eef0f3; --ink-2: #b8c0c9; --muted: #8a929c; --line: #2c3137;
+  --accent: #9a94f0; --z1: #3987e5; --z2: #d95926; --z3: #199e70; --z4: #c98500; --good: #2bb52b; --bad: #e66767; color-scheme: dark; } }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.5 var(--sans); }
+header { padding: 14px 20px; border-bottom: 1px solid var(--line); background: var(--surface); display: flex; gap: 16px; align-items: baseline; flex-wrap: wrap; }
+header h1 { margin: 0; font-size: 18px; }
+header span { color: var(--muted); font-size: 13px; }
+main { display: grid; grid-template-columns: minmax(280px, 340px) 1fr; gap: 16px; padding: 16px 20px 40px; max-width: 1280px; }
+@media (max-width: 860px) { main { grid-template-columns: 1fr; } }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+h2 { margin: 0; font-size: 15px; }
+label { display: grid; gap: 4px; font-size: 12px; color: var(--ink-2); font-weight: 600; }
+input, select, textarea { font: 14px var(--sans); padding: 7px 9px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--ink); width: 100%; }
+input#epc { font-family: var(--mono); }
+.row { display: flex; gap: 10px; flex-wrap: wrap; }
+.row > * { flex: 1 1 90px; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 7px; overflow: hidden; }
+.seg button { border: 0; background: transparent; padding: 7px 12px; font: 13px var(--sans); color: var(--ink-2); cursor: pointer; }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--surface); }
+button.primary { background: var(--accent); color: #fff; border: 0; border-radius: 7px; padding: 10px 14px; font: 600 14px var(--sans); cursor: pointer; }
+button.primary:disabled { opacity: .55; cursor: wait; }
+button.ghost { background: transparent; border: 1px solid var(--line); color: var(--ink); border-radius: 7px; padding: 7px 12px; cursor: pointer; font: 13px var(--sans); }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.checks { display: grid; gap: 4px; max-height: 190px; overflow: auto; border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; }
+.checks label { display: flex; gap: 8px; align-items: center; font-weight: 400; color: var(--ink); font-size: 13px; }
+.checks input { width: auto; }
+.checks small { color: var(--muted); }
+.hint { font-size: 12px; color: var(--muted); }
+.status { font-size: 13px; padding: 8px 10px; border-radius: 6px; background: var(--bg); }
+.status.err { color: var(--bad); }
+.verdict { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.verdict .big { font-size: 32px; font-weight: 700; }
+.chip { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: 600; color: #fff; }
+.chip.ok { background: var(--good); } .chip.no { background: var(--bad); }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--line); }
+th { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+td.num, th.num { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.scroll { overflow-x: auto; }
+.bar { height: 10px; border-radius: 3px; background: var(--line); position: relative; min-width: 80px; }
+.bar i { position: absolute; inset: 0 auto 0 0; border-radius: 3px; }
+.warn { color: var(--bad); font-size: 13px; }
+svg text { fill: var(--ink); font-family: var(--sans); }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.zbtn { display: flex; gap: 6px; flex-wrap: wrap; }
+.zbtn button { border: 2px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 7px; padding: 6px 14px; cursor: pointer; font: 600 13px var(--sans); }
+.zbtn button[aria-pressed="true"] { border-color: var(--accent); background: var(--surface); }
+.muted { color: var(--muted); }
+</style>
+</head>
+<body>
+<header><h1>Zone Locator</h1><span>Type an EPC, scan, and see how sure the lookup table is about each zone. Lookup = calibration captures with known box positions.</span></header>
+<main>
+  <section class="card" aria-label="Inputs">
+    <label>Tag EPC<input id="epc" list="taglist" placeholder="1A11223344556677889906 54" autocomplete="off" spellcheck="false"></label>
+    <datalist id="taglist"></datalist>
+    <div><div class="hint" style="margin-bottom:4px">Read from</div>
+      <div class="seg" id="src"><button type="button" data-v="live" aria-pressed="true">Live scan</button><button type="button" data-v="session" aria-pressed="false">Saved capture</button></div></div>
+    <div id="live-opts" class="row">
+      <label>RF mode<select id="mode"><option value="2">2 · Dense Reader M=4</option><option value="1002">1002 · AutoSet DRDS</option><option value="4">4 · Max Miller</option></select></label>
+      <label>Scan (s)<input id="dwell" type="number" min="5" max="120" value="20"></label>
+      <label title="Gen2 session: how long a tag remembers it was read (its inventoried flag). S0: forgets at once, so it replies every round. S1: about 0.5-5 s. S2/S3: several seconds or more (default S2). With dual-target search the reader flips between A and B, so all sessions keep reading stationary tags.">Gen2 session<select id="g2sess"><option value="0">S0</option><option value="1">S1</option><option value="2" selected>S2</option><option value="3">S3</option></select></label>
+      <label title="Dual target: reads tags in A, then B, then A... so every tag keeps replying. Single target: reads only tags in state A; once read they go quiet until their flag decays (useful with S0, where it decays at once).">Search<select id="search"><option value="dual" selected>Dual target</option><option value="single">Single target</option></select></label>
+    </div>
+    <label id="sess-opt" hidden>Saved capture<select id="session"></select></label>
+    <label>Power (dBm)<select id="power"><option>20</option><option>15</option><option>12</option></select></label>
+    <div><div class="hint" style="margin-bottom:4px">Lookup table (calibration sessions)</div><div class="checks" id="lookup"></div>
+      <div class="hint" style="margin-top:4px">A saved capture is never looked up against itself.</div></div>
+    <div><div class="hint" style="margin-bottom:4px">Antenna weighting for phase</div>
+      <div class="seg" id="wt"><button type="button" data-v="equal" aria-pressed="true">Equal</button><button type="button" data-v="rssi" aria-pressed="false">By RSSI</button></div></div>
+    <button class="primary" id="go" type="button">Locate tag</button>
+    <div class="status" id="status" hidden></div>
+  </section>
+
+  <section class="card" aria-label="Result" id="result">
+    <h2>Result</h2>
+    <p class="muted" id="empty">Results appear here. Tip: pick "Saved capture" and a session such as 4zone_mode2_d to try it without the reader.</p>
+    <div id="res" hidden>
+      <div class="verdict"><div><div class="hint">Most likely</div><div class="big" id="call"></div></div><div id="truth"></div><div class="hint" id="src-line"></div></div>
+      <div class="scroll"><svg id="map" viewBox="0 0 640 248" style="min-width:520px;width:100%;height:auto" role="img" aria-label="Zone confidence on the shelf"></svg></div>
+      <div class="warn" id="warns"></div>
+      <div class="two">
+        <div><h2 style="margin-bottom:6px">Confidence per zone</h2><table id="ztable"></table></div>
+        <div><h2 style="margin-bottom:6px">What each antenna heard</h2><table id="atable"></table></div>
+      </div>
+      <div><h2 style="margin-bottom:6px">Closest calibration boxes (phase pattern)</h2><div class="scroll"><table id="ntable"></table></div></div>
+      <div class="card" style="background:var(--bg)">
+        <h2>Log this test</h2>
+        <div class="hint">Where is the box really? Logging builds the accuracy and confidence check below.</div>
+        <div class="zbtn" id="truebtn"></div>
+        <label>Note<input id="note" placeholder="e.g. box rotated, between spots, 2 neighbours"></label>
+        <div><button class="ghost" id="save" type="button">Save result</button> <span class="hint" id="saved"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" style="grid-column:1/-1" aria-label="Test log">
+    <h2>Test log</h2>
+    <div id="logsum" class="muted">No tests logged yet.</div>
+    <div class="scroll"><table id="logtable"></table></div>
+  </section>
+
+  <section class="card" style="grid-column:1/-1" aria-label="Evaluate a session">
+    <h2>Check a whole session</h2>
+    <div class="hint">Classifies every box of a calibration-style session (with known positions) against the lookup sessions ticked above.</div>
+    <div class="row"><label>Session<select id="evsess"></select></label><label>Power (dBm)<select id="evpow"><option>20</option><option>15</option><option>12</option></select></label><div style="align-self:end"><button class="ghost" id="evgo" type="button">Run check</button></div></div>
+    <div id="evres" class="muted"></div>
+    <div class="scroll"><table id="evtable"></table></div>
+  </section>
+</main>
+
+<script>
+// Opened from disk (file://) instead of http://localhost:8765? Talk to the local server directly.
+const API = /^https?:$/.test(location.protocol) ? '' : 'http://localhost:8765';
+const START = 'Start the server from the project folder:  .venv\\Scripts\\python tools\\zone_ui\\server.py';
+const $ = s => document.querySelector(s);
+const st = { src: 'live', wt: 'equal', last: null, truth: null, meta: null };
+const ZC = z => `var(--z${z})`;
+const pct = v => v == null ? '–' : Math.round(v * 100) + '%';
+const dbm = v => v == null ? '–' : (v < 0 ? '−' : '') + Math.abs(v).toFixed(1);
+function seg(id, key, onchange) {
+  $(id).querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+    st[key] = b.dataset.v; $(id).querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x === b))); onchange && onchange();
+  }));
+}
+seg('#src', 'src', () => { $('#live-opts').hidden = st.src !== 'live'; $('#sess-opt').hidden = st.src !== 'session'; });
+seg('#wt', 'wt');
+function status(msg, err) { const s = $('#status'); s.hidden = !msg; s.textContent = msg || ''; s.className = 'status' + (err ? ' err' : ''); }
+const lookupSel = () => [...document.querySelectorAll('#lookup input:checked')].map(i => i.value);
+
+async function loadMeta() {
+  const m = await (await fetch(API + '/api/meta')).json(); st.meta = m;
+  $('#taglist').innerHTML = Object.entries(m.tags).map(([e, t]) => `<option value="${e}">box ${t.box} · zone ${t.zone}</option>`).join('');
+  const def = new Set(['4zone_cal32', '4zone_cal32_repeat']);
+  $('#lookup').innerHTML = m.lookup.map(s => `<label><input type="checkbox" value="${s.name}" ${def.has(s.name) ? 'checked' : ''}> ${s.name} <small>${s.boxes} boxes · mode ${s.rf_mode ?? '?'}${s.gen2_session != null ? ' · S' + s.gen2_session : ''} · ${s.started}</small></label>`).join('');
+  $('#session').innerHTML = m.captures.slice().reverse().map(s => `<option value="${s.name}">${s.name} (mode ${s.rf_mode ?? '?'}${s.gen2_session != null ? ', S' + s.gen2_session : ''}${s.search === 'single' ? ' single' : ''}, ${s.powers.join('/')} dBm)</option>`).join('');
+  $('#evsess').innerHTML = m.lookup.map(s => `<option value="${s.name}">${s.name} (${s.boxes} boxes, mode ${s.rf_mode ?? '?'})</option>`).join('');
+  const d = m.captures.find(s => s.name === '4zone_mode2_d'); if (d) $('#session').value = d.name;
+  const e = m.lookup.find(s => s.name === '4zone_mode2_d'); if (e) $('#evsess').value = e.name;
+  $('#truebtn').innerHTML = m.zones.map(z => `<button type="button" data-z="${z}" aria-pressed="false">Zone ${z}</button>`).join('');
+  $('#truebtn').querySelectorAll('button').forEach(b => b.addEventListener('click', () => setTruth(+b.dataset.z)));
+}
+function setTruth(z) { st.truth = z; $('#truebtn').querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.z === z))); }
+
+$('#go').addEventListener('click', async () => {
+  const epc = $('#epc').value.replace(/\s+/g, '').toUpperCase();
+  if (!epc) return status('Enter an EPC first.', true);
+  const body = { epc, source: st.src, session: $('#session').value, power: +$('#power').value, rf_mode: +$('#mode').value, gen2_session: +$('#g2sess').value, search: $('#search').value,
+    dwell: +$('#dwell').value, lookup: lookupSel(), weighting: st.wt };
+  $('#go').disabled = true;
+  status(st.src === 'live' ? `Scanning for ${body.dwell} s at ${body.power} dBm, mode ${body.rf_mode}, S${body.gen2_session} ${body.search} (plus ~15 s to start the reader)…` : 'Classifying…');
+  try {
+    const r = await fetch(API + '/api/locate', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+    const j = await r.json();
+    if (j.error) { status(j.error, true); return; }
+    st.last = { ...j, epc, body }; status(st.src === 'live' ? `Scan saved as sessions/${j.session}.` : ''); render(j, epc);
+    if (st.src === 'live') { await loadMeta(); $('#session').value = j.session; }
+  } catch (e) { status(`Could not reach the locator server at ${API || location.origin}. ${START}`, true); }
+  finally { $('#go').disabled = false; }
+});
+
+function render(r, epc) {
+  $('#empty').hidden = true; $('#res').hidden = false;
+  $('#call').innerHTML = `Zone ${r.call} <span style="font-size:20px;color:var(--ink-2)">${pct(r.call_conf)}</span>`;
+  const known = st.meta.tags[epc];
+  const tz = r.truth_zone ?? null;
+  $('#truth').innerHTML = tz ? (tz === r.call ? `<span class="chip ok">✓ correct (box is in zone ${tz})</span>` : `<span class="chip no">✗ box is in zone ${tz}</span>`) :
+    (known ? `<span class="hint">box ${known.box}: zone ${known.zone} in the newest calibration layout</span>` : '');
+  $('#src-line').textContent = `${r.source} · ${r.lookup_boxes} lookup readings · strongest antenna says zone ${r.strongest}`;
+  setTruth(tz ?? null);
+  $('#warns').innerHTML = (r.warnings || []).join('<br>');
+  drawMap(r);
+  $('#ztable').innerHTML = '<tr><th>Zone</th><th>Combined</th><th class="num">Phase</th><th class="num">RSSI</th><th class="num" title="phase slope across frequency: shortest path to the antenna of that zone">Slope</th><th class="num">Best match</th></tr>' +
+    r.zones.map((z, i) => `<tr><td><b>${z}</b></td><td><div class="bar"><i style="width:${(r.combined[i] || 0) * 100}%;background:${ZC(z)}"></i></div><span class="hint">${pct(r.combined[i])}</span></td>` +
+      `<td class="num">${pct(r.phase[i])}</td><td class="num">${pct(r.rssi[i])}</td><td class="num">${r.slope ? pct(r.slope[i]) : '–'}</td><td class="num">${r.phase_best_match[i] == null ? '–' : r.phase_best_match[i].toFixed(2)}</td></tr>`).join('');
+  $('#atable').innerHTML = '<tr><th>Antenna</th><th class="num">RSSI dBm</th><th class="num">Reads</th><th class="num">Channels</th><th class="num" title="phase slope across frequency, deg/MHz (steeper = longer path)">Slope °/MHz</th><th class="num" title="slope minus the median of this antenna over the lookup boxes, in spreads; higher = closer than usual">Relative</th></tr>' +
+    r.antennas.map(a => `<tr><td>A${a.port} · zone ${a.zone}</td><td class="num">${dbm(a.rssi)}</td><td class="num">${a.reads}</td><td class="num">${a.channels}</td><td class="num">${a.slope ?? '–'}</td><td class="num">${a.rel_slope == null ? '–' : (a.rel_slope > 0 ? '+' : '') + a.rel_slope.toFixed(2)}</td></tr>`).join('');
+  $('#ntable').innerHTML = '<tr><th>Box</th><th>Zone</th><th class="num">x, y (in)</th><th class="num">Phase match</th><th class="num">RSSI distance</th><th>Session</th></tr>' +
+    r.nearest.map(n => `<tr><td>${n.box}</td><td><span class="chip" style="background:${ZC(n.zone)}">${n.zone}</span></td><td class="num">${n.x}, ${n.y}</td><td class="num">${n.phase ?? '–'}</td><td class="num">${n.rssi_dist}</td><td class="hint">${n.session}</td></tr>`).join('');
+}
+
+function drawMap(r) {
+  const svg = $('#map'), NS = 'http://www.w3.org/2000/svg'; svg.innerHTML = '';
+  const el = (t, a) => { const e = document.createElementNS(NS, t); for (const k in a) k === 'text' ? e.textContent = a[k] : e.setAttribute(k, a[k]); svg.appendChild(e); return e; };
+  const X0 = 40, W = 560, Y0 = 26, H = 150, zw = W / 4, sx = x => X0 + x / 48 * W, sy = y => Y0 + (1 - y / 24) * H;
+  el('rect', { x: X0, y: 8, width: W, height: 8, fill: 'var(--line)' });
+  el('text', { x: X0 + W / 2, y: 6, 'text-anchor': 'middle', 'font-size': 10, fill: 'var(--muted)', text: '' });
+  r.zones.forEach((z, i) => {
+    const p = r.combined[i] || 0;
+    el('rect', { x: X0 + i * zw + 2, y: Y0, width: zw - 4, height: H, rx: 6, fill: ZC(z), 'fill-opacity': 0.08 + 0.72 * p, stroke: z === r.call ? 'var(--ink)' : ZC(z), 'stroke-width': z === r.call ? 3 : 1 });
+    el('text', { x: X0 + i * zw + zw / 2, y: Y0 + 24, 'text-anchor': 'middle', 'font-size': 13, 'font-weight': 700, text: `Zone ${z}` });
+    el('text', { x: X0 + i * zw + zw / 2, y: Y0 + 46, 'text-anchor': 'middle', 'font-size': 20, 'font-weight': 700, text: pct(p) });
+    el('rect', { x: X0 + i * zw + zw / 2 - 18, y: Y0 + H + 14, width: 36, height: 10, rx: 2, fill: 'var(--ink)' });
+    el('text', { x: X0 + i * zw + zw / 2, y: Y0 + H + 40, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--ink-2)', text: `Ant ${i + 1}` });
+  });
+  el('line', { x1: X0, x2: X0 + W, y1: Y0 + H + 6, y2: Y0 + H + 6, stroke: 'var(--ink-2)', 'stroke-width': 2 });
+  el('text', { x: 4, y: Y0 + H + 4, 'font-size': 10, fill: 'var(--muted)', text: 'aisle' });
+  el('text', { x: 4, y: Y0 + 8, 'font-size': 10, fill: 'var(--muted)', text: 'back' });
+  r.nearest.forEach((n, k) => {
+    el('circle', { cx: sx(n.x), cy: sy(n.y), r: k === 0 ? 8 : 5, fill: 'var(--surface)', stroke: 'var(--ink)', 'stroke-width': k === 0 ? 3 : 1.5 });
+  });
+  el('text', { x: X0 + W, y: Y0 + H + 58, 'text-anchor': 'end', 'font-size': 11, fill: 'var(--muted)', text: `circles = closest calibration boxes (thick = closest, box ${r.nearest[0]?.box ?? '–'})` });
+}
+
+$('#save').addEventListener('click', async () => {
+  if (!st.last) return; if (!st.truth) { $('#saved').textContent = 'Pick the true zone first.'; return; }
+  const b = st.last.body;
+  const r = await fetch(API + '/api/log', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ epc: st.last.epc, true_zone: st.truth, result: st.last, power: b.power, lookup: b.lookup, weighting: b.weighting, note: $('#note').value }) });
+  const j = await r.json(); $('#saved').textContent = j.error ? j.error : 'Saved.'; $('#note').value = ''; showLog(j);
+});
+function showLog(j) {
+  const s = j.summary; if (!s || !s.n) { $('#logsum').textContent = 'No tests logged yet.'; $('#logtable').innerHTML = ''; return; }
+  $('#logsum').innerHTML = `<b>${s.correct}/${s.n}</b> right (${Math.round(s.correct / s.n * 100)}%) · strongest antenna alone ${s.strongest_correct}/${s.n} · ` +
+    'by confidence: ' + s.bins.map(b => `${b.range}: ${b.correct}/${b.n}`).join(' · ');
+  $('#logtable').innerHTML = '<tr><th>Time</th><th>EPC</th><th class="num">True</th><th class="num">Called</th><th class="num">Conf</th><th class="num">Strongest</th><th>Source</th><th>Note</th></tr>' +
+    j.rows.slice().reverse().slice(0, 25).map(r => `<tr><td class="hint">${r.time.replace('T', ' ')}</td><td style="font-family:var(--mono)">…${r.epc.slice(-6)}</td><td class="num">${r.true_zone}</td>` +
+      `<td class="num">${r.call} ${r.correct === '1' ? '✓' : '✗'}</td><td class="num">${pct(+r.conf)}</td><td class="num">${r.strongest}</td><td class="hint">${r.source}</td><td class="hint">${r.note}</td></tr>`).join('');
+}
+$('#evgo').addEventListener('click', async () => {
+  $('#evres').textContent = 'Running…'; $('#evtable').innerHTML = '';
+  const r = await fetch(API + '/api/evaluate', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ session: $('#evsess').value, power: +$('#evpow').value, lookup: lookupSel(), weighting: st.wt }) });
+  const j = await r.json();
+  if (j.error) { $('#evres').textContent = j.error; return; }
+  $('#evres').innerHTML = `<b>${j.correct}/${j.n}</b> boxes in the right zone (${j.n ? Math.round(j.correct / j.n * 100) : 0}%) · strongest antenna alone ${j.strongest_correct}/${j.n}`;
+  $('#evtable').innerHTML = '<tr><th>Box</th><th class="num">Zone</th><th class="num">x, y</th><th class="num">Called</th><th class="num">Conf</th><th class="num">Strongest</th></tr>' +
+    j.rows.map(r => r.error ? `<tr><td>${r.box}</td><td colspan="5" class="warn">${r.error}</td></tr>` :
+      `<tr><td>${r.box}</td><td class="num">${r.zone}</td><td class="num">${r.x ?? '–'}, ${r.y}</td><td class="num">${r.call} ${r.call === r.zone ? '✓' : '✗'}</td><td class="num">${pct(r.conf)}</td><td class="num">${r.strongest}</td></tr>`).join('');
+});
+loadMeta().then(async () => showLog(await (await fetch(API + '/api/log')).json())).catch(e => status(`Could not reach the locator server at ${API || location.origin}. ${START}, then open http://localhost:8765`, true));
+</script>
+</body>
+</html>

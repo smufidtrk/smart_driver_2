@@ -358,3 +358,41 @@ python -m venv .venv && .venv/Scripts/python -m pip install numpy pandas matplot
 cd sim && ../.venv/Scripts/python analyze.py        # summary.csv + plots
 ../.venv/Scripts/python fingerprint.py               # kNN fingerprint results → fingerprint_summary.csv
 ```
+
+## Zone Locator (test UI)
+
+A local web page for testing the zone call on single tags.
+
+**To start it**, run this from the project folder, then open http://localhost:8765 in a browser. Opening `index.html` straight from disk or the file viewer also works while the server is running, since the page then talks to localhost:8765 directly:
+
+```
+.venv\Scripts\python tools\zone_ui\server.py
+```
+
+**Using it:**
+1. Type an EPC.
+2. Choose **Live scan** (runs `capture/run.cmd`, default RF mode 2, Gen2 session S2, dual-target search, 20 dBm, 20 s) or **Saved capture**. For live scans you can change the RF mode, scan time, **Gen2 session** (S0-S3) and **search mode** (dual or single target). Each saved capture records these, and results and the test log show them next to the source.
+3. Tick the calibration sessions to use as the lookup table.
+
+It shows a confidence per zone from these sources:
+- **Phase pattern:** the best match to any calibration box in that zone.
+- **RSSI pattern:** the closest relative-RSSI vector.
+- **Slope:** the phase slope across frequency on each antenna (deg/MHz). A longer path gives a steeper slope. Each antenna's cable delay is removed using its median slope over the lookup boxes, and the antenna with the shortest relative path points to the zone. It changes smoothly with position, so it doesn't need the tag to sit on a calibrated spot (`analysis/phase_slope.py`).
+- **Combined:** all three. The phase and RSSI patterns only recognise calibrated spots, so they are weighted by how closely the tag matches any lookup box: no weight below a best match of 0.80, full weight above 0.95. Below that, the call leans on the slope, and the page says so.
+
+Tuned on the saved captures (lookup = 4zone_cal32 + repeat):
+
+| Boxes | Before the slope | With the slope |
+|---|---|---|
+| On a calibrated spot (minutes later and overnight, 15/20 dBm) | 118/128 | 113/128 |
+| Off the spots (6" leave-one-out, 12-box) | 42/76 | 50/76 |
+
+The slope on its own gets 54/76 off-spot but only 79/128 on-spot.
+
+It also shows the closest calibration boxes on a shelf map and what each antenna heard.
+
+**After each test:**
+- Pick the box's real zone and press **Save result**. The test log (`tools/zone_ui/test_log.csv`) shows overall accuracy, strongest-antenna accuracy, and how often each confidence band is right.
+- **Check a whole session** classifies every box of a session with a known layout.
+
+The confidences are rankings, not calibrated probabilities; the log shows how far to trust them. Live scans are saved under `sessions/ui_runs/`. The R700 accepts one connection at a time, so close ItemTest first.
