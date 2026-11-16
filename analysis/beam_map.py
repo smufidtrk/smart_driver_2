@@ -1,7 +1,9 @@
 """
 Box-layout map of a beam check: which boxes each port reads alone, and which port is strongest per box.
 
-  python analysis/beam_map.py sessions/beam_check_silion10_16cm [more session dirs ...]
+  python analysis/beam_map.py [--reads] sessions/beam_check_silion10_16cm [more session dirs ...]
+
+--reads adds the read count per box (reads in the 30 s on that port) to the port panels.
 
 Needs analysis/beam_check.py run on each dir first (reads its beam_check.csv).
 Writes <dir>/beam_map.png. Shelf seen from above: back wall at the top, aisle (array) at the bottom.
@@ -41,14 +43,15 @@ def shelf(ax, title):
     ax.set_title(title, loc="left", fontsize=9, fontweight="bold", color=INK, pad=4)
 
 
-def unread(ax, x, y, box):
+def unread(ax, x, y, box, reads=False):
     ax.add_patch(FancyBboxPatch((x - BOX / 2, y - BOX / 2), BOX, BOX, boxstyle="round,pad=0,rounding_size=0.6",
                                 fc=SURF, ec=LINE, lw=1, ls=(0, (2, 2))))
-    ax.text(x, y + 0.9, box, ha="center", va="center", fontsize=7, color=MUTED)
-    ax.text(x, y - 1.1, "–", ha="center", va="center", fontsize=7, color=MUTED)
+    dy = 0.6 if reads else 0
+    ax.text(x, y + 0.9 + dy, box, ha="center", va="center", fontsize=7, color=MUTED)
+    ax.text(x, y - 1.1 + dy, "–", ha="center", va="center", fontsize=7, color=MUTED)
 
 
-def run(sd):
+def run(sd, reads=False):
     R = pd.read_csv(os.path.join(sd, "beam_check.csv"), dtype={"box": str})
     name = os.path.basename(os.path.normpath(sd))
     fig, axg = plt.subplots(2, 3, figsize=(15, 7.6), facecolor=SURF)
@@ -60,13 +63,18 @@ def run(sd):
               "  ".join(f"Z{z} {share.get(z, 0):.0f}%" for z in (1, 2, 3, 4)) + "  of reads")
         for _, r in g.iterrows():
             if r.reads == 0 or not np.isfinite(r.rssi):
-                unread(ax, r.x, r.y, r.box); continue
+                unread(ax, r.x, r.y, r.box, reads); continue
             c = SEQ(NORM(np.clip(r.rssi, LO, HI)))
             ax.add_patch(FancyBboxPatch((r.x - BOX / 2, r.y - BOX / 2), BOX, BOX, boxstyle="round,pad=0,rounding_size=0.6",
                                         fc=c, ec=SURF, lw=2))
             tc = "#ffffff" if NORM(r.rssi) > 0.35 else INK
-            ax.text(r.x, r.y + 0.9, r.box, ha="center", va="center", fontsize=7, color=tc, fontweight="bold")
-            ax.text(r.x, r.y - 1.1, f"{r.rssi:.0f}", ha="center", va="center", fontsize=7, color=tc)
+            if reads:  # box / median RSSI / reads on this port
+                ax.text(r.x, r.y + 1.5, r.box, ha="center", va="center", fontsize=7, color=tc, fontweight="bold")
+                ax.text(r.x, r.y, f"{r.rssi:.0f}", ha="center", va="center", fontsize=7, color=tc)
+                ax.text(r.x, r.y - 1.5, f"{int(r.reads)}×", ha="center", va="center", fontsize=6.5, color=tc)
+            else:
+                ax.text(r.x, r.y + 0.9, r.box, ha="center", va="center", fontsize=7, color=tc, fontweight="bold")
+                ax.text(r.x, r.y - 1.1, f"{r.rssi:.0f}", ha="center", va="center", fontsize=7, color=tc)
     # strongest port per box
     ax = axs[4]
     P = R.pivot_table(index=["box", "zone", "x", "y"], columns="port", values="rssi").reset_index()
@@ -88,7 +96,8 @@ def run(sd):
     lg.text(0.04, 0.84, "Seen from above: back wall at the top (grey bar),\n"
                         "the 4-element array at the aisle edge at the bottom.\n"
                         "Each square is a box; number = box (last 3 EPC digits).", fontsize=8, color=INK2, va="top")
-    lg.text(0.04, 0.58, "Port panels: shade = median RSSI on that port alone;\n"
+    lg.text(0.04, 0.58, "Port panels: shade = median RSSI on that port alone;\n" +
+                        ("box / median RSSI (dBm) / reads in the 30 s (n×);\n" if reads else "") +
                         "dashed grey = not read by that port.", fontsize=8, color=INK2, va="top")
     lg.text(0.04, 0.24, "Strongest-port panel: colour = port with the highest\n"
                         "RSSI; 'only' = the only port that read it.", fontsize=8, color=INK2, va="top")
@@ -105,6 +114,14 @@ def run(sd):
                 "beam_check_silion5": "Silion · 5 dBm · 20 s per port · wrong element spacing",
                 "beam_check": "R700 · 10 dBm · 20 s per port · wrong element spacing",
                 **{f"beam_check_gap3_{p}dbm": f"Silion · {p} dBm · 30 s per port · zones 3\" apart (boxes drawn on the old grid)"
+                   for p in (5, 10, 15)},
+                **{f"zircon_beam_{p}dbm": f"Zircon (QM100) · {p} dBm · 30 s per port · zones 3\" apart (boxes drawn on the old grid)"
+                   for p in (5, 10, 15)},
+                **{f"zircon_beam_metal_new2_{p}dbm": f"Zircon (QM100) · {p} dBm · back metal v3: v2 antenna, boxes stacked · 30 s per port"
+                   for p in (5, 10, 15)},
+                **{f"zircon_beam_metal_new_{p}dbm": f"Zircon (QM100) · {p} dBm · back metal v2: array on plate, 18 cm apart · 30 s per port"
+                   for p in (5, 10, 15)},
+                **{f"zircon_beam_metal_{p}dbm": f"Zircon (QM100) · {p} dBm · back metal v1: plate behind array · 30 s per port"
                    for p in (5, 10, 15)}}.get(name, name)
     fig.suptitle(f"Beam-steering check: each port alone · {run_name}", x=0.01, ha="left", fontsize=11, fontweight="bold")
     fig.subplots_adjust(left=0.01, right=0.995, top=0.90, bottom=0.01, wspace=0.04, hspace=0.18)
@@ -114,5 +131,7 @@ def run(sd):
 
 
 if __name__ == "__main__":
-    for d in sys.argv[1:]:
-        run(d)
+    args = sys.argv[1:]
+    reads = "--reads" in args  # add the read count per box in the port panels
+    for d in (a for a in args if a != "--reads"):
+        run(d, reads)

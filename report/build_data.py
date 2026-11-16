@@ -2,7 +2,7 @@
 (used by report/zone_test_report.html).  Run from the project folder:
     .venv\\Scripts\\python report\\build_data.py
 """
-import json, os, sys
+import glob, json, os, sys
 import numpy as np
 import pandas as pd
 
@@ -186,6 +186,101 @@ if os.path.exists(os.path.join(RC, "reader_compare.csv")):
         ["POWER", "mid", "<b>12 dBm on antennas 1–2 and 14 dBm on 3–4 gave even coverage.</b> Reads per antenna 4,150–5,270 in 120 s, "
          "a median 43 channels per box per antenna, and 16 of 128 box–antenna pairs under 6 channels (R700: 6–31)."],
     ]
+
+# ── H. Beam-steering array, one port at a time (analysis/beam_check.py output) ──
+# Only runs with the elements at the correct 16 cm spacing (earlier runs had the wrong spacing).
+BEAM_RUNS = [("beam_check_silion8_16cm", 1, 8, "Nov 13"), ("beam_check_silion10_16cm", 1, 10, "Nov 13"),
+             ("beam_check_gap3_5dbm", 3, 5, "Nov 13"), ("beam_check_gap3_10dbm", 3, 10, "Nov 13"),
+             ("beam_check_gap3_15dbm", 3, 15, "Nov 13")]
+PORT_ZONE = {1: 1, 4: 2, 3: 3, 2: 4}  # zone each port favoured at 5 dBm (3" gaps), used as the reference beam map
+
+
+def beam_run(sess, pz):
+    """Per-box and per-port summary of one beam check (each port run alone). pz: port -> zone map for scoring."""
+    p = S(sess, "beam_check.csv")
+    if not os.path.exists(p):
+        return None
+    B = pd.read_csv(p, dtype={"box": str})
+    boxes = []
+    for (bx, z, x, y), g in B.groupby(["box", "zone", "x", "y"]):
+        g = g.set_index("port")
+        rs = {pt: (None if pd.isna(g.rssi.get(pt)) else float(g.rssi[pt])) for pt in (1, 2, 3, 4)}
+        rd = {pt: int(g.reads.get(pt, 0)) for pt in (1, 2, 3, 4)}
+        best = max((v, pt) for pt, v in rs.items() if v is not None)[1] if any(v is not None for v in rs.values()) else None
+        boxes.append(dict(box=bx, zone=int(z), x=float(x), y=float(y), rssi=[rs[k] for k in (1, 2, 3, 4)],
+                          reads=[rd[k] for k in (1, 2, 3, 4)], best=best))
+    nport = [sum(1 for b in boxes if b["reads"][i] > 0) for i in range(4)]
+    seen = [b for b in boxes if any(b["reads"])]
+    share = []
+    for pt in (1, 2, 3, 4):
+        tot = B[B.port == pt].reads.sum()
+        share.append([round(float(B[(B.port == pt) & (B.zone == z)].reads.sum() / max(tot, 1) * 100)) for z in (1, 2, 3, 4)])
+    # mean RSSI over every read of the 32 box tags (all ports)
+    tags = {str(bx).zfill(4) for bx in B.box}
+    cap = pd.concat(pd.read_csv(f) for f in glob.glob(os.path.join(S(sess), "port*", "cap_*.csv")))
+    cap = cap[cap.epc.astype(str).str[-4:].isin(tags)]
+    return dict(id=sess, boxes=boxes, nport=nport, share=share,
+                reads=[int(B[B.port == pt].reads.sum()) for pt in (1, 2, 3, 4)],
+                seen=len(seen), multi=sum(1 for b in seen if sum(r > 0 for r in b["reads"]) >= 2),
+                right=sum(1 for b in seen if b["best"] is not None and pz[b["best"]] == b["zone"]),
+                rssi_mean=round(float(cap.rssi_dbm.mean()), 1), pz=pz)
+
+
+beam = []
+for sess, gap, pw, day in BEAM_RUNS:
+    r = beam_run(sess, PORT_ZONE)
+    if r:
+        beam.append(dict(r, gap=gap, power=pw, day=day))
+if beam:
+    out["beam"] = dict(runs=beam, port_zone=PORT_ZONE, findings=[
+        ["5 dBm", "mid", "<b>At 5 dBm with 3\" gaps each port has its own zone.</b> Port 1 reads only zone 1 and port 2 only zone 4; "
+         "port 3 favours zone 3 (47% of its reads) and port 4 zone 2 (49%). But only 16 of 32 boxes are read at all, and port 1 "
+         "reads just 2 boxes, so this is the edge of reading, not a working setup."],
+        ["10 dBm", "no", "<b>At 8–10 dBm the beams overlap.</b> Port 1 covers the left half, port 3 the right three zones, port 2 both "
+         "ends and port 4 everything. 63–88% of the boxes read are seen on 2 or more ports. The 3\" gaps changed nothing measurable "
+         "at 10 dBm."],
+        ["15 dBm", "no", "<b>At 15 dBm every port reads 28–30 boxes across all four zones</b> (30 of 31 boxes on 2+ ports): the "
+         "beams no longer separate the zones."],
+        ["CALL", "no", "<b>The strongest port names the right zone for at most about half the boxes.</b> Taking the 5 dBm beam map "
+         "(P1→Z1, P4→Z2, P3→Z3, P2→Z4) for every run: 8 and 7 of 32 with 1\" gaps at 8 and 10 dBm; 12, 11 and 17 of 32 with 3\" gaps "
+         "at 5, 10 and 15 dBm (at 5 dBm, 12 of the 16 boxes read). One antenna per zone gave 13–15 of 32."],
+        ["ORDER", "mid", "<b>The order along the shelf is P1, P4, P3, P2.</b> The design angles (P3 41°, P1 76°, P4 105°, P2 139°) "
+         "give P3, P1, P4, P2, so ports 1 and 3 look swapped, at the reader or at the Butler matrix."],
+    ])
+
+# ── I. Zircon (QM100, one reader port + RF switch): same beam check, array and metal changed between setups ──
+# v1: array on foam (16 cm) with a metal plate held perpendicular to the shelf behind it.
+# v2: array remounted on the plate, elements 18 cm apart.  v3: v2's antenna, boxes stacked instead of one layer.
+# The port order moved with the remount: no metal and v1 favoured A2/A3/A4/A1 for zones 1-4; v2 and v3 P1/P4/P3/P2
+# (the Silion order). Each setup is scored with its own map.
+ZX_OLD = {2: 1, 3: 2, 4: 3, 1: 4}
+ZX_SETUPS = [("zircon_beam", "No back metal", "Nov 13", ZX_OLD, 16),
+             ("zircon_beam_metal", "Back metal v1", "Nov 13", ZX_OLD, 16),
+             ("zircon_beam_metal_new", "Back metal v2", "Nov 15", PORT_ZONE, 18),
+             ("zircon_beam_metal_new2", "Back metal v3", "Nov 15", PORT_ZONE, 18)]
+zx = []
+for base, setup, day, pz, cm in ZX_SETUPS:
+    for pw in (5, 10, 15):
+        r = beam_run(f"{base}_{pw}dbm", pz)
+        if r:
+            zx.append(dict(r, setup=setup, power=pw, day=day, spacing=cm, stacked=base.endswith("new2")))
+if zx:
+    out["zircon"] = dict(runs=zx, setups=[s[1] for s in ZX_SETUPS], findings=[
+        ["v2", "ok", "<b>Back metal v2 (array mounted on the plate, elements 18 cm apart) is the best Zircon setup.</b> The strongest port names the right zone for 23, 22 and 24 of "
+         "32 boxes at 5, 10 and 15 dBm, every box is read, and every zone gets at least 4 right. At 5 dBm only 56% of boxes are "
+         "seen on 2+ ports and 73% of port 2's reads land in zone 4."],
+        ["ORDER", "mid", "<b>Mounting the array on the plate at 18 cm changed the port order to P1, P4, P3, P2</b>, the same as "
+         "the Silion. Without metal and with v1 (16 cm, plate only behind it) it was A2, A3, A4, A1."],
+        ["v3", "mid", "<b>Stacking the boxes (v3, same antenna as v2) lost zone 4.</b> Ports 3 and 4 stay tight (76% of port 3's "
+         "reads at 5 dBm in zone 3), but only 2–3 of 8 zone-4 boxes are called right: 19, 20 and 20 of 32, with 4 boxes unread at "
+         "5 dBm. Box positions are drawn on the one-layer grid."],
+        ["v1", "mid", "<b>A plate held perpendicular to the shelf behind the array (v1) helped zones 1–3 but not zone 4</b>: 19, 19 "
+         "and 20 of 32, with zone 4 at 2 of 8 because port 4 spills into it and beats port 1."],
+        ["NONE", "no", "<b>Without back metal the beams barely separate</b>: 81–96% of boxes are seen on 2+ ports and the "
+         "strongest port is right for 13, 19 and 16 of 32."],
+        ["RSSI", "mid", "<b>The Zircon reports about 5 dB lower RSSI than the Silion</b> (−48.5 to −52.7 dBm mean against −42.7 "
+         "to −46.0). Its RSSI is raw and goes through the RF switch, so compare RSSI within one reader only."],
+    ])
 
 json.dump(out, open(os.path.join(ROOT, "report", "report_data.json"), "w"), indent=0)
 tpl = open(os.path.join(ROOT, "report", "template.html"), encoding="utf-8").read()

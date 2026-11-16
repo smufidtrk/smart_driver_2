@@ -117,12 +117,12 @@ svg text { fill: var(--ink); font-family: var(--body); }
 
 <div class="wrap">
 <header>
-  <span class="eyebrow">RFID zone tests · Impinj R700 and Silion E710 · Nov 9–12, 2026</span>
+  <span class="eyebrow">RFID zone tests · Impinj R700, Silion E710 and Zircon (QM100) · Nov 9–15, 2026</span>
   <h1>Truck shelf zone tests</h1>
   <p class="lede">Can a reader tell which zone of a truck shelf a box sits in, using RSSI and phase? This page collects every
   test so far. The early tests split the shelf into four quadrants with 2 antennas; the later ones use 4 side-by-side 1&nbsp;ft
   zones with one antenna per zone. Every figure shows each box: where it was, what each antenna heard, and which zone it was assigned.</p>
-  <div class="meta"><span>Tests 1–6: Impinj R700, RF mode 1002, session 2</span><span>Test 7: Silion E710 (Sapphire), mode 4141, session 0</span><span>Power: 12–20 dBm</span><span>Box tags: 1A1122…06xx</span></div>
+  <div class="meta"><span>Tests 1–6: Impinj R700, RF mode 1002, session 2</span><span>Tests 7–8: Silion E710 (Sapphire), mode 4141, session 0</span><span>Test 9: Zircon (QM100 + RF switch)</span><span>Power: 5–20 dBm</span><span>Box tags: 1A1122…06xx</span></div>
 </header>
 
 <section>
@@ -258,6 +258,65 @@ svg text { fill: var(--ink); font-family: var(--body); }
   <p class="callout">The Silion E710 does this job as well as the R700, with cleaner phase, but not better: each box's zone is still only reliable when a calibration box sat on the same spot. The limit is the reflections on the metal shelf, not the reader.</p>
 </section>
 
+<section id="t-beam">
+  <div class="sec-head"><span class="eyebrow">Test 8 · Nov 13 · Butler-matrix beam steering · Silion E710 · 32 boxes</span><h2>Beam steering: one port at a time</h2>
+  <p>The four zone antennas were replaced by a 4-patch array (elements 16&nbsp;cm apart) behind a 4×4 Butler matrix, mounted at the middle of the aisle edge under the roof. Each reader port feeds one beam. With the 32 boxes in the calibration layout, each port was run alone for 30&nbsp;s (Silion E710, mode 4141, S0) to see which boxes it reads. First with the zones about 1" apart at 8 and 10&nbsp;dBm, then with the boxes centred in their zones and 3" between zones at 5, 10 and 15&nbsp;dBm. Earlier runs, made before the elements were set 16&nbsp;cm apart, are left out.</p></div>
+  <div class="photos">
+    <figure><img src="photos/beam_aisle_view.jpg" alt="Shelf from the aisle: four patch antennas under the roof edge above the 32 boxes in four zones" loading="lazy"><figcaption>From the aisle: the 4-patch array under the roof edge, above the 32 boxes (zones about 1" apart).</figcaption></figure>
+    <figure><img src="photos/beam_array_view.jpg" alt="Looking up at the four patch elements on foam spacers under the metal roof" loading="lazy"><figcaption>The array from below: four patches on foam spacers, 16&nbsp;cm apart, with their RF cables.</figcaption></figure>
+    <figure><img src="photos/beam_shelf_view.jpg" alt="View along the shelf: 32 labelled boxes in 4 rows and 8 columns, array at the roof edge" loading="lazy"><figcaption>Along the shelf: 4 rows × 8 columns of boxes between metal walls, array at the top right.</figcaption></figure>
+  </div>
+  <div class="panel">
+    <div class="controls"><span class="ctl-label">Run</span><div class="seg" id="bm-r"></div></div>
+    <div class="controls"><span class="ctl-label">Show</span><div class="seg" id="bm-v"></div></div>
+    <div class="result-line" id="bm-result"></div>
+    <div class="legend" id="bm-legend"></div>
+    <div class="scroll"><svg id="bm-svg" role="img" aria-label="Which of the 32 boxes each beam-steering port reads, or the strongest port per box" style="min-width:760px"></svg></div>
+    <p class="note">Box positions are drawn on the original grid. For the 3" runs the boxes were centred in their zones and kept their zone. Port colours follow the zone each port favoured at 5&nbsp;dBm: P1 → zone 1, P4 → zone 2, P3 → zone 3, P2 → zone 4.</p>
+  </div>
+  <div class="panel"><h3>Share of each port's reads by zone</h3><div class="scroll"><table id="bm-share"></table></div>
+    <p class="note">Bold marks the zone that gets the most of that port's reads. Box counts are out of 32.</p></div>
+  <div class="panel"><h3>All runs</h3><div class="scroll"><table id="bm-runs"></table></div>
+    <p class="note"><b>On 2+ ports</b> is the antenna engineer's "multi-zone" count: boxes read by more than one beam. <b>Strongest port right</b> takes the port with the highest median RSSI for each box and maps it to a zone with the 5&nbsp;dBm beam map.</p></div>
+  <ul class="findings" id="bm-findings"></ul>
+  <p class="callout">On this metal shelf the beams only separate the zones at a power too low to read every box. At powers that read the whole shelf, every port reads every zone, and the strongest port is no better than one antenna per zone.</p>
+</section>
+
+<section id="t-zircon">
+  <div class="sec-head"><span class="eyebrow">Test 9 · Nov 13–15 · Butler-matrix beam steering · Zircon (QM100) · 32 boxes</span><h2>Beam steering on the Zircon board, with metal behind the array</h2>
+  <p>The same 4-patch array and 32 boxes (3" between zones) on the Zircon board: a QM100 reader with a single RF port and an RF switch that selects one of the four beam ports, logged over J-Link RTT. Each port was run alone for 30&nbsp;s at 5, 10 and 15&nbsp;dBm. The Zircon reports a raw RSSI through the switch, so its RSSI is about 5&nbsp;dB lower than the Silion's and should only be compared within the Zircon runs.</p>
+  <table class="kv"><tbody>
+    <tr><td><b>No back metal</b> · Nov 13</td><td>Array on foam under the roof edge, elements 16&nbsp;cm apart; boxes in one layer.</td></tr>
+    <tr><td><b>Back metal v1</b> · Nov 13</td><td>Same array, with a metal plate held perpendicular to the shelf behind it.</td></tr>
+    <tr><td><b>Back metal v2</b> · Nov 15</td><td>Array mounted on the metal plate, elements 18&nbsp;cm apart; boxes in one layer.</td></tr>
+    <tr><td><b>Back metal v3</b> · Nov 15</td><td>Same antenna as v2; boxes stacked instead of one layer.</td></tr>
+  </tbody></table></div>
+  <div class="photos">
+    <figure><img src="photos/zircon_v1_shelf_view.jpg" alt="v1: the metal plate hanging perpendicular to the shelf in front of 32 boxes in one layer" loading="lazy"><figcaption>v1: the metal plate held perpendicular to the shelf, 32 boxes in one layer.</figcaption></figure>
+    <figure><img src="photos/zircon_v1_array_view.jpg" alt="v1: four patches on foam under the roof with the metal plate behind them" loading="lazy"><figcaption>v1: the four patches on foam, 16&nbsp;cm apart, with the plate behind them.</figcaption></figure>
+    <figure><img src="photos/zircon_aisle_view.jpg" alt="Down the truck: the 4-patch array on a metal back plate under the roof, tagged boxes on the left" loading="lazy"><figcaption>v2/v3: the array mounted on the metal plate under the roof.</figcaption></figure>
+    <figure><img src="photos/zircon_array_view.jpg" alt="Looking up at the four patches on the metal back plate with their RF cables" loading="lazy"><figcaption>v2/v3: the four patches on the plate, 18&nbsp;cm apart, with RF cables.</figcaption></figure>
+    <figure><img src="photos/zircon_shelf_view.jpg" alt="The shelf from the aisle: boxes in four zones under the tilted metal back plate" loading="lazy"><figcaption>v3: boxes stacked in the four zones under the back of the array.</figcaption></figure>
+    <figure><img src="photos/zircon_end_view.jpg" alt="From the door end: array on its plate, laptop logging over J-Link, tagged boxes" loading="lazy"><figcaption>v2/v3 from the door: the array, the laptop logging over J-Link, and the boxes.</figcaption></figure>
+  </div>
+  <div class="panel">
+    <div class="controls"><span class="ctl-label">Setup</span><div class="seg" id="zx-s"></div></div>
+    <div class="controls"><span class="ctl-label">Power</span><div class="seg" id="zx-p"></div></div>
+    <div class="controls"><span class="ctl-label">Show</span><div class="seg" id="zx-v"></div></div>
+    <div class="result-line" id="zx-result"></div>
+    <div class="legend" id="zx-legend"></div>
+    <div class="scroll"><svg id="zx-svg" role="img" aria-label="Which of the 32 boxes each Zircon port reads, or the strongest port per box" style="min-width:760px"></svg></div>
+    <p class="note">Box positions are drawn on the original grid. Each setup is scored with its own beam map: without metal and with v1 the ports favoured A2 → zone 1, A3 → 2, A4 → 3, A1 → 4; with v2 and v3, P1 → 1, P4 → 2, P3 → 3, P2 → 4 (the Silion order). In the port views each box shows its median RSSI and how many times it was read in the 30&nbsp;s. For v3 the boxes were stacked, so the grid shows each box's zone, not its exact position.</p>
+  </div>
+  <div class="panel"><h3>Share of each port's reads by zone</h3><div class="scroll"><table id="zx-share"></table></div>
+    <p class="note">Bold marks the zone that gets the most of that port's reads. Box counts are out of 32.</p></div>
+  <div class="panel"><h3>All Zircon runs</h3><div class="scroll"><table id="zx-runs"></table></div>
+    <p class="note">Back metal v2 in bold. <b>Strongest port right</b> uses that setup's beam map. <b>Mean RSSI</b> is the mean over every read of the 32 box tags, all ports. When two ports tie on median RSSI, the higher port number is taken.</p></div>
+  <ul class="findings" id="zx-findings"></ul>
+  <p class="callout">Mounting the array on the metal plate with the elements 18&nbsp;cm apart is what makes the Zircon beams separate the zones. Back metal v2 at 5&nbsp;dBm is the best result so far on either reader: every box read, 23 of 32 called right, and every zone at least 4 of 8.</p>
+</section>
+
+
 <section id="t-geo">
   <div class="sec-head"><span class="eyebrow">Geometry</span><h2>Antenna height sets the zone separation</h2>
   <p>A free-space model of the roof antennas (patch, 70° beam, tilted down toward the back wall) gives how much stronger a middle box reads on its own antenna than on the neighbouring zone's antenna. Tilt mostly moves coverage between the front and back rows; the separation between zones depends on height.</p></div>
@@ -300,6 +359,12 @@ svg text { fill: var(--ink); font-family: var(--body); }
       <tr><td>Nov 11, 12:51–13:23</td><td>4zone_mode*</td><td>Same grid, RF modes 1002, 2, 4, 4141, 4180</td><td class="num">20</td><td>Mode 2 cleanest phase (0.6°), 32/32 against the day before</td></tr>
       <tr><td>Nov 12, 15:12</td><td>silion_cal32</td><td>Silion E710 (Sapphire), same grid, mode 4141, S0, 12/12/14/14 dBm, 120 s</td><td class="num">1</td><td>18,631 reads, even across antennas; 18/32 leave-one-out</td></tr>
       <tr><td>Nov 12, 15:19</td><td>silion_test_s0</td><td>Silion E710, boxes untouched, same settings, 120 s</td><td class="num">1</td><td>Locator 32/32, phase pattern 31/32 against silion_cal32</td></tr>
+      <tr><td>Nov 13</td><td>beam_check_silion8_16cm, _silion10_16cm</td><td>Butler array, elements 16 cm apart, zones ~1" apart, one port at a time, 8 and 10 dBm, 30 s per port</td><td class="num">8</td><td>27–30/32 boxes read; 63–88% on 2+ ports</td></tr>
+      <tr><td>Nov 13</td><td>beam_check_gap3_5dbm, _10dbm, _15dbm</td><td>Same array, boxes centred, 3" between zones, 5, 10 and 15 dBm, 30 s per port</td><td class="num">12</td><td>5 dBm: one zone per port but 16/32 read; 15 dBm: every port reads every zone</td></tr>
+      <tr><td>Nov 13</td><td>zircon_beam_5dbm, _10dbm, _15dbm</td><td>Zircon (QM100 + RF switch), same array and boxes, no metal behind the array, 5, 10 and 15 dBm, 30 s per port</td><td class="num">12</td><td>24–31/32 read; 81–96% on 2+ ports; strongest port right 13–19/32</td></tr>
+      <tr><td>Nov 13</td><td>zircon_beam_metal_5dbm, _10dbm, _15dbm</td><td>Zircon, back metal v1: plate perpendicular to the shelf behind the array</td><td class="num">12</td><td>Strongest port right 19–20/32; zone 4 only 2/8</td></tr>
+      <tr><td>Nov 15</td><td>zircon_beam_metal_new_5dbm, _10dbm, _15dbm</td><td>Zircon, back metal v2: array on the plate, elements 18 cm apart</td><td class="num">12</td><td>32/32 read; strongest port right 22–24/32; port order now P1, P4, P3, P2</td></tr>
+      <tr><td>Nov 15</td><td>zircon_beam_metal_new2_5dbm, _10dbm, _15dbm</td><td>Zircon, back metal v3: v2 antenna, boxes stacked</td><td class="num">12</td><td>Strongest port right 19–20/32; zone 4 only 2–3/8</td></tr>
     </tbody></table></div>
   <p class="note">Data: the session folders in smart_driver_2/sessions. Figures are rebuilt with report/build_data.py. The front, middle and back depths in test 5 are estimates (6, 12 and 18").</p>
 </section>
@@ -743,6 +808,90 @@ renderCal();
     R.quality.map(q => `<tr><td>${q.reader}</td><td>${q.capture}</td><td class="num">${q.seconds}</td><td class="num">${q.reads_per_box}</td><td class="num">${q.channels_per_box_ant}</td><td class="num">${q.weak_pairs_lt6ch}/128</td><td class="num">${q.phase_noise_deg.toFixed(1)}°</td><td class="num">${q.rssi_spread_db.toFixed(2)} dB</td></tr>`).join('') + '</tbody>';
   $('#sl-findings').innerHTML = (R.findings || []).map(([p, cls, t]) => `<li><span class="pill ${cls}">${p}</span><span>${t}</span></li>`).join('');
 })();
+
+// ── beam steering: one port at a time (Silion section and Zircon section share this view) ──
+function beamView(B, px, secId, opts) {
+  if (!B) { $(secId).hidden = true; return; }
+  const runs = B.runs, runLab = opts.runLab;
+  const st = { r: Math.max(0, runs.findIndex(opts.start)), v: 'best' };
+  const lo = -56, hi = -35;
+  function render() {
+    const R = runs[st.r], PZ = R.pz, svg = $(`#${px}-svg`); svg.innerHTML = '';
+    const w = 92, h = 74, gap = 6, zg = 14, LX = 40, top = 42;
+    const colX = i => LX + i * (w + gap) + Math.floor(i / 2) * zg;
+    const W = colX(7) + w + 4, gridB = top + 4 * (h + gap), H = gridB + 70;
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    el('rect', { x: LX, y: 6, width: W - LX - 4, height: 8, class: 'wall' }, svg);
+    for (let z = 1; z <= 4; z++) {
+      const cx = (colX(2 * z - 2) + colX(2 * z - 1) + w) / 2;
+      el('text', { x: cx, y: 32, 'text-anchor': 'middle', class: 't-head', text: `Zone ${z}` }, svg);
+      if (z > 1) { const lx = colX(2 * z - 2) - (gap + zg) / 2; el('line', { x1: lx, x2: lx, y1: 18, y2: gridB, class: 'ref' }, svg); }
+    }
+    const ys = [21, 15, 9, 3], xs = [3, 9, 15, 21, 27, 33, 39, 45];
+    ys.forEach((yd, i) => el('text', { x: 0, y: top + i * (h + gap) + h / 2 + 4, class: 't-lab', text: `${yd}"` }, svg));
+    let good = 0;
+    R.boxes.forEach(b => {
+      const ci = xs.indexOf(b.x), ri = ys.indexOf(b.y); if (ci < 0 || ri < 0) return;
+      const g = el('g', { transform: `translate(${colX(ci)},${top + ri * (h + gap)})`, class: 'cell', tabindex: 0 }, svg);
+      let read, fillZ, op, val, bd;
+      if (st.v === 'best') {
+        read = b.best != null; fillZ = read ? PZ[b.best] : 0; op = 0.3;
+        const s = b.rssi.filter(v => v != null).sort((a, c) => c - a);
+        val = read ? `P${b.best} ${s.length > 1 ? '+' + (s[0] - s[1]).toFixed(0) + ' dB' : 'only'}` : 'not read';
+        if (read && fillZ === b.zone) good++;
+        bd = !read ? 'cellbd near' : fillZ === b.zone ? `cellbd zs${fillZ}` : 'cellbd wrong';
+      } else {
+        const p = +st.v, v = b.rssi[p - 1];
+        read = b.reads[p - 1] > 0; fillZ = PZ[p];
+        op = read ? 0.15 + 0.8 * Math.max(0, Math.min(1, (v - lo) / (hi - lo))) : 0;
+        val = read ? `${dbm(v)} dBm` : 'not read';
+        if (read && b.zone === PZ[p]) good++;
+        bd = read ? `cellbd zs${fillZ}` : 'cellbd near';
+      }
+      if (read) el('rect', { x: 0, y: 0, width: w, height: h, rx: 5, class: `zf${fillZ}`, 'fill-opacity': op.toFixed(2) }, g);
+      el('rect', { x: 1, y: 1, width: w - 2, height: h - 2, rx: 4, class: bd }, g);
+      el('text', { x: 8, y: 20, class: 't-box', text: b.box }, g);
+      if (read && st.v !== 'best') el('text', { x: w - 8, y: 20, 'text-anchor': 'end', class: 't-small', text: `${b.reads[+st.v - 1]}×` }, g);
+      el('text', { x: 8, y: h - 12, class: read ? 't-val' : 't-small', 'font-size': 11, text: val }, g);
+      bindTip(g, `<b>Box ${b.box}</b> · zone ${b.zone} · x ${b.x}" y ${b.y}"<br><table>` +
+        [1, 2, 3, 4].map(p => `<tr><td>Port ${p} (→Z${PZ[p]})</td><td>${b.reads[p - 1] ? dbm1(b.rssi[p - 1]) + ' dBm' : 'not read'}</td><td>${b.reads[p - 1]} reads</td></tr>`).join('') + '</table>');
+    });
+    el('line', { x1: LX, x2: W - 4, y1: gridB + 2, y2: gridB + 2, class: 'divider' }, svg);
+    const mid = (LX + W) / 2, sp = 34;
+    for (let i = 0; i < 4; i++) el('rect', { x: mid + (i - 1.5) * sp - 11, y: gridB + 12, width: 22, height: 12, rx: 2, class: 'ant' }, svg);
+    el('text', { x: mid, y: gridB + 48, 'text-anchor': 'middle', class: 't-lab', text: `Aisle edge · 4-patch array, ${R.spacing || 16} cm apart (not to scale)${R.stacked ? ' · boxes stacked, drawn by zone' : ''}` }, svg);
+    const r = runLab(R);
+    if (st.v === 'best') $(`#${px}-result`).innerHTML = `${r}: <b>${R.seen}/32</b> boxes read by at least one port; the strongest port maps to the box's zone for <b>${good}/32</b>. Mean RSSI ${dbm1(R.rssi_mean)} dBm.`;
+    else { const p = +st.v, sh = R.share[p - 1]; $(`#${px}-result`).innerHTML = `${r} · port ${p} alone: <b>${R.nport[p - 1]}/32</b> boxes, ${R.reads[p - 1].toLocaleString()} reads; zone ${PZ[p]} boxes are <b>${good}</b> of them. Reads by zone: ` + sh.map((s, i) => `Z${i + 1} ${s}%`).join(' · ') + '.'; }
+    const order = [1, 2, 3, 4].sort((a, c) => PZ[a] - PZ[c]);
+    $(`#${px}-legend`).innerHTML = st.v === 'best'
+      ? order.map(p => `<span><span class="sw" style="background:var(--z${PZ[p]})"></span>P${p} strongest (→ zone ${PZ[p]})</span>`).join('') + '<span><span class="sw bad"></span>Not this box\'s zone</span>'
+      : `<span><span class="sw" style="background:var(--z${PZ[+st.v]})"></span>Read by port ${st.v}; darker = stronger (−56 to −35 dBm median RSSI); top right: reads in 30 s</span><span><span class="sw" style="border:2px dashed var(--muted);background:transparent"></span>Not read</span>`;
+    $(`#${px}-share`).innerHTML = '<thead><tr><th>Port</th><th class="num">Boxes read</th><th class="num">Reads</th>' + [1, 2, 3, 4].map(z => `<th class="num">Zone ${z}</th>`).join('') + '</tr></thead><tbody>' +
+      order.map(p => { const sh = R.share[p - 1], mx = Math.max(...sh); return `<tr><td><span class="sw" style="background:var(--z${PZ[p]})"></span>Port ${p} (→ zone ${PZ[p]})</td><td class="num">${R.nport[p - 1]}/32</td><td class="num">${R.reads[p - 1].toLocaleString()}</td>` +
+        sh.map(s => `<td class="num"${s === mx && s > 0 ? ' style="font-weight:700"' : ''}>${s}%</td>`).join('') + '</tr>'; }).join('') + '</tbody>';
+  }
+  $(`#${px}-runs`).innerHTML = `<thead><tr>${opts.runHead}<th class="num">Boxes read</th><th class="num">On 2+ ports</th><th class="num">Strongest port right</th><th class="num">Mean RSSI (dBm)</th><th class="num">Boxes per port P1 / P2 / P3 / P4</th></tr></thead><tbody>` +
+    runs.map(r => `<tr${opts.best && opts.best(r) ? ' style="font-weight:700"' : ''}>${opts.runCells(r)}<td class="num">${r.seen}/32</td><td class="num">${r.multi}/${r.seen} (${Math.round(r.multi / Math.max(r.seen, 1) * 100)}%)</td><td class="num">${r.right}/32</td><td class="num">${dbm1(r.rssi_mean)}</td><td class="num">${r.nport.join(' / ')}</td></tr>`).join('') + '</tbody>';
+  if (opts.groups) {  // two selectors: setup and power
+    const cur = () => runs[st.r];
+    const pick = (sg, pw) => { const i = runs.findIndex(r => r.setup === sg && r.power === pw); if (i >= 0) st.r = i; render(); };
+    seg(`#${px}-s`, opts.groups.map(g => [g, g]), () => cur().setup, v => pick(v, cur().power));
+    seg(`#${px}-p`, [5, 10, 15].map(p => [p, `${p} dBm`]), () => cur().power, v => pick(cur().setup, +v));
+  } else seg(`#${px}-r`, runs.map((r, i) => [i, runLab(r)]), () => st.r, v => { st.r = v; render(); });
+  seg(`#${px}-v`, [['best', 'Strongest port'], ['1', 'Port 1'], ['2', 'Port 2'], ['3', 'Port 3'], ['4', 'Port 4']], () => st.v, v => { st.v = v; render(); });
+  render();
+  $(`#${px}-findings`).innerHTML = (B.findings || []).map(([p, cls, t]) => `<li><span class="pill ${cls}">${p}</span><span>${t}</span></li>`).join('');
+}
+beamView(D.beam, 'bm', '#t-beam', {
+  runLab: r => `${r.gap}" gaps · ${r.power} dBm`, start: r => r.gap === 3 && r.power === 5,
+  runHead: '<th>Run</th><th>Session</th>', runCells: r => `<td>${r.gap}" gaps · ${r.power} dBm</td><td>${r.id}</td>`,
+});
+beamView(D.zircon, 'zx', '#t-zircon', {
+  runLab: r => `${r.setup} · ${r.power} dBm`, start: r => r.setup === 'Back metal v2' && r.power === 5,
+  groups: D.zircon && D.zircon.setups, best: r => r.setup === 'Back metal v2',
+  runHead: '<th>Setup</th><th>Day</th><th class="num">Power</th>', runCells: r => `<td>${r.setup}</td><td>${r.day}</td><td class="num">${r.power} dBm</td>`,
+});
 
 // similarity matrix
 (function () {
